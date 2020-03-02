@@ -1,0 +1,20 @@
+[
+{"type":"header","version":"4.8.0.1","comment":"Export to JSON plugin for PHPMyAdmin"},
+{"type":"database","name":"mydbpdo"},
+{"type":"table","name":"cardboard","database":"mydbpdo","data":
+[
+{"jdoc":"{\"id\": [\"5e0d7b7de61eb\"], \"name\": [\"Nouvel An\"], \"items\": [], \"state\": \"NEW\", \"weight\": 5, \"document\": null, \"handling\": \"NORMAL\", \"descrition\": null, \"goingToRoom\": null, \"classifiedAs\": [\"CARDBOARD\"]}"},
+
+{"jdoc":"{\"id\": [\"5e0d7b841dcea\"], \"name\": [\"Nouvel An\"], \"items\": [], \"state\": \"NEW\", \"weight\": 5, \"document\": null, \"handling\": \"NORMAL\", \"descrition\": null, \"goingToRoom\": null, \"classifiedAs\": [\"CARDBOARD\"]}"},
+
+{"jdoc":"{\"id\": [\"5e17195c54745\"], \"name\": [\"Deco Noel\"], \"items\": [], \"state\": \"NEW\", \"weight\": 7, \"document\": null, \"handling\": \"NORMAL\", \"descrition\": null, \"goingToRoom\": null, \"classifiedAs\": [\"CARDBOARD\"]}"},
+
+{"jdoc":"{\"id\": [\"5e171992f3ecd\"], \"name\": [\"Deco Paques\"], \"items\": [], \"state\": \"NEW\", \"weight\": 5, \"document\": null, \"handling\": \"NORMAL\", \"descrition\": null, \"goingToRoom\": null, \"classifiedAs\": [\"CARDBOARD\"]}"},
+
+{"jdoc":"{\"id\": [\"5e195f853a737\"], \"name\": [\"Deco Enfants\"], \"items\": [], \"state\": \"NEW\", \"weight\": null, \"document\": null, \"handling\": \"NORMAL\", \"descrition\": null, \"goingToRoom\": null, \"classifiedAs\": [\"CARDBOARD\"]}"},
+
+{"jdoc":"{\"id\": [\"5e195fbb90cdb\"], \"name\": [\"vrac\"], \"items\": [], \"state\": \"NEW\", \"weight\": null, \"document\": null, \"handling\": \"NORMAL\", \"descrition\": null, \"goingToRoom\": null, \"classifiedAs\": [\"CARDBOARD\"]}"}
+
+]
+}
+]
