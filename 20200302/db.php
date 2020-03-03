@@ -7,10 +7,10 @@ PURPOSE
 Database connection
 */
 
-$servername = "localhost:3307";
-$username = "root";
-$password = "";
-$dbname = "myDBPDO";
+$servername = "localhost";
+$username = "homeinventorydev";
+$password = "855265600PLk";
+$dbname = "homeinventorydevdb";
 // $conn = ""; 
 
 try {
