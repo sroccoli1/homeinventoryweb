@@ -56,5 +56,4 @@ These instructions will get you a copy of the project up and running on your loc
 5. Set up the database :
   1. [Create a DB and its associated user](https://doc.ubuntu-fr.org/mysql#creer_une_base_de_donnees_et_un_utilisateur_qui_lui_est_associe)
   2. Create the DB tables : in your browser go to localhost, you’ll see a list of files. Click on createtables.php to create the tables.
-
-Congrats, you can start using HomeInventoryWeb!
+  6. Congrats, you can start developping and testing HomeInventoryWeb!
