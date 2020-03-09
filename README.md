@@ -4,7 +4,7 @@
 
 #### Problems when preparing your next move
 
-From experience, moving is often a painstaking, slow but necessary process. Sometimes we need the help of a moving company, the travelling becomes easier. But there is always hassle when to comes to packing, inventoring and unboxing. Here is a list of some of the problems that we may encounter:
+From experience, moving is often a painstaking, slow but necessary process. Fortunately when one can get help from family or friends or from a moving company, travelling becomes easier. But there is always hassle when to comes to packing, inventoring and unboxing. Here is a list of some of the problems that we may encounter:
 1. The moving date is much too close, not leaving time to organise, and with sleep debt. So we end up forgetting what is in which cardboard. After the move, searching for staff become a time consuming challenge. (Time constraint.)
 2. The international moving company must respect a truck load limit when it reaches a country border, crossing on a ferry. When it is over the limit, the moving cost shifts to the upper truck price category. So you must know the global weight a of your move, thus the load of each cardboard or items. (Weight constrainst.)
 3. The volume of your move must fit in the truck. (Volume constrainst.)
@@ -45,16 +45,17 @@ These instructions will get you a copy of the project up and running on your loc
 - You are familiar with t,10
 ,hese commands ls, cd, cp, rm
 
-### Install (Linux workstation)
-1. Download the HomeInventoryWeb code archive from Git (repository not yet public)
+### Install on Linux workstation, single user mode
+1. Download the HomeInventoryWeb code archive [from Git](https://github.com/sroccoli1/homeinventoryweb) (repository not yet public)
 2. Unpack it and let it wait until step 5  
-3. Install Lamp following these instructions (in French)  from step 1 to 3  
+3. Install Lamp following [these instructions (in French)  from step 1 to 3](https://doc.ubuntu-fr.org/lamp#installation)  
 4. Config Lamp :
-4.1 Create working directory, for instance public. At this point, you can open index.html in your browser, pointing at localhost
-4Put the code in this working directory
-Delete the previously created index.html
-At this point, you can open HomeInventoryWeb in your browser, pointing at localhost
-Set up the database : 
-Create a DB and its associated user
-Create the DB tables : in your browser go to localhost, you’ll see a list of files. Click on createtables.php to create the tables.
+  1. [Create working directory, for instance public](https://doc.ubuntu-fr.org/tutoriel/lamp_repertoires_de_travail#mise_en_place_d_un_espace_public). At this point, you can open index.html in your browser, pointing at localhost
+  2. Put the code in this working directory
+  3. Delete the previously created index.html
+  4. At this point, you can open HomeInventoryWeb in your browser, pointing at localhost
+5. Set up the database :
+  1. [Create a DB and its associated user](https://doc.ubuntu-fr.org/mysql#creer_une_base_de_donnees_et_un_utilisateur_qui_lui_est_associe)
+  2. Create the DB tables : in your browser go to localhost, you’ll see a list of files. Click on createtables.php to create the tables.
+
 Congrats, you can start using HomeInventoryWeb!
