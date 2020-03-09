@@ -38,22 +38,21 @@ Synchronize with Cloud (multi-user)
 Or mode 100% online : web app (creating an account on the website)
 
 ## Getting Started (Dev and Test)
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. Deversion
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites (Linux workstation)
 - You have sufficient rights to install packages using sudo
-- You are familiar with t,10
-,hese commands ls, cd, cp, rm
+- You are familiar with Terminal and with these commands ls, cd, cp, rm
 
 ### Install on Linux workstation, single user mode
-1. Download the HomeInventoryWeb code archive [from Git](https://github.com/sroccoli1/homeinventoryweb) (repository not yet public)
-2. Unpack it and let it wait until step 5  
-3. Install Lamp following [these instructions (in French)  from step 1 to 3](https://doc.ubuntu-fr.org/lamp#installation)  
-4. Config Lamp :
-  1. [Create working directory, for instance public](https://doc.ubuntu-fr.org/tutoriel/lamp_repertoires_de_travail#mise_en_place_d_un_espace_public). At this point, you can open index.html in your browser, pointing at localhost
-  2. Put the code in this working directory
-  3. Delete the previously created index.html
-  4. At this point, you can open HomeInventoryWeb in your browser, pointing at localhost
+1. Download the HomeInventoryWeb code archive [from Git](https://github.com/sroccoli1/homeinventoryweb) (repository not yet public).
+2. Unpack it and let it wait until step 5 .
+3. Install a [LAMP](https://en.wikipedia.org/wiki/LAMP_%28software_bundle%29) (Linux-Apache-MySQL-PHP) server following [these instructions from step 1 to 3 (in French)](https://doc.ubuntu-fr.org/lamp#installation).
+4. Config LAMP :
+  1. [Create working directory, for instance public](https://doc.ubuntu-fr.org/tutoriel/lamp_repertoires_de_travail#mise_en_place_d_un_espace_public). At this point, you can open index.html in your browser, pointing at localhost.
+  2. Put the code in this working directory.
+  3. Delete the previously created index.html.
+  4. At this point, you can open HomeInventoryWeb in your browser, pointing at localhost.
 5. Set up the database :
   1. [Create a DB and its associated user](https://doc.ubuntu-fr.org/mysql#creer_une_base_de_donnees_et_un_utilisateur_qui_lui_est_associe)
   2. Create the DB tables : in your browser go to localhost, you’ll see a list of files. Click on createtables.php to create the tables.
