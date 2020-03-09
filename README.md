@@ -1,6 +1,6 @@
 # homeinventoryweb
-## Managing your cardboard boxes for your next move !<br>
-### homeinventoryweb is a digital twin of your cardboard boxes! With it you know where is your staff and how much it weights. Which helps to contract with any moving company!<br>homeinventoryweb a web development self-learning project developed by sroccoli1. 
+## Managing your cardboard boxes for your next move !
+### It helps to inventory your staff, evaluates how much it weights, so  contracting with a moving company becomes easy!<br>homeinventoryweb a web development self-learning project developed by sroccoli1.<br>The digital twin of your staff! 
 
 #### Problems when preparing your next move
 
