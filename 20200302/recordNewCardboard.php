@@ -116,11 +116,17 @@ PURPOSE: It creates a form with controls, where user writes the cardboard name, 
 			  $jsontobeinserted = json_encode($new_cardboard_input, JSON_PRETTY_PRINT);
 			  echo "<div> New cardboard :<br>" . $jsontobeinserted . "</div>"; 
 			
-			  //insert to mysql json db
+			  
+			  // insert to mysql json db
+			  include 'db.php';
+
+			  /**
 			  $servername = "localhost:3307";
 			  $username = "root";
 			  $password = "";
 			  $dbname = "myDBPDO";
+			  */
+
 
 			  try {
 				$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);				

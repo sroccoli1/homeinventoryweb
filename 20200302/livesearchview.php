@@ -19,31 +19,6 @@ This search page helps to find objects (here mainly cardboard). This search capa
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 		<title>Cardboard search</title>
-		
-		<script>
-		function showResult(str) {
-		  if (str.length==0) {
-			document.getElementById("livesearch").innerHTML="";
-			document.getElementById("livesearch").style.border="0px";
-			return;
-		  }
-		  if (window.XMLHttpRequest) {
-			// code for IE7+, Firefox, Chrome, Opera, Safari
-			xmlhttp=new XMLHttpRequest();
-		  } else {  // code for IE6, IE5
-			xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-		  }
-		  xmlhttp.onreadystatechange=function() {
-			if (this.readyState==4 && this.status==200) {
-			  document.getElementById("livesearch").innerHTML=this.responseText;
-			  document.getElementById("livesearch").style.border="1px solid #A5ACB2";
-			}
-		  }
-		  xmlhttp.open("POST","livesearch.php",true);
-		  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-		  xmlhttp.send("q=" + str);
-		}
-		</script>
 	</head>
 	
 	<body class="searchview">
@@ -66,13 +41,14 @@ This search page helps to find objects (here mainly cardboard). This search capa
 		See https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_searchbar3-->
 		<form class="searchview-topbar-form" id="cardboardSearch-searchBar-searchInput" role="search" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 			
-			<input type="search" class="searchview-topbar-input"  
+			<input type="search" id="livesearch-input" class="searchview-topbar-input"  
 			name="search" 
 			placeholder="&#xf002; Cardboard name..."
 			aria-label="Search carboard through site content"
-			onkeyup="showResult(this.value)">
+			onkeyup="showResult(this.value)" onsearch="showResultAfterSuggestion()"/>
 			
 			<button class="searchview-topbar-delete" id="cardboardSearch-searchBar-deleteBtn"><i class="fa fa-times"></i></button>
+			<input type="submit" style="visibility: hidden; position: absolute;"/>
 			<div id="livesearch"></div>
 		</form>
 	</div>
@@ -124,52 +100,48 @@ This search page helps to find objects (here mainly cardboard). This search capa
 						USER INPUT VALIDATION SECTION
 		* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 		This section handles form, set required fields are filled and correct, and secure user input.*/
-		
-		$cardboardName = $cardboardNameErr = ""; 
-		
-		if ($_SERVER["REQUEST_METHOD"] == "POST") {
-		  //User input check and Validation for $cardBoardName
-		  if (empty($_POST["search"])) {
-			$cardboardNameErr = "Carboard name is required";
-		  } 
-		  else {
-			$cardboardName = test_input($_POST["search"]);
-			// check if cardboard name only contains letters and whitespace
-			if (!preg_match("/^[a-zA-Z ]*$/",$cardboardName)) {
-			  $cardboardNameErr = "Only letters and white space allowed"; 
-			}
-		  }
-		} 
-		
-		// If the user add a space or tab, newline, backslashes(\), they should be removed. Trim() and stripslashes() remove them. Hackers might exploit $_SERVER["PHP_SELF"] by adding scripts in the user fields (Cross-site Scriting attack). htmlspecialchars() means to avoid this.
-		function test_input($data) {
-		  $data = trim($data);
-		  $data = stripslashes($data);
-		  $data = htmlspecialchars($data);
-		  return $data;
-		}		
-		
+		error_reporting(E_ALL);
+		ini_set('display_errors',1);
 		include 'db.php';
 
+		$cardboardName = $cardboardNameErr = ""; 
+		
+
 		try {
-			$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-			// set the PDO error mode to exception
-			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$sql = "SELECT jdoc FROM Item";
-			$stmt = $conn->prepare($sql); 
-			// use exec() because no results are returned
-			$stmt->execute();
-			
-			echo "fetching done" ;
-			// set the resulting array to associative
-			// The data can then be fetched either using $stmt->fetch() and then looping through one row at a time, or all in one hit with the $stmt->fetchAll() function.
-			$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-			//var_dump($rows);
-			//print_r($rows);
+			if ($_SERVER["REQUEST_METHOD"] == "POST") {
+			  //User input check and Validation for $cardBoardName
+			  if (empty($_POST["search"])) {
+				$cardboardNameErr = "Carboard name is required";
+			  } 
+			  else {
+				$cardboardName = test_input($_POST["search"]);
+				// check if cardboard name only contains letters and whitespace
+				if (!preg_match("/^[a-zA-Z ]*$/",$cardboardName)) {
+				  $cardboardNameErr = "Only letters and white space allowed"; 
+				}
+			  }else{
+
+				$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+				// set the PDO error mode to exception
+				$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+				$sql = "SELECT jdoc FROM Cardboard";
+				$stmt = $conn->prepare($sql); 
+				// use exec() because no results are returned
+				$stmt->execute();
+				
+				echo "fetching done" ;
+				// set the resulting array to associative
+				// The data can then be fetched either using $stmt->fetch() and then looping through one row at a time, or all in one hit with the $stmt->fetchAll() function.
+				$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+				//var_dump($rows);
+				//print_r($rows);
+			  }
+			}
 		}
 		catch(PDOException $e){
 			echo $sql . "<br>" . $e->getMessage();
 		}
+
 
 		$conn = null;
 		//This return an array of all the JSON objects of the Item table (1 column: JDOC)
@@ -188,14 +160,27 @@ This search page helps to find objects (here mainly cardboard). This search capa
 				  <th>Id</th>
 				<tr>
 				  <td>";
-		echo $cardboardName;
 		echo "</td>
 				  <td></td>
 				  <td></td>
 				</tr>
 			</table>";
+			
+			
+		  
+		
+		// If the user add a space or tab, newline, backslashes(\), they should be removed. Trim() and stripslashes() remove them. Hackers might exploit $_SERVER["PHP_SELF"] by adding scripts in the user fields (Cross-site Scriting attack). htmlspecialchars() means to avoid this.
+		function test_input($data) {
+		  $data = trim($data);
+		  $data = stripslashes($data);
+		  $data = htmlspecialchars($data);
+		  return $data;
+		}		
 		
 		?>
+
+
+		
 	  
 		<!--Cardboard01 picture-->
 		<!---
