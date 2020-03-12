@@ -208,10 +208,9 @@ function showResultAfterSuggestion() {
 /*----------------Suggests a search result 
 
 *****************************************************************************/
-/*Depending on the screen size the forms label are removed (or normally displayed).*/
 
-function showResult(str) {
-  console.log("showResult()");
+function showSuggestions(str) {
+  console.log("showSuggestions()");
   if (str.length==0) {
 	document.getElementById("livesearch").innerHTML="";
 	document.getElementById("livesearch").style.border="0px";
@@ -230,6 +229,36 @@ function showResult(str) {
 	}
   }
   xmlhttp.open("POST","livesearch.php",true);
+  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xmlhttp.send("q=" + str);
+}
+
+/*****************************************************************************
+
+/*----------------Display a search result 
+
+*****************************************************************************/
+
+function showResultsAfterSuggestions(str) {
+  console.log("showResultsAfterSuggestions()");
+  if (str.length==0) {
+	document.getElementById("liveresults").innerHTML="";
+	document.getElementById("liveresults").style.border="0px";
+	return;
+  }
+  if (window.XMLHttpRequest) {
+	// code for IE7+, Firefox, Chrome, Opera, Safari
+	xmlhttp=new XMLHttpRequest();
+  } else {  // code for IE6, IE5
+	xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+	if (this.readyState==4 && this.status==200) {
+	  document.getElementById("liveresults").innerHTML=this.responseText;
+	  document.getElementById("liveresults").style.border="1px solid #A5ACB2";
+	}
+  }
+  xmlhttp.open("POST","liveresults.php",true);
   xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xmlhttp.send("q=" + str);
 }

@@ -380,6 +380,9 @@ PURPOSE: It creates a form with controls, where user writes the cardboard name, 
 		</form><!-- End smartphone / tablet look -->
 	</body>
 	
-	<script src="myScript.js"></script>
+	<script src="myScript.js">    
+		if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }</script>
 </html>
 
