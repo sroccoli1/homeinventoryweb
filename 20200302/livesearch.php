@@ -28,6 +28,8 @@ include 'db.php';
 //get the q parameter from URL
 $q=$_POST["q"];
 
+//echo "q, "+ $q;
+
 //lookup all cardboard from the DB if length of q>0
 if (strlen($q)>0) {
   $hint="";
