@@ -96,18 +96,46 @@ if (strlen($q)>0) {
         if ($hint=="") { // initial $hint value
 		  if(isset($object->weight)){
 		    $hint = $val . ", " . $object->weight . " kg,  (" . $object->id[0] . ")"; // here : update in $hint
+		    $hint = "<table>
+						<tr>
+							<th>Name</th>	<th>Weight (kg) </th>	<th>Id</th>
+						<tr>
+							<td>". $val . "</td> <td>" . $object->weight . "</td> <td>" . $object->id[0] . "</td>
+						</tr>
+					</table>";
 		  }
 		  else{
 			$hint = $val . "  (" . $object->id[0] . ")";
+		    $hint = "<table>
+						<tr>
+							<th>Name</th>	<th>Weight (kg) </th>	<th>Id</th>
+						<tr>
+							<td>". $val . "</td> <td>" . $object->weight . "</td> <td>" . $object->id[0] . "</td>
+						</tr>
+					</table>";
 		  }
 		} 
 		else { // if updated $hint value 
 		  if(isset($object->weight)){
 		    $hint = $hint . "<br>" . $val . ", " . $object->weight . " kg,  (" . $object->id[0] . ")"; // here : update in $hint
+		    $hint = "<table>
+						<tr>
+							<th>Name</th>	<th>Weight (kg) </th>	<th>Id</th>
+						<tr>
+							<td>". $val . "</td> <td>" . $object->weight . "</td> <td>" . $object->id[0] . "</td>
+						</tr>
+					</table>";
 		  }
 		  else{
 			$hint = $hint . "<br>" . $val . "  (" . $object->id[0] . ")"; 
           //$hint = $hint . $val; // then update concatenate in $hint
+		    $hint = "<table>
+						<tr>
+							<th>Name</th>	<th>Weight (kg) </th>	<th>Id</th>
+						<tr>
+							<td>". $val . "</td> <td>" . $object->weight . "</td> <td>" . $object->id[0] . "</td>
+						</tr>
+					</table>";
 		  }
         }
       }

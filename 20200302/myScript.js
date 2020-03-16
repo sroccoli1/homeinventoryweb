@@ -252,6 +252,13 @@ function showResultsAfterSuggestions(str) {
   } else {  // code for IE6, IE5
 	xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
   }
+
+	xmlhttp.addEventListener("progress", updateProgress);
+	xmlhttp.addEventListener("load", transferComplete);
+	xmlhttp.addEventListener("error", transferFailed);
+	xmlhttp.addEventListener("abort", transferCanceled);
+
+
   xmlhttp.onreadystatechange=function() {
 	if (this.readyState==4 && this.status==200) {
 	  document.getElementById("liveresults").innerHTML=this.responseText;
@@ -261,4 +268,30 @@ function showResultsAfterSuggestions(str) {
   xmlhttp.open("POST","liveresults.php",true);
   xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xmlhttp.send("q=" + str);
+}
+
+
+  // progress on transfers from the server to the client (downloads)
+  // from https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest#Handling_responses
+  
+
+function updateProgress (oEvent) {
+  if (oEvent.lengthComputable) {
+    var percentComplete = oEvent.loaded / oEvent.total * 100;
+    // ...
+  } else {
+    // Unable to compute progress information since the total size is unknown
+  }
+}
+
+function transferComplete(evt) {
+  console.log("The transfer is complete.");
+}
+
+function transferFailed(evt) {
+  console.log("An error occurred while transferring the file.");
+}
+
+function transferCanceled(evt) {
+  console.log("The transfer has been canceled by the user.");
 }
