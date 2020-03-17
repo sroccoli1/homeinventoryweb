@@ -2,7 +2,7 @@
 /* Project: Home Inventory Helper
 /* Version : 0.1
 /* Branch : 2
-/* Last updated : 2019_09_08
+/* Last updated : 2020_03_17
 
 /* PURPOSE: Style the pages : 
 /* - Top Navigation Bar
@@ -676,6 +676,7 @@ input[type=reset]:hover {
 	grid-template-columns: repeat(auto-fit, minmax(var(--auto-grid-min-size),1fr));
 	grid-gap: 1rem;
 	/* the Grid property justify-items: strech does not work here */
+  text-align: center;
 }
 
 /*------------------------------ Search view topbar ------------------------*/
@@ -904,6 +905,11 @@ Note : that it will show only if the topbar overflow is allowed. */
 	grid-column: 9 / 13;
 	overflow: scroll;
 }
+
+/* Now the result view is a list.
+
+/* ---- please improve this section 
+
 
 /******************************************************************************
 

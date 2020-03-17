@@ -87,56 +87,17 @@ if (strlen($q)>0) {
 	//var_dump($rows[$i]['jdoc']);
     //echo "<br>current value of \$rows[$i]['jdoc']: $rows[$i]['jdoc'].\n";
 	$object = json_decode($rows[$i]['jdoc']);
-	//var_dump($object);
+	var_dump($object);
 	//$object_length = sizeof($object);
 	//echo "<br>current length of \$object: $object_length.\n";
     foreach($object->name as $val){ //$val is a string
 	  //echo "<br>current value of \$object->name: $val.\n";
 	  if (stristr($val, $q)) {// if the name matches partly $q  
         if ($hint=="") { // initial $hint value
-		  if(isset($object->weight)){
-		    $hint = $val . ", " . $object->weight . " kg,  (" . $object->id[0] . ")"; // here : update in $hint
-		    $hint = "<table>
-						<tr>
-							<th>Name</th>	<th>Weight (kg) </th>	<th>Id</th>
-						<tr>
-							<td>". $val . "</td> <td>" . $object->weight . "</td> <td>" . $object->id[0] . "</td>
-						</tr>
-					</table>";
-		  }
-		  else{
-			$hint = $val . "  (" . $object->id[0] . ")";
-		    $hint = "<table>
-						<tr>
-							<th>Name</th>	<th>Weight (kg) </th>	<th>Id</th>
-						<tr>
-							<td>". $val . "</td> <td>" . $object->weight . "</td> <td>" . $object->id[0] . "</td>
-						</tr>
-					</table>";
-		  }
+		  	$hint = formatResults($val,$object,"L" );
 		} 
 		else { // if updated $hint value 
-		  if(isset($object->weight)){
-		    $hint = $hint . "<br>" . $val . ", " . $object->weight . " kg,  (" . $object->id[0] . ")"; // here : update in $hint
-		    $hint = "<table>
-						<tr>
-							<th>Name</th>	<th>Weight (kg) </th>	<th>Id</th>
-						<tr>
-							<td>". $val . "</td> <td>" . $object->weight . "</td> <td>" . $object->id[0] . "</td>
-						</tr>
-					</table>";
-		  }
-		  else{
-			$hint = $hint . "<br>" . $val . "  (" . $object->id[0] . ")"; 
-          //$hint = $hint . $val; // then update concatenate in $hint
-		    $hint = "<table>
-						<tr>
-							<th>Name</th>	<th>Weight (kg) </th>	<th>Id</th>
-						<tr>
-							<td>". $val . "</td> <td>" . $object->weight . "</td> <td>" . $object->id[0] . "</td>
-						</tr>
-					</table>";
-		  }
+		  	$hint = formatResults($val,$object,"L" );
         }
       }
 	}
@@ -156,14 +117,29 @@ if ($hint=="") {
 echo $response;
 
 /** 
-* Return the cardboard's id name and weight
-* @var object(sdtClass) $data is one line of the Cardboard table 
-* Par exemple $obj = json_decode($rows[0]['jdoc']);
+* Return the result in a list formatted table or mosaic.
+* @var object(sdtClass) $object = json_decode($rows[$i]['jdoc']);
+* @var String $value : $object->name
+* @var String $format : Mozaic or List 
 */
-function get_carboard_id_name_weight($data) {
-	return array("ids" => 	$data->id, 
-				"names" => 	$data->name,
-				"weight" => $data->weight
-				);
+function formatResults($value, $object ,$format) {
+	if($format=='L'){ 
+		return "<table>
+						<tr>
+							<td>". $value . "</td> <td>" . $object->weight . "</td> <td>" . $object->handling . "</td>
+						</tr>
+						<tr>
+							<td>". $object->descrition . "</td>
+							<td>". $object->goingToRoom . "</td>
+						</tr>
+				</table>";
+	}
+	else if($format=='M'){ 
+		return "<table>
+						<tr>
+							<td>". $value . "</td> <td>" . $object->weight . "</td> <td>" . $object->handling . "</td>
+						</tr>
+				</table>";
+	}
 }
 ?>
