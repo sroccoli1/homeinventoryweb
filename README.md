@@ -49,23 +49,50 @@ These instructions will get you a copy of the project up and running on your loc
 (Repository not yet public), unpack it and let it wait until step 5 .
 #### 2. Install a [LAMP](https://en.wikipedia.org/wiki/LAMP_%28software_bundle%29) (Linux-Apache-MySQL-PHP) server : 
 Follow [these instructions from step 1 to 3 in french](https://doc.ubuntu-fr.org/lamp#installation) or these ones translated to english:
-1. Install the LAMP pile packets for Apache, PHP (latest version) and MySQL: sudo apt install apache2 php libapache2-mod-php mysql-server php-mysql
-2. Install these additional PHP modules: sudo apt install php-curl php-gd php-intl php-json php-mbstring php-xml php-zip
+1. Install the LAMP pile packets for Apache, PHP (latest version) and MySQL: `sudo apt install apache2 php libapache2-mod-php mysql-server php-mysql`
+2. Install these additional PHP modules: `sudo apt install php-curl php-gd php-intl php-json php-mbstring php-xml php-zip`
 Description of the packets:
-- the apache2 packet installs HTTP Apache 2 server (it is a libapache2-mod-php dependency).
-- the php packet installs a PHP interpreter (it is only a libapache2-mod-php dependency).
-- the libapache2-mod-php installs the Apache Php module
-- the mysql-server packet installs MySQL database system.
-- the php-mysql installs the php modules for interacting with MySQL or MariaDB
+- the `apache2` packet installs HTTP Apache 2 server (it is a libapache2-mod-php dependency).
+- the `php` packet installs a PHP interpreter (it is only a libapache2-mod-php dependency).
+- the `libapache2-mod-php` installs the Apache Php module
+- the `mysql-server` packet installs MySQL database system.
+- the `php-mysql` installs the php modules for interacting with MySQL or MariaDB
 3. Once installed, open the following links in your browser:
-- http://127.0.0.1/
-- http://localhost
+- `http://127.0.0.1/`
+- `http://localhost`
 4. If it is displayed « It works! », then your LAMP sever is correctly installed. Depending on the installed version, it may be displayed a page entitled « Apache2 Ubuntu Default Page ».
+
 **With this install method you get a preconfigured and running LAMP server, displaying the content of the folder /var/www/html (by default the file index.html or index.php).**
 
 #### 3. Config LAMP :
-  1. Configuring the automatic start configuration 
-  2. [Create working directory, for instance public (tutotial in french)](https://doc.ubuntu-fr.org/tutoriel/lamp_repertoires_de_travail#mise_en_place_d_un_espace_public) or from [here](https://help.ubuntu.com/community/ApacheMySQLPHP#Virtual_Hosts). At this point, you can open index.html in your browser, pointing at localhost.
+##### 1. (Optional) Configuring the automatic start configuration [following these instructions in french](https://doc.ubuntu-fr.org/lamp#configuration_du_demarrage_automatique_de_lamp) or these translated into english:
+By default, Apache and MySQL or MariaDB start automatically when you turn on your computer.
+###### Prevent LAMP from starting at startup
+
+`sudo systemctl disable apache2`
+
+  And for mysql:
+`sudo systemctl disable mysql`
+
+  Then you can manually start them up. 
+  For Apache :
+`sudo systemctl start apache2`
+
+  and pour MySql
+
+`sudo systemctl start mysql`
+
+  Les commandes disponibles sont systemctl start, systemctl stop, et systemctl restart.
+
+###### Reactivate automatic startup 
+
+It's easy:
+`sudo systemctl enable apache2`
+`sudo systemctl enable mysql`
+
+##### 2. Create working directory
+  1. Create working directory, for instance public following [this tutorial in french](https://doc.ubuntu-fr.org/tutoriel/lamp_repertoires_de_travail#mise_en_place_d_un_espace_public) or from [this page in english](https://help.ubuntu.com/community/ApacheMySQLPHP#Virtual_Hosts). 
+  2. At this point, you can open index.html in your browser, pointing at localhost.
   3. Put the code in this working directory.
   4. Delete the previously created index.html.
   5. At this point, you can open HomeInventoryWeb in your browser, pointing at localhost.
