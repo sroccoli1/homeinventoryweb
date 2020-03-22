@@ -33,9 +33,9 @@ Inventory can be sent to the insurance company for accidental cases.
 
 #### homeinventoryweb technical features
 
-Desktop, web & mobile app
-Synchronize with Cloud (multi-user)
-Or mode 100% online : web app (creating an account on the website)
+- Desktop, web & mobile app
+- Synchronize with Cloud (multi-user)
+- Or mode 100% online : website (creating an account on the website)
 
 ## Getting Started (Dev and Test)
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
@@ -68,11 +68,11 @@ With this install method you get a preconfigured and running LAMP server, displa
 
 4. Config LAMP :
   1. Configuring the automatic start configuration 
-  1. [Create working directory, for instance public (tutotial in french)](https://doc.ubuntu-fr.org/tutoriel/lamp_repertoires_de_travail#mise_en_place_d_un_espace_public). At this point, you can open index.html in your browser, pointing at localhost.
+  1. [Create working directory, for instance public (tutotial in french)](https://doc.ubuntu-fr.org/tutoriel/lamp_repertoires_de_travail#mise_en_place_d_un_espace_public) or from [here](https://help.ubuntu.com/community/ApacheMySQLPHP#Virtual_Hosts). At this point, you can open index.html in your browser, pointing at localhost.
   2. Put the code in this working directory.
   3. Delete the previously created index.html.
   4. At this point, you can open HomeInventoryWeb in your browser, pointing at localhost.
 5. Set up the database :
-  1. [Create a DB and its associated user](https://doc.ubuntu-fr.org/mysql#creer_une_base_de_donnees_et_un_utilisateur_qui_lui_est_associe)
+  1. [Create a DB and its associated user (tutorial in french)](https://doc.ubuntu-fr.org/mysql#creer_une_base_de_donnees_et_un_utilisateur_qui_lui_est_associe)
   2. Create the DB tables : in your browser go to localhost, you’ll see a list of files. Click on createtables.php to create the tables.
-  6. Congrats, you can start developping and testing HomeInventoryWeb!
+  6. Congrats, you can start testing HomeInventoryWeb!
