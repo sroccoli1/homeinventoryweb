@@ -47,9 +47,28 @@ These instructions will get you a copy of the project up and running on your loc
 ### Install on Linux workstation, single user mode
 1. Download the HomeInventoryWeb code archive [from Git](https://github.com/sroccoli1/homeinventoryweb) (repository not yet public).
 2. Unpack it and let it wait until step 5 .
-3. Install a [LAMP](https://en.wikipedia.org/wiki/LAMP_%28software_bundle%29) (Linux-Apache-MySQL-PHP) server following [these instructions from step 1 to 3 (in French)](https://doc.ubuntu-fr.org/lamp#installation).
+3. Install a [LAMP](https://en.wikipedia.org/wiki/LAMP_%28software_bundle%29) (Linux-Apache-MySQL-PHP) server following [these instructions from step 1 to 3 in french](https://doc.ubuntu-fr.org/lamp#installation) or these ones translated to english:
+- Install the LAMP pile packets for Apache, PHP (latest version) and MySQL: sudo apt install apache2 php libapache2-mod-php mysql-server php-mysql
+- Install these additional PHP modules: sudo apt install php-curl php-gd php-intl php-json php-mbstring php-xml php-zip
+Description of the packets:
+- the apache2 packet installs HTTP Apache 2 server (it is a libapache2-mod-php dependency).
+- the php packet installs a PHP interpreter (it is only a libapache2-mod-php dependency).
+- the libapache2-mod-php installs the Apache Php module
+- the mysql-server packet installs MySQL database system.
+- the php-mysql installs the php modules for interacting with MySQL or MariaDB
+
+After installed, open the following links in your browser:
+http://127.0.0.1/
+http://localhost
+If it is displayed « It works! », then your LAMP sever is correctly installed.
+
+Depending on the installed version, it may be displayed a page entitled « Apache2 Ubuntu Default Page ».
+
+With this install method you get a preconfigured and running LAMP server, displaying the content of the folder /var/www/html (by default the file index.html or index.php).
+
 4. Config LAMP :
-  1. [Create working directory, for instance public](https://doc.ubuntu-fr.org/tutoriel/lamp_repertoires_de_travail#mise_en_place_d_un_espace_public). At this point, you can open index.html in your browser, pointing at localhost.
+  1. Configuring the automatic start configuration 
+  1. [Create working directory, for instance public (tutotial in french)](https://doc.ubuntu-fr.org/tutoriel/lamp_repertoires_de_travail#mise_en_place_d_un_espace_public). At this point, you can open index.html in your browser, pointing at localhost.
   2. Put the code in this working directory.
   3. Delete the previously created index.html.
   4. At this point, you can open HomeInventoryWeb in your browser, pointing at localhost.
