@@ -1,6 +1,6 @@
 # homeinventoryweb
 ## Managing your cardboard boxes for your next move !
-### It helps to inventory your staff, evaluates how much it weights, so  contracting with a moving company becomes easy!<br>homeinventoryweb a web development self-learning project developed by sroccoli1.<br>The digital twin of your staff! 
+### Inventory your staff, evaluate how much it weights, so contracting with a moving company becomes easy!<br>homeinventoryweb a web development self-learning project developed by sroccoli1.<br>The digital twin of your staff! 
 
 #### Problems when preparing your next move
 
@@ -45,34 +45,31 @@ These instructions will get you a copy of the project up and running on your loc
 - You are familiar with Terminal and with these commands ls, cd, cp, rm
 
 ### Install on Linux workstation, single user mode
-1. Download the HomeInventoryWeb code archive [from Git](https://github.com/sroccoli1/homeinventoryweb) (repository not yet public).
-2. Unpack it and let it wait until step 5 .
-3. Install a [LAMP](https://en.wikipedia.org/wiki/LAMP_%28software_bundle%29) (Linux-Apache-MySQL-PHP) server following [these instructions from step 1 to 3 in french](https://doc.ubuntu-fr.org/lamp#installation) or these ones translated to english:
-- Install the LAMP pile packets for Apache, PHP (latest version) and MySQL: sudo apt install apache2 php libapache2-mod-php mysql-server php-mysql
-- Install these additional PHP modules: sudo apt install php-curl php-gd php-intl php-json php-mbstring php-xml php-zip
+#### 1. Download the HomeInventoryWeb code archive [from Git](https://github.com/sroccoli1/homeinventoryweb) 
+(Repository not yet public), unpack it and let it wait until step 5 .
+#### 2. Install a [LAMP](https://en.wikipedia.org/wiki/LAMP_%28software_bundle%29) (Linux-Apache-MySQL-PHP) server : 
+Follow [these instructions from step 1 to 3 in french](https://doc.ubuntu-fr.org/lamp#installation) or these ones translated to english:
+1. Install the LAMP pile packets for Apache, PHP (latest version) and MySQL: sudo apt install apache2 php libapache2-mod-php mysql-server php-mysql
+2. Install these additional PHP modules: sudo apt install php-curl php-gd php-intl php-json php-mbstring php-xml php-zip
 Description of the packets:
 - the apache2 packet installs HTTP Apache 2 server (it is a libapache2-mod-php dependency).
 - the php packet installs a PHP interpreter (it is only a libapache2-mod-php dependency).
 - the libapache2-mod-php installs the Apache Php module
 - the mysql-server packet installs MySQL database system.
 - the php-mysql installs the php modules for interacting with MySQL or MariaDB
+3. Once installed, open the following links in your browser:
+- http://127.0.0.1/
+- http://localhost
+4. If it is displayed « It works! », then your LAMP sever is correctly installed. Depending on the installed version, it may be displayed a page entitled « Apache2 Ubuntu Default Page ».
+**With this install method you get a preconfigured and running LAMP server, displaying the content of the folder /var/www/html (by default the file index.html or index.php).**
 
-After installed, open the following links in your browser:
-http://127.0.0.1/
-http://localhost
-If it is displayed « It works! », then your LAMP sever is correctly installed.
-
-Depending on the installed version, it may be displayed a page entitled « Apache2 Ubuntu Default Page ».
-
-With this install method you get a preconfigured and running LAMP server, displaying the content of the folder /var/www/html (by default the file index.html or index.php).
-
-4. Config LAMP :
+#### 3. Config LAMP :
   1. Configuring the automatic start configuration 
-  1. [Create working directory, for instance public (tutotial in french)](https://doc.ubuntu-fr.org/tutoriel/lamp_repertoires_de_travail#mise_en_place_d_un_espace_public) or from [here](https://help.ubuntu.com/community/ApacheMySQLPHP#Virtual_Hosts). At this point, you can open index.html in your browser, pointing at localhost.
-  2. Put the code in this working directory.
-  3. Delete the previously created index.html.
-  4. At this point, you can open HomeInventoryWeb in your browser, pointing at localhost.
-5. Set up the database :
+  2. [Create working directory, for instance public (tutotial in french)](https://doc.ubuntu-fr.org/tutoriel/lamp_repertoires_de_travail#mise_en_place_d_un_espace_public) or from [here](https://help.ubuntu.com/community/ApacheMySQLPHP#Virtual_Hosts). At this point, you can open index.html in your browser, pointing at localhost.
+  3. Put the code in this working directory.
+  4. Delete the previously created index.html.
+  5. At this point, you can open HomeInventoryWeb in your browser, pointing at localhost.
+#### 4. Set up the database :
   1. [Create a DB and its associated user (tutorial in french)](https://doc.ubuntu-fr.org/mysql#creer_une_base_de_donnees_et_un_utilisateur_qui_lui_est_associe)
   2. Create the DB tables : in your browser go to localhost, you’ll see a list of files. Click on createtables.php to create the tables.
-  6. Congrats, you can start testing HomeInventoryWeb!
+#### 5. Congrats, you can start testing HomeInventoryWeb!
