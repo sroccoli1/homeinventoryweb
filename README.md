@@ -78,11 +78,11 @@ By default, Apache and MySQL or MariaDB start automatically when you turn on you
   For Apache :
 `sudo systemctl start apache2`
 
-  and pour MySql
+  and pour MySQL:
 
 `sudo systemctl start mysql`
 
-  Les commandes disponibles sont systemctl start, systemctl stop, et systemctl restart.
+  The available commands are `systemctl start`, `systemctl stop`, et `systemctl restart`.
 
 ###### Reactivate automatic startup 
 
@@ -96,7 +96,7 @@ It's easy:
   3. Put the code in this working directory.
   4. Delete the previously created index.html.
   5. At this point, you can open HomeInventoryWeb in your browser, pointing at localhost.
-#### 4. Set up the database :
+#### 3. Set up the database :
   1. [Create a DB and its associated user (tutorial in french)](https://doc.ubuntu-fr.org/mysql#creer_une_base_de_donnees_et_un_utilisateur_qui_lui_est_associe)
   2. Create the DB tables : in your browser go to localhost, you’ll see a list of files. Click on createtables.php to create the tables.
-#### 5. Congrats, you can start testing HomeInventoryWeb!
+#### Congrats, you can start testing HomeInventoryWeb!
