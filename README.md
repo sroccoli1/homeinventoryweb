@@ -91,12 +91,15 @@ It's easy:
 `sudo systemctl enable mysql`
 
 ##### 2. Create working directory
-  1. Create working directory, for instance public following [this tutorial in french](https://doc.ubuntu-fr.org/tutoriel/lamp_repertoires_de_travail#mise_en_place_d_un_espace_public) or from [this page in english](https://help.ubuntu.com/community/ApacheMySQLPHP#Virtual_Hosts). 
+  1. Create working directory, following the section [Création du répertoire de travail](https://doc.ubuntu-fr.org/tutoriel/lamp_repertoires_de_travail#mise_en_place_d_un_espace_public) or from this section [Virtual Hosts](https://help.ubuntu.com/community/ApacheMySQLPHP#Virtual_Hosts). 
   2. At this point, you can open index.html in your browser, pointing at localhost.
   3. Put the code in this working directory.
   4. Delete the previously created index.html.
   5. At this point, you can open HomeInventoryWeb in your browser, pointing at localhost.
 #### 3. Set up the database :
-  1. [Create a DB and its associated user (tutorial in french)](https://doc.ubuntu-fr.org/mysql#creer_une_base_de_donnees_et_un_utilisateur_qui_lui_est_associe)
+  1. Follow [Create a DB and its associated user (tutorial in french)](https://doc.ubuntu-fr.org/mysql#creer_une_base_de_donnees_et_un_utilisateur_qui_lui_est_associe) or follow in this order at the page After installing MySQL [After installing MySQL](https://help.ubuntu.com/community/ApacheMySQLPHP#After_installing_MySQL) the sections:
+[1. [Set mysql root password](https://help.ubuntu.com/community/ApacheMySQLPHP#Set_mysql_root_password),
+[2. [Create a mysql database](https://help.ubuntu.com/community/ApacheMySQLPHP#Create_a_mysql_database),
+[3. [Create a mysql user in the section](https://help.ubuntu.com/community/ApacheMySQLPHP#Create_a_mysql_user) 
   2. Create the DB tables : in your browser go to localhost, you’ll see a list of files. Click on createtables.php to create the tables.
 #### Congrats, you can start testing HomeInventoryWeb!
