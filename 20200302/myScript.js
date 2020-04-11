@@ -2,7 +2,7 @@
 /* Project: Home Inventory Helper
 /* Version : 0.1
 /* Branch : 2
-/* Last updated : 2019_08_02_18_18
+/* Last updated : 2020_04_10_07_48
 */
 
 /*****************************************************************************
@@ -294,4 +294,30 @@ function transferFailed(evt) {
 
 function transferCanceled(evt) {
   console.log("The transfer has been canceled by the user.");
+}
+
+/*****************************************************************************
+
+/*----------------Animate a object view carousel 
+
+*****************************************************************************/
+
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 6000); // Change image every 2 seconds
 }
