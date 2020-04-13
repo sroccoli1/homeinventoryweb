@@ -472,7 +472,7 @@ div.form-section-main > label{
 }
 
 /* Style the font*/
-h1, h2, body, input, p, button {
+h1, h2, h3, h4, body, input, p, button {
 	font-family: "Lato", "Helvetica", "Trebuchet MS", "Arial", sans-serif;
 }
 
@@ -500,6 +500,52 @@ h2 {
 	text-align: center;
 	left: 0;
 	margin: 0;
+  font-weight: bold;
+}
+
+h3 {
+  display: inline;
+  /*grid-column: 1 / 2;*/
+  height: auto;
+  width: 100%;
+  padding: auto;
+  background-color: white;
+  font-size: 1.2em;
+  color: black;
+  text-align: center;
+  left: 0;
+  margin: 0;
+  font-weight: bold;
+}
+
+h4 {
+  display: inline;
+  /*grid-column: 1 / 2;*/
+  height: auto;
+  width: 100%;
+  padding: auto;
+  background-color: white;
+  font-size: 1.2em;
+  color: black;
+  text-align: center;
+  left: 0;
+  margin: 0;
+  font-weight:normal;
+}
+
+.system-history-info {
+  display: inline;
+  /*grid-column: 1 / 2;*/
+  height: auto;
+  width: 100%;
+  padding: auto;
+  background-color: white;
+  font-size: 1em;
+  color: grey;
+  text-align: center;
+  left: 0;
+  margin: 0;
+  font-weight:normal;
 }
 
 .devpurpose h2 {
@@ -933,10 +979,45 @@ Note : that it will show only if the topbar overflow is allowed. */
 
 /********************************************************************************/
 /*                                        */
-/*              Object view                     */ 
+/*--------------- Object view ---------------  */ 
 /*                                        */
 /* Common to all objects search, for items, cardboards, rooms... */
 /********************************************************************************/
+
+/*------------------------ General  ------------------------*/
+
+.objectview-overall {
+  position: relative;
+  top: 0; /* Place the form just below the topbar (=at 60px).*/
+  left: 0;
+  margin: 0;
+
+/* Mobile design first : the form is only one column */
+/* If Mobile first title is place under the slideshow.
+   If larger screen, title comes above the slideshow!  
+*/
+  display: grid;
+  grid-template-areas:
+    'title title title title title title title title title'
+    'info info info info info info info info info'
+    'pict pict pict pict pict pict pict pict pict';
+}
+
+.objectview-title{
+  grid-area: title;
+  padding: 8px;
+  text-align: left;
+}
+
+.objectview-info{
+  grid-area: info;
+  padding: 8px;
+}
+
+.objectview-pict{
+  grid-area: info;
+  padding: 8px;
+}
 
 /*------------------------ Slideshow / Carousel ------------------------*/
 
@@ -1017,4 +1098,28 @@ Note : that it will show only if the topbar overflow is allowed. */
 @keyframes fade {
   from {opacity: .4}
   to {opacity: 1}
+}
+
+/*------------------------ Title ------------------------*/
+
+/* h2 is defined earlier*/
+/* Cf. object view general definition   
+*/
+
+/*------------------------ Object Info  ------------------------*/
+
+/* Info Text below edit/share/save button */
+.info-edit-button {
+  display: inline;
+  /*grid-column: 1 / 2;*/
+  height: auto;
+  width: 100%;
+  padding: auto;
+  background-color: white;
+  font-size: 0.8em;
+  color: black;
+  text-align: center;
+  left: 0;
+  margin: 0;
+  font-weight:normal;
 }
