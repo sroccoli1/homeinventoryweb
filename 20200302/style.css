@@ -548,6 +548,8 @@ h4 {
   font-weight:normal;
 }
 
+.system-history-info-value{}
+
 .devpurpose h2 {
 	display: none;
 }
@@ -986,7 +988,7 @@ Note : that it will show only if the topbar overflow is allowed. */
 
 /*------------------------ General  ------------------------*/
 
-.objectview-overall {
+.objectview-wrapper {
   position: relative;
   top: 0; /* Place the form just below the topbar (=at 60px).*/
   left: 0;
@@ -998,9 +1000,9 @@ Note : that it will show only if the topbar overflow is allowed. */
 */
   display: grid;
   grid-template-areas:
-    'title title title title title title title title title'
-    'info info info info info info info info info'
-    'pict pict pict pict pict pict pict pict pict';
+    'pict'
+    'title'
+    'info';
 }
 
 .objectview-title{
@@ -1015,9 +1017,10 @@ Note : that it will show only if the topbar overflow is allowed. */
 }
 
 .objectview-pict{
-  grid-area: info;
+  grid-area: pict;
   padding: 8px;
 }
+
 
 /*------------------------ Slideshow / Carousel ------------------------*/
 
@@ -1122,4 +1125,18 @@ Note : that it will show only if the topbar overflow is allowed. */
   left: 0;
   margin: 0;
   font-weight:normal;
+}
+
+.objectview-info-details-label{}
+.objectview-info-details-label-value{}
+
+/* For screens bigger than 400px */
+@media only screen and (min-width: 400px) {
+  .objectview-wrapper {
+    /*grid-template-columns: 20% auto;*/
+    grid-template-areas:
+      'title title'
+      'pict pict'
+      'info info';
+  }
 }

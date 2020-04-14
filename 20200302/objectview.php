@@ -21,14 +21,34 @@ Display one object details.
 	</head>
 	
 	<body class="objectview">
+
+	<!--*****************************************************************************
+
+	------------------------------TOP--------------------------
+
+	-********************************************************************************-->
+
+
+	<!--*****************************************************************************
+
+	------------------------------SEARCH BAR--------------------------
+
+	-********************************************************************************-->
 	
 	<!--*****************************************************************************
 
-	------------------------------UP--------------------------
+	------------------------------ MENU --------------------------
 
-	-********************************************************************************
+	-********************************************************************************-->
+
+
+	<!--*****************************************************************************
+
+	------------------------------Object View Upper Section--------------------------
+
+	-********************************************************************************-->
 	<!--Go back button and photo carousel -->
-	<div class="" id="">
+	<div class="objectview-pict" id="">
 
 		<!-- A GO BACK button -->
 	    <!--  Caution : id used by JS script // not at the moment-->
@@ -36,10 +56,11 @@ Display one object details.
 			<i class="fas fa-arrow-left searchview-topbar-goback"></i>
 		</a>
 
-	    <!--Search
+	    <!-- Slideshow container
 		See https://www.w3schools.com/howto/howto_js_slideshow.asp-->
 		<div class="slideshow-container">
 
+			<!-- Full-width images -->
 			<div class="mySlides fade">
 			  <img src="img_nature_wide.jpg" style="width:100%">
 			</div>
@@ -52,12 +73,14 @@ Display one object details.
 			  <img src="img_mountains_wide.jpg" style="width:100%">
 			</div>
 
+			<!-- Next and previous buttons -->
 			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
 			<a class="next" onclick="plusSlides(1)">&#10095;</a>
 
 		</div>
 		<br>
 
+		<!-- The dots/circles -->
 		<div style="text-align:center">
 		  <span class="dot" onclick="currentSlide(1)"></span>
 		  <span class="dot" onclick="currentSlide(2)"></span>
@@ -68,30 +91,45 @@ Display one object details.
 
 	<!--*****************************************************************************
 
-	<!------------------------------OBJECT INFO SECTION------------------------
+	<!------------------------------OBJECT VIEW'S INFO SECTION------------------------
 
 	<!---***************************************************************************-->
-	<div class="" id="objectview-info">
 		
-		<!-- Name  -->
-		<div class="" id="objectview-info-name" href="#" onclick="">Name</div>
+	<!-- Name  -->
+	<div class="objectview-title">
+	  <h2>Children's staff</h2>
+	</div>
 
-		<!-- Weight and price  -->
 
-	    <!-- Last edited time -->
-		
-	    <!-----------------Object Description--------------------->
-	    <div class="" id="objectview-info-description" action="">
-		Description</div>
-		
-		<div class="" id="objectview-info-edit-butttons" action="">
-			<button id="objectview-edit-buttton" class="" onclick="">Forward<i class="fa fa-share" aria-hidden="true"></i></button>
-			<button id="objectview-edit-buttton" class="" onclick="">Save<i class="fa fa-flag" aria-hidden="true"></i></button>
-			<button id="objectview-edit-buttton" class="" onclick="">Edit<i class="fa fa-pencil" aria-hidden="true"></i></i></button>
-		</div>
-		
-		<!-----------------Object Details-------------------------->
-		<div id="objectview-info-details" class="">Details</div>
+	<!-- Weight and price  -->
+
+    <!-- Last edited time -->
+	
+    <!-----------------Object Description--------------------->
+    <div class="objectview-info">
+	  <h3 class="" id="" action="">General</h3>
+
+      <div class="objectview-info-details-label" id="">Description</div>
+	
+	  <div class="info-edit-button" id="" action="">
+		<button id="" class="info-edit-button" onclick="">Forward<i class="fa fa-share" aria-hidden="true"></i></button>
+		<button id="" class="info-edit-button" onclick="">Save<i class="fa fa-flag" aria-hidden="true"></i></button>
+		<button id="" class="info-edit-button" onclick="">Edit<i class="fa fa-pencil" aria-hidden="true"></i></button>
+	  </div>
+	
+	  <!-----------------Object Details-------------------------->
+	  <div id="objectview-info-details" class="">Details</div>
+
+	  <div id="" class="objectview-info-details-label">Items</div>
+	  <div id="" class="objectview-info-details-label-value">(no selection)</div>
+	  <div id="" class="objectview-info-details-label">Handling</div>
+	  <div id="" class="objectview-info-details-label-value">Normal</div>
+	  <div id="" class="objectview-info-details-label">State</div>
+	  <div id="" class="objectview-info-details-label-value">New</div>
+	  <div id="" class="objectview-info-details-label">Going to</div>
+	  <div id="" class="objectview-info-details-label-value">Kid's room</div>
+	  <div id="" class="system-history-info">Last edited</div>
+	  <div id="" class="system-history-info-value">22h ago</div>
 
 	</div>
 
