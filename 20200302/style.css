@@ -999,6 +999,7 @@ Note : that it will show only if the topbar overflow is allowed. */
    If larger screen, title comes above the slideshow!  
 */
   display: grid;
+  grid-gap: 1em;
   grid-template-areas:
     'pict'
     'title'

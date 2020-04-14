@@ -3,7 +3,7 @@ Project: Home Inventory Helper
 File Name : objectview.php
 Version : 0.1                              
 Branch : 1
-Started  : 2020_04_10
+Started  : 2020_04_14
 PURPOSE: 
 Display one object details.
 -->
@@ -20,7 +20,7 @@ Display one object details.
 		<title>Cardboard search</title>
 	</head>
 	
-	<body class="objectview">
+	<body class="objectview-wrapper">
 
 	<!--*****************************************************************************
 
@@ -52,7 +52,7 @@ Display one object details.
 
 		<!-- A GO BACK button -->
 	    <!--  Caution : id used by JS script // not at the moment-->
-		<a class="goback" id="objectview-goBackButton" href="livesearchview.php" onclick="">
+		<a id="objectview-goBackButton" href="livesearchview.php" onclick="">
 			<i class="fas fa-arrow-left searchview-topbar-goback"></i>
 		</a>
 
