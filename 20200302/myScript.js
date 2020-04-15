@@ -321,3 +321,41 @@ function showSlides() {
   dots[slideIndex-1].className += " active";
   setTimeout(showSlides, 6000); // Change image every 2 seconds
 }
+
+
+/*****************************************************************************
+
+/*--------------------Re-arrange goback when resizing------------------------
+
+/****************************************************************************/
+/* Note: For Object View Only */
+
+/* Mobile design first : 
+- if the screen width is under 400px, goback is in the picture section 
+- if the screen width is over 400px : goback is in the title section  
+
+Development : 
+1. if the screen width is under 400px : goback is not displayed (invisible) in the title section but visible in the picture section 
+2. if the screen width is over 400px : goback is not displayed (invisible) in the picture section but visible in the title section  
+*/
+
+function rearrangeObjectViewGoBack(){
+	isGoBackButtonPictVisible ="";
+	console.log("entered rearrangeObjectViewGoBack()");
+	// Implements 1.
+	if(window.matchMedia("(min-width:400px)").matches){
+		console.log("window is greater than 400px wide");
+		document.getElementById("objectview-goBackButton-pict").style.visibility = "visible";
+		document.getElementById("objectview-goBackButton-title").style.visibility = "hidden";
+		isGoBackButtonPictVisible = document.getElementById("objectview-goBackButton-pict").style.visibility;
+		console.log("Is GoBackButton  visible ? "+ isGoBackButtonPictVisible);
+	}
+	// Implements 2.
+	else {
+		console.log("window is smaller than 400px wide");
+		document.getElementById("objectview-goBackButton-pict").style.visibility = "hidden";
+		document.getElementById("objectview-goBackButton-title").style.visibility = "visible";
+		isGoBackButtonPictVisible = document.getElementById("objectview-goBackButton-pict").style.visibility;
+		console.log("Is GoBackButton visible ? "+ isGoBackButtonPictVisible);
+	}
+}

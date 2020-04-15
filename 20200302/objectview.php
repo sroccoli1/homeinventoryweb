@@ -51,10 +51,11 @@ Display one object details.
 	<div class="objectview-pict" id="">
 
 		<!-- A GO BACK button -->
-	    <!--  Caution : id used by JS script // not at the moment-->
-		<a id="objectview-goBackButton" href="livesearchview.php" onclick="">
+	    <!--  Caution : id used by JS script // not at the moment
+		<a id="objectview-goBackButton-pict" href="livesearchview.php" onclick="">
 			<i class="fas fa-arrow-left searchview-topbar-goback"></i>
 		</a>
+		-->
 
 	    <!-- Slideshow container
 		See https://www.w3schools.com/howto/howto_js_slideshow.asp-->
@@ -97,6 +98,11 @@ Display one object details.
 		
 	<!-- Name  -->
 	<div class="objectview-title">
+		<!-- A GO BACK button -->
+	    <!--  Caution : id used by JS script // not at the moment-->
+	  <a id="objectview-goBackButton-title" href="livesearchview.php" onclick="">
+		<i class="fas fa-arrow-left searchview-topbar-goback"></i>
+	  </a>
 	  <h2>Children's staff</h2>
 	</div>
 
@@ -118,7 +124,7 @@ Display one object details.
 	  </div>
 	
 	  <!-----------------Object Details-------------------------->
-	  <div id="objectview-info-details" class="">Details</div>
+	  <div id="objectview-info-details" class=""><h3>Details</h3></div>
 
 	  <div id="" class="objectview-info-details-label">Items</div>
 	  <div id="" class="objectview-info-details-label-value">(no selection)</div>
