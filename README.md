@@ -1,6 +1,7 @@
 # homeinventoryweb
 ## Managing your cardboard boxes for your next move !
-### Inventory your staff, evaluate how much it weights, so contracting with a moving company becomes easy!<br>homeinventoryweb a web development self-learning project developed by sroccoli1.<br>The digital twin of your staff! 
+### Inventory your staff, evaluate how much it weights, so contracting with a moving company becomes easy!<br>homeinventoryweb is a web development self-learning project developed by sroccoli1.<br>The digital twin of your staff! 
+#### [HomeInventoryWeb GUI concept (slideshow)](https://docs.google.com/presentation/d/1Q-WU6EXmCz8f2J5X9AstjjvyCnf4XlexK0z0Xx5O2q4/edit?usp=sharing)
 
 #### Problems when preparing your next move
 
@@ -13,6 +14,8 @@ From experience, moving is often a painstaking, slow but necessary process. Fort
   - at destination you can check out all your staff. 
 
 #### homeinventoryweb solution
+
+Check [here the GUI concept (slideshow)](https://docs.google.com/presentation/d/1Q-WU6EXmCz8f2J5X9AstjjvyCnf4XlexK0z0Xx5O2q4/edit?usp=sharing)
 
 3 main usages : 
 - Inventory at the moving departure place (Answer to : where is what ? In which cardboard is what?) 
