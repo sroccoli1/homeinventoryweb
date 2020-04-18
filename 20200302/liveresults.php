@@ -87,7 +87,7 @@ if (strlen($q)>0) {
 	//var_dump($rows[$i]['jdoc']);
     //echo "<br>current value of \$rows[$i]['jdoc']: $rows[$i]['jdoc'].\n";
 	$object = json_decode($rows[$i]['jdoc']);
-	var_dump($object);
+
 	//$object_length = sizeof($object);
 	//echo "<br>current length of \$object: $object_length.\n";
     foreach($object->name as $val){ //$val is a string
@@ -126,7 +126,20 @@ function formatResults($value, $object ,$format) {
 	if($format=='L'){ 
 		return "<table>
 						<tr>
-							<td>". $value . "</td> <td>" . $object->weight . "</td> <td>" . $object->handling . "</td>
+						  <th></th>
+						  <th>Id</th>
+						  <th>Name</th>
+						  <th>Weight</th>
+						  <th>Handling</th>
+						</tr>
+						<tr>
+						  <td>
+						    <a href="."objectview.php"."><i style='font-size:24px' class='fas'>&#xf49e;</i></a>"."
+						  </td>
+						  <td>". $object->id[0] . "</td>
+						  <td>". $value . "</td>
+						  <td>" . $object->weight . "</td> 
+						  <td>" . $object->handling . "</td>
 						</tr>
 						<tr>
 							<td>". $object->descrition . "</td>
