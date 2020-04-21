@@ -4,7 +4,7 @@
 #### [HomeInventoryWeb GUI concept (slideshow)](https://docs.google.com/presentation/d/1Q-WU6EXmCz8f2J5X9AstjjvyCnf4XlexK0z0Xx5O2q4/edit?usp=sharing)
 
 ## Content
-- [Milestones and Log - click here] (https://github.com/sroccoli1/homeinventoryweb/blob/master/log.md)
+- [Milestones and Log - click here](https://github.com/sroccoli1/homeinventoryweb/blob/master/log.md)
 - [If you want to start testing or developing](https://github.com/sroccoli1/homeinventoryweb/blob/master/GettingStartedDevandTest.md)
 
 ## Problems when preparing your next move
@@ -19,24 +19,28 @@ From experience, moving is often a painstaking, slow but necessary process. Fort
 
 ### homeinventoryweb solution
 
-Check [here the GUI concept (slideshow)](https://docs.google.com/presentation/d/1Q-WU6EXmCz8f2J5X9AstjjvyCnf4XlexK0z0Xx5O2q4/edit?usp=sharing)
-
 3 main usages : 
 - Inventory at the moving departure place (Answer to : where is what ? In which cardboard is what?) 
 - Inventory checker at the destination place
 - Weight limit and overall value superviser   
 
+And here is the current solution in pictures:
+- Home Page <img src="https://photos.app.goo.gl/yan1Lu22zP4sxu3z7" alt=" Picture: Home Inventory Web - Current Home Page">
+- New Cardboard Page <img src="https://photos.app.goo.gl/Xvdn8nqLyVEGH1AD6" alt=" Picture: Home Inventory Web - Current New Carboard Page">
+- Search Cardboard Page <img src="https://photos.app.goo.gl/3osRBV15FoA7i2Yb9" alt=" Picture: Home Inventory Web - Current New Carboard Page">
+
+[![Video update #1](https://media.giphy.com/media/MdegzNhqQnHdfV59vb/giphy.gif)](https://youtu.be/2eW1WiKwrd0)
+
 ## homeinventoryweb features
 
-I have noticed the movables weight is over the limit... I can save this configuration for later, unselect items and set a new configuration… and save them for later (without deleting).
-Tired of entering data with the GUI? You can instead edit the inventory in XLS then upload it and use the services. 
-
-Record items and add them to their cardboard!
-View the global : number of cardboard and moving weight!
-Record item info such as name, weight, purchase date, purchase price, and even picture !
-Dispatch them each to a cardboard (cardboard ID)!
-Quick check on cardboards with their color tag!
-Inventory can be sent to the insurance company for accidental cases. 
+- I have noticed the movables weight is over the limit... I can save this configuration for later, unselect items and set a new configuration… and save them for later (without deleting).
+- Tired of entering data with the GUI? You can instead edit the inventory in XLS then upload it and use the service. 
+- Record items and add them to their cardboard!
+- View the global number of cardboard and staff weight!
+- Record item info such as name, weight, purchase date, purchase price, and even picture !
+- Dispatch them each to a cardboard (cardboard ID)!
+- Quick check on cardboards with their color tag!
+- Inventory can be sent to the insurance company for accidental cases (export data). 
 
 ## homeinventoryweb technical features
 
