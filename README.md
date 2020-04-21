@@ -24,11 +24,7 @@ From experience, moving is often a painstaking, slow but necessary process. Fort
 - Inventory checker at the destination place
 - Weight limit and overall value superviser   
 
-And here is the current solution in pictures:
-- Home Page <img src="https://photos.app.goo.gl/yan1Lu22zP4sxu3z7" alt=" Picture: Home Inventory Web - Current Home Page">
-- New Cardboard Page <img src="https://photos.app.goo.gl/Xvdn8nqLyVEGH1AD6" alt=" Picture: Home Inventory Web - Current New Carboard Page">
-- Search Cardboard Page <img src="https://photos.app.goo.gl/3osRBV15FoA7i2Yb9" alt=" Picture: Home Inventory Web - Current New Carboard Page">
-
+Current solution:<br>
 [![Video update #1](https://media.giphy.com/media/MdegzNhqQnHdfV59vb/giphy.gif)](https://youtu.be/2eW1WiKwrd0)
 
 ## homeinventoryweb features
