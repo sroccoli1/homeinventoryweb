@@ -1,4 +1,4 @@
-# Home Inventory Web - Log
+# Home Inventory Web - Milestones and Log
 
 ## Milestones
 
@@ -18,4 +18,4 @@ From Trappes (France) to Oulu (Finland). No incident. Phew!
 Christmas 2018. Thank you Eli The Computer Guy for [this superbe tutorial](https://www.youtube.com/watch?v=27dR_sLaM74&list=PL6C3CB409A8577C2F)! You help me a lot!
 
 ## Log
-Started soon 21-4-2020
+Starting soon.
