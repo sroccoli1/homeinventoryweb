@@ -29,6 +29,8 @@ Description of the packets:
 
 **With this install method you get a preconfigured and running LAMP server, displaying the content of the folder /var/www/html (by default the file index.html or index.php).**
 
+> It's a good idea to check [LAMP known issues](https://help.ubuntu.com/community/ApacheMySQLPHP#Known_problems) telling about Skype incompatibility. 
+
 ### 3. Config LAMP :
 #### 1. (Optional) Configuring the automatic start configuration [following these instructions in french](https://doc.ubuntu-fr.org/lamp#configuration_du_demarrage_automatique_de_lamp) or these translated into english:
 By default, Apache and MySQL or MariaDB start automatically when you turn on your computer.
@@ -69,5 +71,11 @@ It's easy:
   2. Create the DB tables : in your browser go to localhost, you’ll see a list of files. Click on createtables.php to create the tables.
 ### Congrats, you can start testing HomeInventoryWeb!
 
-## Install on Window 10 workstation, single user mode
+## Uninstall (Linux)
+(Coming soon)
+
+## Install on Windows 10 workstation, single user mode
+(Coming soon)
+
+## Uninstall (Windows)
 (Coming soon)
