@@ -4,10 +4,14 @@ These instructions will get you a copy of the project up and running on your loc
 ## Prerequisites (Linux workstation)
 - You have sufficient rights to install packages using sudo
 - You are familiar with Terminal and with these commands ls, cd, cp, rm
+- Note: this step-by-step has been developed using Lubuntu 16.04.3 LTS amd64
+
+## Prerequisites (Windows workstation)
+- You have sufficient rights to install on the drive
+- Note: this step-by-step has been developed using Window 10 Pro 1909
 
 ## Install on Linux workstation, single user mode
-### 1. Download the HomeInventoryWeb code archive [from Git](https://github.com/sroccoli1/homeinventoryweb) 
-(Repository not yet public), unpack it and let it wait until step 5 .
+### 1. Download the HomeInventoryWeb code archive [from Git](https://github.com/sroccoli1/homeinventoryweb) unpack it and let it wait until step 5 .
 ### 2. Install a [LAMP](https://en.wikipedia.org/wiki/LAMP_%28software_bundle%29) (Linux-Apache-MySQL-PHP) server : 
 Follow [these instructions from step 1 to 3 in french](https://doc.ubuntu-fr.org/lamp#installation) or these ones translated to english:
 1. Install the LAMP pile packets for Apache, PHP (latest version) and MySQL: `sudo apt install apache2 php libapache2-mod-php mysql-server php-mysql`
@@ -64,3 +68,6 @@ It's easy:
 [3. [Create a mysql user in the section](https://help.ubuntu.com/community/ApacheMySQLPHP#Create_a_mysql_user) 
   2. Create the DB tables : in your browser go to localhost, you’ll see a list of files. Click on createtables.php to create the tables.
 ### Congrats, you can start testing HomeInventoryWeb!
+
+## Install on Window 10 workstation, single user mode
+(Coming soon)
