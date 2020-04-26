@@ -1,9 +1,12 @@
-# Home Inventory Web - Milestones and Log
+# Home Inventory Web - 2019 Milestones
+
+**My Web Dev journey Story, shortly**
 
 ## 2018 Milestones
 
 ### Day 0
 (Writing retrospectively) I was really struggling at cleaning, at filling the cardboard boxes, weighing them, sizing them, and emptying the 4 rooms flat and selling items...
+<br><img src="https://photos.app.goo.gl/4yco2UfK1u8YaqrD8" alt="A cardboard pile in the living-room"><br>
 Filling the cardboard boxes with the families items they wanted to take, and checking during calls what was where,... 
 My kids and my wife departed few months before me. 
 I was left alone to do the job efficiently!
@@ -21,17 +24,18 @@ Christmas 2018. Thank you Eli The Computer Guy for [this superbe tutorial](https
 ## 2019 Milestones
 
 ### January
-Created the Home Inventory Home Page, with HTLM, CSS and PHP!
+- Went throught HTML and CSS and PHP basic with [this website](https://www.w3schools.com/)
+- Created the Home Inventory Home Page, with HTLM, CSS and PHP!
 
 ### Feb
-Made the Home Inventory Home Page responsible and added bits of Javascript.
+Made the Home Inventory Home Page responsible and added tiny bits of Javascript.
 
 ### March
-Learned some Javascript and added some into the home page.
+[Learned some Javascript with this website](https://www.w3schools.com/js/default.asp) and added more some into the home page.
 
 ### May
-Fixed the topbar dropdown.
-Added a search filed and styled it.
+- Fixed the topbar dropdown.
+- Added a search filed and styled it.
 
 ### June
 Fixed recordNewCarboard mobile layout.
@@ -52,19 +56,27 @@ PHP PDO MySQL implementation for Record New Cardboard feature STARTED.
 ### Dec
 PHP PDO MySQL implementation for Record New Cardboard feature DONE.
 
+### Some Thoughts
+Having an hour of coding/learning web dev every morning can really make a difference at the end! 
+Feel did a lot this year a lot independently!
+
 ## 2020 Milestones
 
 ### Feb
-Started using Git and GitHub!
-Pushed Home inventory on Github (created repository). 
+- Started using Git and GitHub!
+- Pushed Home inventory on Github (created repository). 
 
 ### March
-Started learning ReactJS.
+Started learning ReactJS [(following this tutorial)](https://reactjs.org/tutorial/tutorial.html).
 
 ### April
-Github's Home inventory repository becomes public.
+Github's Home Inventory Web repository becomes public.
 
 ### May
 
 ## Log
 Starting soon.
+
+## Contents
+- [Home Inventory Web project](https://github.com/sroccoli1/homeinventoryweb)
+- [2020 Milestones](https://github.com/sroccoli1/homeinventoryweb/edit/master/2020_milestones.md)
