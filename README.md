@@ -4,7 +4,8 @@
 #### [HomeInventoryWeb GUI concept (slideshow)](https://docs.google.com/presentation/d/1Q-WU6EXmCz8f2J5X9AstjjvyCnf4XlexK0z0Xx5O2q4/edit?usp=sharing)
 
 ## Content
-- [Milestones and Log - click here](https://github.com/sroccoli1/homeinventoryweb/blob/master/log.md)
+- [2019 Milestones - The project story in a nutshell](https://github.com/sroccoli1/homeinventoryweb/blob/master/2019_milestones.md)
+- [2020 Milestones](https://github.com/sroccoli1/homeinventoryweb/blob/master/2020_milestones.md)
 - [If you want to start testing or developing](https://github.com/sroccoli1/homeinventoryweb/blob/master/GettingStartedDevandTest.md)
 
 ## Problems when preparing your next move
@@ -48,5 +49,5 @@ Current solution in a short video:<br>
 [Getting Started with Home Inventory Web (Dev and Test)](https://github.com/sroccoli1/homeinventoryweb/blob/master/GettingStartedDevandTest.md)
 
 ## Note
-If you have any questions or ideas about Home Inventory (or other ideas), feel free to reach out to me on Twitter: @SRoccoli 
-If you like this repo and find it useful, please consider ★ starring it (on top right of the page) and forking it :)
+If you have any questions or ideas about Home Inventory (or other ideas), feel free to reach out to me on Twitter: **@SRoccoli** 
+<br>If you like this repo and find it useful, please consider ★ starring it (on top right of the page) and forking it :)
