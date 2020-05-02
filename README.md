@@ -6,6 +6,7 @@
 ## Content
 - [2019 Milestones - The project story in a nutshell](https://github.com/sroccoli1/homeinventoryweb/blob/master/2019_milestones.md)
 - [2020 Milestones](https://github.com/sroccoli1/homeinventoryweb/blob/master/2020_milestones.md)
+- [2020 Weekly Log](https://github.com/sroccoli1/homeinventoryweb/blob/master/2020_log.md)
 - [If you want to start testing or developing](https://github.com/sroccoli1/homeinventoryweb/blob/master/GettingStartedDevandTest.md)
 
 ## Problems when preparing your next move
