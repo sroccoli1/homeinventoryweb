@@ -7,11 +7,11 @@ PURPOSE
 Database connection
 */
 
-$servername = "localhost";
+$servername = "localhost:3308";
 $username = "homeinventorydev";
-$password = "855265600PLk";
+$password = "xFog2f8NIrP6MGpl"; //here 
 $dbname = "homeinventorydevdb";
-// $conn = ""; 
+
 
 try {
   $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
