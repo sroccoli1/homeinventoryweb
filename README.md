@@ -11,7 +11,7 @@
 
 ## Problems when preparing your next move
 
-From experience, moving is often a painstaking, slow but necessary process. Fortunately when one can get help from family or friends or from a moving company, travelling becomes easier. But there is always hassle when to comes to packing, inventoring and unboxing. Here is a list of some of the problems that we may encounter:
+From experience, moving is often a painstaking, slow but necessary process. Fortunately when one can get help from family or friends or from a moving company, travelling becomes easier. But there is always hassle when it comes to packing, inventoring, unboxing and looking for one's staff. Here is a list of some of the problems that we may encounter:
 1. The moving date is much too close, not leaving time to organise, and with sleep debt. So we end up forgetting what is in which cardboard. After the move, searching for staff become a time consuming challenge. (Time constraint.)
 2. The international moving company must respect a truck load limit when it reaches a country border, crossing on a ferry. When it is over the limit, the moving cost shifts to the upper truck price category. So you must know the global weight a of your move, thus the load of each cardboard or items. (Weight constrainst.)
 3. The volume of your move must fit in the truck. (Volume constrainst.)
