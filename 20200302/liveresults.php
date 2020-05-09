@@ -134,7 +134,7 @@ function formatResults($value, $object ,$format) {
 						</tr>
 						<tr>
 						  <td>
-						    <a href="."objectview.php"."><i style='font-size:24px' class='fas'>&#xf49e;</i></a>"."
+						    <a id='view-object-button'><i style='font-size:24px' class='fas'>&#xf49e;</i></a>"."
 						  </td>
 						  <td>". $object->id[0] . "</td>
 						  <td>". $value . "</td>

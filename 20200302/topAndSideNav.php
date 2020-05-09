@@ -27,8 +27,7 @@ Define a top navigation (4 buttons) and a responsive menu sidebar with 8 section
 		<title>Home</title>
 	</head>
 	<!--When body is resized sidenav is dynamically resized too-->
-	<body>
-	<!--<body onload="rearrangeTopbar(); " onresize="resizeOpenedSidenav(); rearrangeTopbar(); ">-->
+	<body onload="closeDropdownAtClickOutside();">
 	<!--*****************************************************************************
 
 	------------------------------Top Navigation Bar--------------------------

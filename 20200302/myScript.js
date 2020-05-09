@@ -152,13 +152,15 @@ function showSearchFiltersSettingsAtClick(){
 	console.log("showSearchFiltersSettingsAtClick()");
 }
 // Close the dropdown if the user clicks outside of it
-window.onclick = function(e) {
-  if (!e.target.matches('.searchview-filters-settings-dropbtn-js')) {
-  var myDropdown = document.getElementById("cardboardSearch-filterBar-filterSettings-contents-js");
-	if (myDropdown.classList.contains('searchview-filters-dropdown-content-show-js')) {
-	  myDropdown.classList.remove('searchview-filters-dropdown-content-show-js');
+function closeSearchFiltersAtClickOutside(){
+	window.onclick = function(e) {
+	  if (!e.target.matches('.searchview-filters-settings-dropbtn-js')) {
+	  var myDropdown = document.getElementById("cardboardSearch-filterBar-filterSettings-contents-js");
+		if (myDropdown.classList.contains('searchview-filters-dropdown-content-show-js')) {
+		  myDropdown.classList.remove('searchview-filters-dropdown-content-show-js');
+		}
+	  }
 	}
-  }
 }
 /*****************************************************************************
 
@@ -172,12 +174,14 @@ function showDropdownAtClick(){
 	console.log("showDropdownAtClick()");
 }
 // Close the dropdown if the user clicks outside of it
-window.onclick = function(e) {
-  if (!e.target.matches('.dropbtn')) {
-  var myDropdown = document.getElementById("myDropdown");
-	if (myDropdown.classList.contains('show')) {
-	  myDropdown.classList.remove('show');
-	}
+function closeDropdownAtClickOutside(){
+  window.onclick = function(e) {
+    if (!e.target.matches('.dropbtn')) {
+	  var myDropdown = document.getElementById("myDropdown");
+	  if (myDropdown.classList.contains('show')) {
+	    myDropdown.classList.remove('show');
+	  }
+    }
   }
 }
 
@@ -196,11 +200,11 @@ window.onclick = function(e) {
 *****************************************************************************/
 /*Depending on the screen size the forms label are removed (or normally displayed).*/
 
-function showResultAfterSuggestion() {
-	console.log("showResultAfterSuggestion()");
-	var valueSelected = document.getElementById("livesearch-input").value; //This gets the current topbar height
-	console.log("valueSelected : "+ valueSelected);
-}
+// function showResultAfterSuggestion() {
+	// console.log("showResultAfterSuggestion()");
+	// var valueSelected = document.getElementById("livesearch-input").value; //This gets the current topbar height
+	// console.log("valueSelected : "+ valueSelected);
+// }
 
 
 /*****************************************************************************
@@ -339,23 +343,46 @@ Development :
 2. if the screen width is over 400px : goback is not displayed (invisible) in the picture section but visible in the title section  
 */
 
+/* NOT NEEDED button (redundant)2020 09 05 
+
 function rearrangeObjectViewGoBack(){
-	isGoBackButtonPictVisible ="";
+	var isGoBackButtonPictVisible ="";
 	console.log("entered rearrangeObjectViewGoBack()");
 	// Implements 1.
 	if(window.matchMedia("(min-width:400px)").matches){
 		console.log("window is greater than 400px wide");
 		document.getElementById("objectview-goBackButton-pict").style.visibility = "visible";
 		document.getElementById("objectview-goBackButton-title").style.visibility = "hidden";
-		isGoBackButtonPictVisible = document.getElementById("objectview-goBackButton-pict").style.visibility;
-		console.log("Is GoBackButton  visible ? "+ isGoBackButtonPictVisible);
+		isGoBackButtonPictVisible = "visible";
+		//console.log("Is GoBackButton  visible ? "+ isGoBackButtonPictVisible);
 	}
 	// Implements 2.
 	else {
 		console.log("window is smaller than 400px wide");
 		document.getElementById("objectview-goBackButton-pict").style.visibility = "hidden";
 		document.getElementById("objectview-goBackButton-title").style.visibility = "visible";
-		isGoBackButtonPictVisible = document.getElementById("objectview-goBackButton-pict").style.visibility;
-		console.log("Is GoBackButton visible ? "+ isGoBackButtonPictVisible);
+		isGoBackButtonPictVisible = "hidden";
+		//console.log("Is GoBackButton visible ? "+ isGoBackButtonPictVisible);
 	}
+}
+
+*/
+
+/*****************************************************************************
+
+/*--------------------View object button ------------------------
+
+/****************************************************************************/
+/* Note: For Object View Only */
+
+/*
+Development : 
+1. if the screen width is under 400px : goback is not displayed (invisible) in the title section but visible in the picture section 
+2. if the screen width is over 400px : goback is not displayed (invisible) in the picture section but visible in the title section  
+*/
+
+function viewObjectButton(){
+	var isButtonClicked ="";
+	console.log("entered viewObjectButton()");
+	// Implements 1.
 }

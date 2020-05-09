@@ -679,7 +679,8 @@ input[type=reset]:hover {
 		'topbar topbar topbar topbar topbar topbar topbar topbar topbar topbar topbar topbar'
 		'filters filters filters filters filters filters filters filters filters filters filters filters'
 		'cate cate cate cate cate cate cate cate cate cate cate cate'
-		'res res res res res res res res res res res res';
+		'res res res res res res res res res res res res'
+		'obj obj obj obj obj obj obj obj obj obj obj obj';
 	grid-gap: 3px 0px;
 }
 /* More styling on the following section "Search view topbar"*/
@@ -988,9 +989,14 @@ Note : that it will show only if the topbar overflow is allowed. */
 
 /*------------------------ General  ------------------------*/
 
+.searchview-results{
+  position: relative;
+  grid-area: res;
+}
+
 .objectview-wrapper {
   position: relative;
-  top: 0; /* Place the form just below the topbar (=at 60px).*/
+  /*top: 0; /* Place the form just below the topbar (=at 60px).*/
   left: 0;
   margin: 0;
 
@@ -998,6 +1004,7 @@ Note : that it will show only if the topbar overflow is allowed. */
 /* If Mobile first title is place under the slideshow.
    If larger screen, title comes above the slideshow!  
 */
+  grid-area: obj;
   display: grid;
   grid-gap: 1em;
   grid-template-areas:
