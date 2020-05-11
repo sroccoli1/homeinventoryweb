@@ -21,7 +21,7 @@ This search page helps to find objects (here mainly cardboard). This search capa
 		<title>Cardboard search</title>
 	</head>
 	
-	<body class="searchview">
+	<body class="searchview" onload="showSlides();">
 		<!--*****************************************************************************
 
 		------------------------------Search Bar--------------------------
@@ -98,7 +98,7 @@ This search page helps to find objects (here mainly cardboard). This search capa
 			
 		</div>
 
-		<div class="objectview-wrapper">
+		<div id="objectview-wrapper-js" class="objectview-wrapper">
 
 			<!--Go back button and photo carousel -->
 			<div class="objectview-pict" id="">

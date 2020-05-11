@@ -124,7 +124,7 @@ echo $response;
 */
 function formatResults($value, $object ,$format) {
 	if($format=='L'){ 
-		return "<table>
+		return "<table id='object-overview-table'>
 						<tr>
 						  <th></th>
 						  <th>Id</th>
@@ -134,16 +134,16 @@ function formatResults($value, $object ,$format) {
 						</tr>
 						<tr>
 						  <td>
-						    <a id='view-object-button'><i style='font-size:24px' class='fas'>&#xf49e;</i></a>"."
+						    <a id='view-object-button' onclick='toggleObjectView();'><i style='font-size:24px' class='fas'>&#xf49e;</i></a>"."
 						  </td>
-						  <td>". $object->id[0] . "</td>
-						  <td>". $value . "</td>
-						  <td>" . $object->weight . "</td> 
-						  <td>" . $object->handling . "</td>
+						  <td id='object-overview-table-td-id'>". $object->id[0] . "</td>
+						  <td 'object-overview-table-td-name'>". $value . "</td>
+						  <td 'object-overview-table-td-weight'>" . $object->weight . "</td> 
+						  <td 'object-overview-table-td-weight'>" . $object->handling . "</td>
 						</tr>
 						<tr>
-							<td>". $object->descrition . "</td>
-							<td>". $object->goingToRoom . "</td>
+							<td 'object-overview-table-td-description'>". $object->descrition . "</td>
+							<td 'object-overview-table-td-goingtoroom'>". $object->goingToRoom . "</td>
 						</tr>
 				</table>";
 	}

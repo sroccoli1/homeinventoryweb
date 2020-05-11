@@ -25,7 +25,7 @@ https://google-developers.appspot.com/chart/interactive/docs/drawing_charts
 		<title>Home</title>
 	</head>
 
-	<body onload="setHomePageUnderTopBar();" onresize="setHomePageUnderTopBar();">
+	<body onload="setHomePageUnderTopBar(); closeDropdownAtClickOutside();" onresize="setHomePageUnderTopBar();">
 		
 		<!--Includes a Top Navigation Menu-->
 		<!--Another way	 to include is : <object type="text/html" data="topAndSideNav.php"></object>-->

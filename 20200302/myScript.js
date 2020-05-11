@@ -306,10 +306,11 @@ function transferCanceled(evt) {
 
 *****************************************************************************/
 
-var slideIndex = 0;
-showSlides();
+// var slideIndex = 0;
+// showSlides();
 
 function showSlides() {
+  var slideIndex = 0;
   var i;
   var slides = document.getElementsByClassName("mySlides");
   var dots = document.getElementsByClassName("dot");
@@ -374,15 +375,35 @@ function rearrangeObjectViewGoBack(){
 
 /****************************************************************************/
 /* Note: For Object View Only */
+/* Purpose : Toggle between hiding and showing the content of the object.
 
 /*
 Development : 
-1. if the screen width is under 400px : goback is not displayed (invisible) in the title section but visible in the picture section 
-2. if the screen width is over 400px : goback is not displayed (invisible) in the picture section but visible in the title section  
+1. When the object result table is loaded, if the link <a id='view-object-button'> is clicked, the grid-area 'obj' becomes visible, if it is clicked again it hides it.
 */
 
-function viewObjectButton(){
-	var isButtonClicked ="";
-	console.log("entered viewObjectButton()");
-	// Implements 1.
+function toggleObjectView(){
+	var buttonClicked = document.getElementById("objectview-wrapper-js");
+	console.log("entered toggleObjectView()");
+	if (buttonClicked.style.display === "none"){
+	  populateObjectView();
+	  buttonClicked.style.display = "block";
+	}
+	else {
+	  buttonClicked.style.display = "none";
+	}
+	// document.getElementById(id).style.color="#6495ed"; //for changing the color of the button
 }
+
+/*****************************************************************************
+
+/*--------------------Populate object view ------------------------
+
+/****************************************************************************/
+/* Note: For Object View Only */
+
+function populateObjectView(){
+	document.getElementsByClassName("object-overview-table-td-name")[0].innerHTML = document.getElementById("object-overview-table-td-id").innerHTML;
+}
+
+
