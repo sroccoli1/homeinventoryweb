@@ -385,8 +385,8 @@ Development :
 function toggleObjectView(){
 	var buttonClicked = document.getElementById("objectview-wrapper-js");
 	console.log("entered toggleObjectView()");
+	populateObjectView();
 	if (buttonClicked.style.display === "none"){
-	  populateObjectView();
 	  buttonClicked.style.display = "block";
 	}
 	else {
@@ -403,7 +403,10 @@ function toggleObjectView(){
 /* Note: For Object View Only */
 
 function populateObjectView(){
-	document.getElementsByClassName("object-overview-table-td-name")[0].innerHTML = document.getElementById("object-overview-table-td-id").innerHTML;
+	/* console.log("entered populateObjectView()");
+	var title = document.getElementsByClassName("objectview-title")[0].getElementsByTagName("h2")[0].innerHTML;
+	title = document.getElementById("object-overview-table-td-name").innerHTML;*/
+	document.getElementsByClassName("objectview-title")[0].getElementsByTagName("h2")[0].innerHTML = document.getElementById("object-overview-table-td-name").innerHTML;
 }
 
 

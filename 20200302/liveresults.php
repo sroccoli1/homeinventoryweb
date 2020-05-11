@@ -137,9 +137,9 @@ function formatResults($value, $object ,$format) {
 						    <a id='view-object-button' onclick='toggleObjectView();'><i style='font-size:24px' class='fas'>&#xf49e;</i></a>"."
 						  </td>
 						  <td id='object-overview-table-td-id'>". $object->id[0] . "</td>
-						  <td 'object-overview-table-td-name'>". $value . "</td>
-						  <td 'object-overview-table-td-weight'>" . $object->weight . "</td> 
-						  <td 'object-overview-table-td-weight'>" . $object->handling . "</td>
+						  <td id='object-overview-table-td-name'>". $value . "</td>
+						  <td id='object-overview-table-td-weight'>" . $object->weight . "</td> 
+						  <td id='object-overview-table-td-weight'>" . $object->handling . "</td>
 						</tr>
 						<tr>
 							<td 'object-overview-table-td-description'>". $object->descrition . "</td>
