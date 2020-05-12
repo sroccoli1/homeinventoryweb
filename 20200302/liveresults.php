@@ -94,10 +94,13 @@ if (strlen($q)>0) {
 	  //echo "<br>current value of \$object->name: $val.\n";
 	  if (stristr($val, $q)) {// if the name matches partly $q  
         if ($hint=="") { // initial $hint value
-		  	$hint = formatResults($val,$object,"L" );
+		  	//$hint = formatResults($val,$object,"L" );
+			$hint = $rows[$i]['jdoc'];
+			
 		} 
 		else { // if updated $hint value 
-		  	$hint = formatResults($val,$object,"L" );
+		  	//$hint = formatResults($val,$object,"L" );
+			$hint = $hint . $rows[$i]['jdoc'];
         }
       }
 	}
@@ -114,7 +117,7 @@ if ($hint=="") {
 }
 
 //output the response
-print_r($response);
+echo $response;
 
 /** 
 * Return the result in a list formatted table or mosaic.
@@ -124,36 +127,35 @@ print_r($response);
 */
 function formatResults($value, $object ,$format) {
 	if($format=='L'){ 
-		return ["table" => "<table id='object-overview-table'>
-						<tr>
-						  <th></th>
-						  <th>Id</th>
-						  <th>Name</th>
-						  <th>Weight</th>
-						  <th>Handling</th>
-						</tr>
-						<tr>
-						  <td>
-						    <a id='view-object-button' onclick='toggleObjectView();'><i style='font-size:24px' class='fas'>&#xf49e;</i></a>"."
-						  </td>
-						  <td id='object-overview-table-td-id'>". $object->id[0] . "</td>
-						  <td id='object-overview-table-td-name'>". $value . "</td>
-						  <td id='object-overview-table-td-weight'>" . $object->weight . "</td> 
-						  <td id='object-overview-table-td-weight'>" . $object->handling . "</td>
-						</tr>
-						<tr>
-							<td 'object-overview-table-td-description'>". $object->descrition . "</td>
-							<td 'object-overview-table-td-goingtoroom'>". $object->goingToRoom . "</td>
-						</tr>
-		</table>",
-		"json"=>$object,]
+return "<table id='object-overview-table'>
+			<tr>
+			  <th></th>
+			  <th>Id</th>
+			  <th>Name</th>
+			  <th>Weight</th>
+			  <th>Handling</th>
+			</tr>
+			<tr>
+			  <td>
+				<a id='view-object-button' onclick='toggleObjectView();'><i style='font-size:24px' class='fas'>&#xf49e;</i></a>"."
+			  </td>
+			  <td id='object-overview-table-td-id'>". $object->id[0] . "</td>
+			  <td id='object-overview-table-td-name'>". $value . "</td>
+			  <td id='object-overview-table-td-weight'>" . $object->weight . "</td> 
+			  <td id='object-overview-table-td-weight'>" . $object->handling . "</td>
+			</tr>
+			<tr>
+				<td 'object-overview-table-td-description'>". $object->descrition . "</td>
+				<td 'object-overview-table-td-goingtoroom'>". $object->goingToRoom . "</td>
+			</tr>
+		</table>"
 		;
 	}
 	else if($format=='M'){ 
 		return "<table>
-						<tr>
-							<td>". $value . "</td> <td>" . $object->weight . "</td> <td>" . $object->handling . "</td>
-						</tr>
+					<tr>
+						<td>". $value . "</td> <td>" . $object->weight . "</td> <td>" . $object->handling . "</td>
+					</tr>
 				</table>";
 	}
 }

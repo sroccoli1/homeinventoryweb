@@ -264,14 +264,25 @@ function showResultsAfterSuggestions(str) {
 
 
   xmlhttp.onreadystatechange=function() {
+    var text = "";
 	if (this.readyState==4 && this.status==200) {
-	  document.getElementById("liveresults").innerHTML=this.responseText;
+	  text = '{ "cardboard" :[' + this.responseText +']}';
+	  console.log("text",text );
+	  
+	  var data = JSON.parse(text);
+	  
+	  var formatteddata = "<table id='object-overview-table'>"+"<tr><th></th><th>Id</th><th>Name</th><th>Weight</th><th>Handling</th></tr><tr><td><a id='view-object-button' onclick='toggleObjectView();'><i style='font-size:24px' class='fas'>&#xf49e;</i></a></td><td id='object-overview-table-td-id'>" + data.cardboard[1].id + "</td><td id='object-overview-table-td-name'>" + data.cardboard[1].name + "</td><td id='object-overview-table-td-weight'>" + data.cardboard[1].weight + "</td> <td id='object-overview-table-td-weight'>" + data.cardboard[1].handling + "</td></tr><tr><td 'object-overview-table-td-description'>" + data.cardboard[1].descrition + "</td><td 'object-overview-table-td-goingtoroom'>" + data.cardboard[1].goingToRoom + "</td></tr></table>";
+	  console.log("formattedtable",formatteddata );
+	  
+	  document.getElementById("liveresults").innerHTML=formatteddata;
 	  document.getElementById("liveresults").style.border="1px solid #A5ACB2";
 	}
   }
   xmlhttp.open("POST","liveresults.php",true);
   xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xmlhttp.send("q=" + str);
+  
+
 }
 
 
@@ -300,31 +311,17 @@ function transferCanceled(evt) {
   console.log("The transfer has been canceled by the user.");
 }
 
-function formatResults(data,format) {
-	if($format=='L'){ 
-		return "<table id='object-overview-table'>
-			<tr>
-			  <th></th>
-			  <th>Id</th>
-			  <th>Name</th>
-			  <th>Weight</th>
-			  <th>Handling</th>
-			</tr>
-			<tr>
-			  <td>
-				<a id='view-object-button' onclick='toggleObjectView();'><i style='font-size:24px' class='fas'>&#xf49e;</i></a>
-			  </td>
-			  <td id='object-overview-table-td-id'>" + data.id[0] + "</td>
-			  <td id='object-overview-table-td-name'>" + data.name + "</td>
-			  <td id='object-overview-table-td-weight'>" + data.weight + "</td> 
-			  <td id='object-overview-table-td-weight'>" + data.handling + "</td>
-			</tr>
-			<tr>
-				<td 'object-overview-table-td-description'>" + data.descrition + "</td>
-				<td 'object-overview-table-td-goingtoroom'>" + data.goingToRoom + "</td>
-			</tr>
-		</table>";
-	}
+function testFormatResults(){
+  var json={"id": ["5e17195c54745"], "name": ["Deco Noel"], "items": [], "state": "NEW", "weight": 7, "document": null, "handling": "NORMAL", "descrition": null, "goingToRoom": null, "classifiedAs": ["CARDBOARD"]};
+  
+  return document.getElementById("p1").innerHTML = formatResults(json);
+}
+	
+function formatResults(data) {
+  var listresult = "<table id='object-overview-table'>"+"<tr><th></th><th>Id</th><th>Name</th><th>Weight</th><th>Handling</th></tr><tr><td><a id='view-object-button' onclick='toggleObjectView();'><i style='font-size:24px' class='fas'>&#xf49e;</i></a></td><td id='object-overview-table-td-id'>" + data.id + "</td><td id='object-overview-table-td-name'>" + data.name + "</td><td id='object-overview-table-td-weight'>" + data.weight + "</td> <td id='object-overview-table-td-weight'>" + data.handling + "</td></tr><tr><td 'object-overview-table-td-description'>" + data.descrition + "</td><td 'object-overview-table-td-goingtoroom'>" + data.goingToRoom + "</td></tr></table>";
+
+  return listresult; 
+}
 
 /*****************************************************************************
 
