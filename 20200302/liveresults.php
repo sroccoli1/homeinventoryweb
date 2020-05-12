@@ -114,7 +114,7 @@ if ($hint=="") {
 }
 
 //output the response
-echo $response;
+print_r($response);
 
 /** 
 * Return the result in a list formatted table or mosaic.
@@ -124,7 +124,7 @@ echo $response;
 */
 function formatResults($value, $object ,$format) {
 	if($format=='L'){ 
-		return "<table id='object-overview-table'>
+		return ["table" => "<table id='object-overview-table'>
 						<tr>
 						  <th></th>
 						  <th>Id</th>
@@ -145,7 +145,9 @@ function formatResults($value, $object ,$format) {
 							<td 'object-overview-table-td-description'>". $object->descrition . "</td>
 							<td 'object-overview-table-td-goingtoroom'>". $object->goingToRoom . "</td>
 						</tr>
-				</table>";
+		</table>",
+		"json"=>$object,]
+		;
 	}
 	else if($format=='M'){ 
 		return "<table>

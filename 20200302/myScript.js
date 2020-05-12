@@ -300,6 +300,32 @@ function transferCanceled(evt) {
   console.log("The transfer has been canceled by the user.");
 }
 
+function formatResults(data,format) {
+	if($format=='L'){ 
+		return "<table id='object-overview-table'>
+			<tr>
+			  <th></th>
+			  <th>Id</th>
+			  <th>Name</th>
+			  <th>Weight</th>
+			  <th>Handling</th>
+			</tr>
+			<tr>
+			  <td>
+				<a id='view-object-button' onclick='toggleObjectView();'><i style='font-size:24px' class='fas'>&#xf49e;</i></a>
+			  </td>
+			  <td id='object-overview-table-td-id'>" + data.id[0] + "</td>
+			  <td id='object-overview-table-td-name'>" + data.name + "</td>
+			  <td id='object-overview-table-td-weight'>" + data.weight + "</td> 
+			  <td id='object-overview-table-td-weight'>" + data.handling + "</td>
+			</tr>
+			<tr>
+				<td 'object-overview-table-td-description'>" + data.descrition + "</td>
+				<td 'object-overview-table-td-goingtoroom'>" + data.goingToRoom + "</td>
+			</tr>
+		</table>";
+	}
+
 /*****************************************************************************
 
 /*----------------Animate a object view carousel 
