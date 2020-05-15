@@ -173,6 +173,7 @@ This search page helps to find objects (here mainly cardboard). This search capa
 			  <h3 class="" id="" action="">General</h3>
 
 			  <div class="objectview-info-details-label" id="">Description</div>
+			  <div class="objectview-info-details-label-value" id="objectview-info-details-description">(no description)</div>
 
 			  <div class="info-edit-button" id="" action="">
 				<button id="" class="info-edit-button" onclick="">Forward<i class="fa fa-share" aria-hidden="true"></i></button>
@@ -184,13 +185,13 @@ This search page helps to find objects (here mainly cardboard). This search capa
 			  <div id="objectview-info-details" class=""><h3>Details</h3></div>
 
 			  <div id="" class="objectview-info-details-label">Items</div>
-			  <div id="" class="objectview-info-details-label-value">(no selection)</div>
+			  <div id="objectview-info-details-items" class="objectview-info-details-label-value">(no selection)</div>
 			  <div id="" class="objectview-info-details-label">Handling</div>
-			  <div id="" class="objectview-info-details-label-value">Normal</div>
+			  <div id="objectview-info-details-handling" class="objectview-info-details-label-value">Normal</div>
 			  <div id="" class="objectview-info-details-label">State</div>
-			  <div id="" class="objectview-info-details-label-value">New</div>
+			  <div id="objectview-info-details-state" class="objectview-info-details-label-value">New</div>
 			  <div id="" class="objectview-info-details-label">Going to</div>
-			  <div id="" class="objectview-info-details-label-value">Kid's room</div>
+			  <div id="objectview-info-details-room" class="objectview-info-details-label-value">Kid's room</div>
 			  <div id="" class="system-history-info">Last edited</div>
 			  <div id="" class="system-history-info-value">22h ago</div>
 

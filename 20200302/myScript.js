@@ -279,13 +279,11 @@ function showResultsAfterSuggestions(str) {
 	  // Save the key/value paris in the web browser, for only one session (the data is deleted when the browser tab is closed).
 	  if (typeof(Storage)!=="undefined"){
 		// Store  
-		sessionStorage.setItem(data.cardboard[0].id, data);
+		sessionStorage.setItem("cardboard", text);
 		// Retrieve
-		console.log("Item retrieved: ", sessionStorage.getItem(data.cardboard[0].id));
-		var itemGotten = sessionStorage.getItem(data.cardboard[0].id);
-		console.log("Item type: ", typeof(itemGotten));
-		
-		
+		var itemGotten = sessionStorage.getItem("cardboard");
+		/* console.log("Item type: ", typeof(itemGotten));
+		console.log("itemGotten : ", itemGotten); */
 	  }else{
 	    console.log("This browser cannot store data.");
 	  }
@@ -436,12 +434,30 @@ function toggleObjectView(){
 
 function populateObjectView(){
 	console.log("entered populateObjectView()");
-	/* 
-	var title = document.getElementsByClassName("objectview-title")[0].getElementsByTagName("h2")[0].innerHTML;
-	title = document.getElementById("object-overview-table-td-name").innerHTML;*/
-	document.getElementsByClassName("objectview-title")[0].getElementsByTagName("h2")[0].innerHTML = document.getElementById("object-overview-table-td-name").innerHTML;
 	
-	//console.log("sessionStorage.getItem('5eadc2d1f3f64'): ", sessionStorage.getItem("5eadc2d1f3f64"));
+	// This stored item is a JSON = string. It must be parsed into an object before using it.
+	var cardboardretrieved = sessionStorage.getItem("cardboard");
+	//console.log("Item type: ", typeof(itemGotten));
+	//console.log("cardboardretrieved : ", cardboardretrieved);
+	//console.log("cardboardretrieved type : ", typeof(cardboardretrieved));
+	
+	// Parsing JSON into an JS object before using it.
+	// If 'null' is found replace with '(undefined)'
+	var obj = JSON.parse(cardboardretrieved, function (key, value) { 
+	  if (value == null) { 
+		return value = "(undefined)";
+	  }else{ 
+		return value;
+	  }});
+	
+	//console.log("object : ", obj);
+	
+	 document.getElementsByClassName("objectview-title")[0].getElementsByTagName("h2")[0].innerHTML = obj.cardboard[0].name;
+	document.getElementById("objectview-info-details-description").innerHTML = obj.cardboard[0].descrition;
+	document.getElementById("objectview-info-details-items").innerHTML = obj.cardboard[0].items;
+	document.getElementById("objectview-info-details-handling").innerHTML = obj.cardboard[0].handling;
+	document.getElementById("objectview-info-details-state").innerHTML = obj.cardboard[0].state;
+	document.getElementById("objectview-info-details-room").innerHTML = obj.cardboard[0].goingToRoom;
 }
 
 
