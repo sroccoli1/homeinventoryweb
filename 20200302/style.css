@@ -676,13 +676,26 @@ input[type=reset]:hover {
 
 	display: grid;
 	grid-template-areas:
-		'topbar topbar topbar topbar topbar topbar topbar topbar topbar topbar topbar topbar'
-		'filters filters filters filters filters filters filters filters filters filters filters filters'
-		'cate cate cate cate cate cate cate cate cate cate cate cate'
-		'res res res res res res res res res res res res'
-		'obj obj obj obj obj obj obj obj obj obj obj obj';
+	  'topbar'
+	  'filters'
+	  'cate'
+	  'res'
+	  'obj';
 	grid-gap: 3px 0px;
 }
+
+/* For screens bigger than 400px */
+@media only screen and (min-width: 400px) {
+ .searchview{
+	grid-template-areas:
+	  'topbar topbar topbar topbar topbar topbar topbar topbar topbar topbar topbar topbar'
+	  'filters filters filters filters filters filters filters filters filters filters filters filters'
+	  'cate cate cate cate cate cate cate cate cate cate cate cate'
+	  'res res res res res res res res res res res res'
+	  'obj obj obj obj obj obj obj obj obj obj obj obj';
+ }
+}
+
 /* More styling on the following section "Search view topbar"*/
 .searchview-topbar{
   grid-area: topbar;
@@ -718,7 +731,13 @@ input[type=reset]:hover {
 
 /* See above note A E.*/
 /* More styling on the following section "Search view results "*/
-.searchview-results{
+.searchview-list-results{
+  grid-area: res;
+  text-align: center;
+  display: inherit; /* Here inherits means Grid. Because of the HTML structure, we children need to benefit also. */
+}
+
+.searchview-mozaic-results{
 	grid-area: res;
 	--auto-grid-min-size: 13rem; /* 16px * 13 = */
 	display: inherit; /* Here inherits means Grid. Because of the HTML structure, we children need to benefit also. */

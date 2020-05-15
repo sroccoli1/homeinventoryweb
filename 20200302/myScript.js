@@ -323,9 +323,17 @@ function testFormatResults(){
   
   return document.getElementById("p1").innerHTML = formatResults(json);
 }
-	
+
+/* @data param : JSON string parsed into a JS object. */	
 function formatResults(data) {
   var listresult = "<table id='object-overview-table'>"+"<tr><th></th><th>Id</th><th>Name</th><th>Weight</th><th>Handling</th></tr><tr><td><a id='view-object-button' onclick='toggleObjectView();'><i style='font-size:24px' class='fas'>&#xf49e;</i></a></td><td id='object-overview-table-td-id'>" + data.id + "</td><td id='object-overview-table-td-name'>" + data.name + "</td><td id='object-overview-table-td-weight'>" + data.weight + "</td> <td id='object-overview-table-td-weight'>" + data.handling + "</td></tr><tr><td 'object-overview-table-td-description'>" + data.descrition + "</td><td 'object-overview-table-td-goingtoroom'>" + data.goingToRoom + "</td></tr></table>";
+
+  return listresult; 
+}
+
+/* @data param : JSON string parsed into a JS object. */
+function formatResultsSmallScren(data) {
+  var listresult = "<table id='object-overview-table'>"+"<tr><td id='view-object-button'><a id='view-object-button' onclick='toggleObjectView();'><i style='font-size:24px' class='fas'>&#xf49e;</i></a></td><td id='object-overview-table-td-name'>" + data.name + "</td><td id='object-overview-table-td-weight'>" + data.weight + "</td></tr><tr><td id='object-overview-table-td-description'>" + data.descrition + "</td><td id='object-overview-table-td-handling'>" + data.handling + "</td></tr><tr><td id='object-overview-table-td-id'>" + data.id + "</td><td id='object-overview-table-td-goingtoroom'>" + data.goingToRoom + "</td></tr></table>";
 
   return listresult; 
 }
@@ -366,17 +374,17 @@ function showSlides() {
 /* Note: For Object View Only */
 
 /* Mobile design first : 
-- if the screen width is under 400px, goback is in the picture section 
-- if the screen width is over 400px : goback is in the title section  
+- if the screen width is under 400px, table is displayed like this 
+- if the screen width is over 400px, table is displayed like this https://docs.google.com/presentation/d/1grmjEQGLNG2whgkbZI_GNA8WtDtWpykH0sp0LCP4kiY/edit#slide=id.g7815e9c42c_0_0
 
 Development : 
 1. if the screen width is under 400px : goback is not displayed (invisible) in the title section but visible in the picture section 
 2. if the screen width is over 400px : goback is not displayed (invisible) in the picture section but visible in the title section  
 */
 
-/* NOT NEEDED button (redundant)2020 09 05 
+/* NOT NEEDED button (redundant) 2020 09 05 
 
-function rearrangeObjectViewGoBack(){
+function rearrangeObjectOverviewTable(){
 	var isGoBackButtonPictVisible ="";
 	console.log("entered rearrangeObjectViewGoBack()");
 	// Implements 1.
@@ -452,12 +460,22 @@ function populateObjectView(){
 	
 	//console.log("object : ", obj);
 	
-	 document.getElementsByClassName("objectview-title")[0].getElementsByTagName("h2")[0].innerHTML = obj.cardboard[0].name;
-	document.getElementById("objectview-info-details-description").innerHTML = obj.cardboard[0].descrition;
-	document.getElementById("objectview-info-details-items").innerHTML = obj.cardboard[0].items;
-	document.getElementById("objectview-info-details-handling").innerHTML = obj.cardboard[0].handling;
-	document.getElementById("objectview-info-details-state").innerHTML = obj.cardboard[0].state;
-	document.getElementById("objectview-info-details-room").innerHTML = obj.cardboard[0].goingToRoom;
+	// If the screen width is under 400px :
+	if(window.matchMedia("(min-width:400px)").matches){
+	  console.log("window width is under 400px");	
+	  formatResultsSmallScren(obj);
+	}
+	else { // If the screen width is over 400px
+	  console.log("window width is over 400px wide");
+	  	
+	  document.getElementsByClassName("objectview-title")[0].getElementsByTagName("h2")[0].innerHTML = obj.cardboard[0].name;
+	  document.getElementById("objectview-info-details-description").innerHTML = obj.cardboard[0].descrition;
+	  document.getElementById("objectview-info-details-items").innerHTML = obj.cardboard[0].items;
+	  document.getElementById("objectview-info-details-handling").innerHTML = obj.cardboard[0].handling;
+	  document.getElementById("objectview-info-details-state").innerHTML = obj.cardboard[0].state;
+	  document.getElementById("objectview-info-details-room").innerHTML = obj.cardboard[0].goingToRoom;
+	  document.getElementById("objectview-info-details-weight").innerHTML = obj.cardboard[0].weight;
+	}
 }
 
 

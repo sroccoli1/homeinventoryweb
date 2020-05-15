@@ -92,13 +92,13 @@ This search page helps to find objects (here mainly cardboard). This search capa
 
 		<!---***************************************************************************-->
 		
-		<div id="liveresults" class="searchview-results">
+		<div id="liveresults" class="searchview-list-results">
 			
-			<!--CardboardXX picture + main information, etc.-->
+			<!--CardboardXX picture + main information, etc. -->
 			
 		</div>
 
-		<div id="objectview-wrapper-js" class="objectview-wrapper">
+		<div id="objectview-wrapper-js" class="">
 
 			<!--Go back button and photo carousel -->
 			<div class="objectview-pict" id="">
@@ -184,6 +184,8 @@ This search page helps to find objects (here mainly cardboard). This search capa
 			  <!-----------------Object Details-------------------------->
 			  <div id="objectview-info-details" class=""><h3>Details</h3></div>
 
+			  <div id="" class="objectview-info-details-label">Weight</div>
+			  <div id="objectview-info-details-weight" class="objectview-info-details-label-value">(undefined)</div>
 			  <div id="" class="objectview-info-details-label">Items</div>
 			  <div id="objectview-info-details-items" class="objectview-info-details-label-value">(no selection)</div>
 			  <div id="" class="objectview-info-details-label">Handling</div>
