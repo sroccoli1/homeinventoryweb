@@ -4,7 +4,7 @@ File Name : searchView.php
 Version : 0.1                              
 Branch : 1
 Started  : 2019_07_30
-Last updated : 2019_08_28
+Last updated : 2020_03_12
 PURPOSE: 
 This search page helps to find objects (here mainly cardboard). This search capable of filtering by object type.
 -->
@@ -21,7 +21,7 @@ This search page helps to find objects (here mainly cardboard). This search capa
 		<title>Cardboard search</title>
 	</head>
 	
-	<body class="searchview" onload="showSlides();">
+	<body class="searchview">
 		<!--*****************************************************************************
 
 		------------------------------Search Bar--------------------------

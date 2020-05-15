@@ -242,6 +242,7 @@ function showSuggestions(str) {
 /*----------------Display a search result 
 
 *****************************************************************************/
+/* Note: Only one result at a time unfortunately */
 
 function showResultsAfterSuggestions(str) {
   console.log("showResultsAfterSuggestions()");
@@ -257,11 +258,10 @@ function showResultsAfterSuggestions(str) {
 	xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
   }
 
-	xmlhttp.addEventListener("progress", updateProgress);
+	/* xmlhttp.addEventListener("progress", updateProgress);
 	xmlhttp.addEventListener("load", transferComplete);
 	xmlhttp.addEventListener("error", transferFailed);
-	xmlhttp.addEventListener("abort", transferCanceled);
-
+	xmlhttp.addEventListener("abort", transferCanceled); */
 
   xmlhttp.onreadystatechange=function() {
     var text = "";
@@ -271,25 +271,34 @@ function showResultsAfterSuggestions(str) {
 	  
 	  var data = JSON.parse(text);
 	  
-	  var formatteddata = "<table id='object-overview-table'>"+"<tr><th></th><th>Id</th><th>Name</th><th>Weight</th><th>Handling</th></tr><tr><td><a id='view-object-button' onclick='toggleObjectView();'><i style='font-size:24px' class='fas'>&#xf49e;</i></a></td><td id='object-overview-table-td-id'>" + data.cardboard[1].id + "</td><td id='object-overview-table-td-name'>" + data.cardboard[1].name + "</td><td id='object-overview-table-td-weight'>" + data.cardboard[1].weight + "</td> <td id='object-overview-table-td-weight'>" + data.cardboard[1].handling + "</td></tr><tr><td 'object-overview-table-td-description'>" + data.cardboard[1].descrition + "</td><td 'object-overview-table-td-goingtoroom'>" + data.cardboard[1].goingToRoom + "</td></tr></table>";
-	  console.log("formattedtable",formatteddata );
+	  var formatteddata = "<table id='object-overview-table'>"+"<tr><th></th><th>Id</th><th>Name</th><th>Weight</th><th>Handling</th></tr><tr><td><a id='view-object-button' onclick='toggleObjectView();'><i style='font-size:24px' class='fas'>&#xf49e;</i></a></td><td id='object-overview-table-td-id'>" + data.cardboard[0].id + "</td><td id='object-overview-table-td-name'>" + data.cardboard[0].name + "</td><td id='object-overview-table-td-weight'>" + data.cardboard[0].weight + "</td> <td id='object-overview-table-td-weight'>" + data.cardboard[0].handling + "</td></tr><tr><td 'object-overview-table-td-description'>" + data.cardboard[0].descrition + "</td><td 'object-overview-table-td-goingtoroom'>" + data.cardboard[0].goingToRoom + "</td></tr></table>";
 	  
 	  document.getElementById("liveresults").innerHTML=formatteddata;
 	  document.getElementById("liveresults").style.border="1px solid #A5ACB2";
+	  
+	  // Save the key/value paris in the web browser, for only one session (the data is deleted when the browser tab is closed).
+	  if (typeof(Storage)!=="undefined"){
+		// Store  
+		sessionStorage.setItem(data.cardboard[0].id, data);
+		// Retrieve
+		console.log("Item retrieved: ", sessionStorage.getItem(data.cardboard[0].id));
+		var itemGotten = sessionStorage.getItem(data.cardboard[0].id);
+		console.log("Item type: ", typeof(itemGotten));
+		
+		
+	  }else{
+	    console.log("This browser cannot store data.");
+	  }
 	}
   }
   xmlhttp.open("POST","liveresults.php",true);
   xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xmlhttp.send("q=" + str);
-  
-
 }
 
 
-  // progress on transfers from the server to the client (downloads)
-  // from https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest#Handling_responses
-  
-
+// progress on transfers from the server to the client (downloads)
+// from https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest#Handling_responses
 function updateProgress (oEvent) {
   if (oEvent.lengthComputable) {
     var percentComplete = oEvent.loaded / oEvent.total * 100;
@@ -426,10 +435,13 @@ function toggleObjectView(){
 /* Note: For Object View Only */
 
 function populateObjectView(){
-	/* console.log("entered populateObjectView()");
+	console.log("entered populateObjectView()");
+	/* 
 	var title = document.getElementsByClassName("objectview-title")[0].getElementsByTagName("h2")[0].innerHTML;
 	title = document.getElementById("object-overview-table-td-name").innerHTML;*/
 	document.getElementsByClassName("objectview-title")[0].getElementsByTagName("h2")[0].innerHTML = document.getElementById("object-overview-table-td-name").innerHTML;
+	
+	//console.log("sessionStorage.getItem('5eadc2d1f3f64'): ", sessionStorage.getItem("5eadc2d1f3f64"));
 }
 
 
