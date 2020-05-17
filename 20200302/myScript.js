@@ -270,13 +270,23 @@ function showResultsAfterSuggestions(str) {
 	  console.log("text",text );
 	  
 	  var data = JSON.parse(text);
+	  var formatteddata ="";//for table formatting
 	  
-	  var formatteddata = "<table id='object-overview-table'>"+"<tr><th></th><th>Id</th><th>Name</th><th>Weight</th><th>Handling</th></tr><tr><td><a id='view-object-button' onclick='toggleObjectView();'><i style='font-size:24px' class='fas'>&#xf49e;</i></a></td><td id='object-overview-table-td-id'>" + data.cardboard[0].id + "</td><td id='object-overview-table-td-name'>" + data.cardboard[0].name + "</td><td id='object-overview-table-td-weight'>" + data.cardboard[0].weight + "</td> <td id='object-overview-table-td-weight'>" + data.cardboard[0].handling + "</td></tr><tr><td 'object-overview-table-td-description'>" + data.cardboard[0].descrition + "</td><td 'object-overview-table-td-goingtoroom'>" + data.cardboard[0].goingToRoom + "</td></tr></table>";
+	  if(window.matchMedia("(min-width:400px)").matches){
+	    console.log("window width is over 400px");
+	  
+	    formatteddata = "<table id='object-overview-table'>"+"<tr><th></th><th>Id</th><th>Name</th><th>Weight</th><th>Handling</th></tr><tr><td><a id='view-object-button' onclick='toggleObjectView();'><i style='font-size:24px' class='fas'>&#xf49e;</i></a></td><td id='object-overview-table-td-id'>" + data.cardboard[0].id + "</td><td id='object-overview-table-td-name'>" + data.cardboard[0].name + "</td><td id='object-overview-table-td-weight'>" + data.cardboard[0].weight + "</td> <td id='object-overview-table-td-handling'>" + data.cardboard[0].handling + "</td></tr><tr><td 'object-overview-table-td-description'>" + data.cardboard[0].descrition + "</td><td 'object-overview-table-td-goingtoroom'>" + data.cardboard[0].goingToRoom + "</td></tr></table>";
+	  }
+	  else{
+		formatteddata = "<table id='object-overview-table'>"+"<tr><th></th><th></th><th></th><th></th><th></th></tr><tr><td rowspan=3><a id='view-object-button' onclick='toggleObjectView();'><i style='font-size:24px' class='fas'>&#xf49e;</i></a></td><td id='object-overview-table-td-name'>" + data.cardboard[0].name + "</td><td id='object-overview-table-td-weight'>" + data.cardboard[0].weight + "</td></tr><tr><td 'object-overview-table-td-description'>" + data.cardboard[0].descrition + "</td><td id='object-overview-table-td-handling'>" + data.cardboard[0].handling + "</td></tr><tr><td id='object-overview-table-td-id'>" + data.cardboard[0].id + "</td><td 'object-overview-table-td-goingtoroom'>" + data.cardboard[0].goingToRoom + "</td></tr></table>";  
+	  }
 	  
 	  document.getElementById("liveresults").innerHTML=formatteddata;
 	  document.getElementById("liveresults").style.border="1px solid #A5ACB2";
 	  
-	  // Save the key/value paris in the web browser, for only one session (the data is deleted when the browser tab is closed).
+	  //rearrangeObjectOverviewTable(data);
+	  
+	  // Save the key/value paris in the web browser, for only one session (the data is deleted when the browser tab is closed).
 	  if (typeof(Storage)!=="undefined"){
 		// Store  
 		sessionStorage.setItem("cardboard", text);
@@ -288,6 +298,7 @@ function showResultsAfterSuggestions(str) {
 	    console.log("This browser cannot store data.");
 	  }
 	}
+	
   }
   xmlhttp.open("POST","liveresults.php",true);
   xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -295,48 +306,6 @@ function showResultsAfterSuggestions(str) {
 }
 
 
-// progress on transfers from the server to the client (downloads)
-// from https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest#Handling_responses
-function updateProgress (oEvent) {
-  if (oEvent.lengthComputable) {
-    var percentComplete = oEvent.loaded / oEvent.total * 100;
-    // ...
-  } else {
-    // Unable to compute progress information since the total size is unknown
-  }
-}
-
-function transferComplete(evt) {
-  console.log("The transfer is complete.");
-}
-
-function transferFailed(evt) {
-  console.log("An error occurred while transferring the file.");
-}
-
-function transferCanceled(evt) {
-  console.log("The transfer has been canceled by the user.");
-}
-
-function testFormatResults(){
-  var json={"id": ["5e17195c54745"], "name": ["Deco Noel"], "items": [], "state": "NEW", "weight": 7, "document": null, "handling": "NORMAL", "descrition": null, "goingToRoom": null, "classifiedAs": ["CARDBOARD"]};
-  
-  return document.getElementById("p1").innerHTML = formatResults(json);
-}
-
-/* @data param : JSON string parsed into a JS object. */	
-function formatResults(data) {
-  var listresult = "<table id='object-overview-table'>"+"<tr><th></th><th>Id</th><th>Name</th><th>Weight</th><th>Handling</th></tr><tr><td><a id='view-object-button' onclick='toggleObjectView();'><i style='font-size:24px' class='fas'>&#xf49e;</i></a></td><td id='object-overview-table-td-id'>" + data.id + "</td><td id='object-overview-table-td-name'>" + data.name + "</td><td id='object-overview-table-td-weight'>" + data.weight + "</td> <td id='object-overview-table-td-weight'>" + data.handling + "</td></tr><tr><td 'object-overview-table-td-description'>" + data.descrition + "</td><td 'object-overview-table-td-goingtoroom'>" + data.goingToRoom + "</td></tr></table>";
-
-  return listresult; 
-}
-
-/* @data param : JSON string parsed into a JS object. */
-function formatResultsSmallScren(data) {
-  var listresult = "<table id='object-overview-table'>"+"<tr><td id='view-object-button'><a id='view-object-button' onclick='toggleObjectView();'><i style='font-size:24px' class='fas'>&#xf49e;</i></a></td><td id='object-overview-table-td-name'>" + data.name + "</td><td id='object-overview-table-td-weight'>" + data.weight + "</td></tr><tr><td id='object-overview-table-td-description'>" + data.descrition + "</td><td id='object-overview-table-td-handling'>" + data.handling + "</td></tr><tr><td id='object-overview-table-td-id'>" + data.id + "</td><td id='object-overview-table-td-goingtoroom'>" + data.goingToRoom + "</td></tr></table>";
-
-  return listresult; 
-}
 
 /*****************************************************************************
 
@@ -368,44 +337,50 @@ function showSlides() {
 
 /*****************************************************************************
 
-/*--------------------Re-arrange goback when resizing------------------------
+/*-------------------- Re-arrange objet overview table when resizing ------------------------
 
 /****************************************************************************/
 /* Note: For Object View Only */
 
-/* Mobile design first : 
-- if the screen width is under 400px, table is displayed like this 
-- if the screen width is over 400px, table is displayed like this https://docs.google.com/presentation/d/1grmjEQGLNG2whgkbZI_GNA8WtDtWpykH0sp0LCP4kiY/edit#slide=id.g7815e9c42c_0_0
-
-Development : 
-1. if the screen width is under 400px : goback is not displayed (invisible) in the title section but visible in the picture section 
-2. if the screen width is over 400px : goback is not displayed (invisible) in the picture section but visible in the title section  
+/* Mobile design first :
+(A)If the table is already loaded, 
+- 1) if the screen width is under 400px, table is displayed like this 
+- 2) if the screen width is over 400px, table is displayed like this https://docs.google.com/presentation/d/1grmjEQGLNG2whgkbZI_GNA8WtDtWpykH0sp0LCP4kiY/edit#slide=id.g7815e9c42c_0_0
 */
-
-/* NOT NEEDED button (redundant) 2020 09 05 
 
 function rearrangeObjectOverviewTable(){
-	var isGoBackButtonPictVisible ="";
-	console.log("entered rearrangeObjectViewGoBack()");
-	// Implements 1.
-	if(window.matchMedia("(min-width:400px)").matches){
-		console.log("window is greater than 400px wide");
-		document.getElementById("objectview-goBackButton-pict").style.visibility = "visible";
-		document.getElementById("objectview-goBackButton-title").style.visibility = "hidden";
-		isGoBackButtonPictVisible = "visible";
-		//console.log("Is GoBackButton  visible ? "+ isGoBackButtonPictVisible);
-	}
-	// Implements 2.
-	else {
-		console.log("window is smaller than 400px wide");
-		document.getElementById("objectview-goBackButton-pict").style.visibility = "hidden";
-		document.getElementById("objectview-goBackButton-title").style.visibility = "visible";
-		isGoBackButtonPictVisible = "hidden";
-		//console.log("Is GoBackButton visible ? "+ isGoBackButtonPictVisible);
-	}
-}
+  console.log("rearrangeObjectOverviewTable()");
+  
+  // This stored item is a JSON = string. It must be parsed into an object before using it. Stored previously sessionStorage.setItem();
+  var cardboardretrieved = sessionStorage.getItem("cardboard");
+  //console.log("Item type: ", typeof(itemGotten));
+  //console.log("cardboardretrieved : ", cardboardretrieved);
+  //console.log("cardboardretrieved type : ", typeof(cardboardretrieved));
 
-*/
+  // Parsing JSON into an JS object before using it.
+  // If 'null' is found replace with '(undefined)'
+  var obj = JSON.parse(cardboardretrieved, function (key, value) { 
+    if (value == null) { 
+	return value = "(undefined)";
+  }else{ 
+	return value;
+  }});
+
+  // A: if there is a table id with 'object-overview-table'
+  if(document.getElementById("object-overview-table")){
+	
+	if(window.matchMedia("(min-width:400px)").matches){
+	  console.log("window width is over 400px");
+	  
+	  document.getElementById("object-overview-table").innerHTML = "<table id='object-overview-table'>"+"<tr><th></th><th>Id</th><th>Name</th><th>Weight</th><th>Handling</th></tr><tr><td><a id='view-object-button' onclick='toggleObjectView();'><i style='font-size:24px' class='fas'>&#xf49e;</i></a></td><td id='object-overview-table-td-id'>" + obj.cardboard[0].id + "</td><td id='object-overview-table-td-name'>" + obj.cardboard[0].name + "</td><td id='object-overview-table-td-weight'>" + obj.cardboard[0].weight + "</td> <td id='object-overview-table-td-handling'>" + obj.cardboard[0].handling + "</td></tr><tr><td 'object-overview-table-td-description'>" + obj.cardboard[0].descrition + "</td><td 'object-overview-table-td-goingtoroom'>" + obj.cardboard[0].goingToRoom + "</td></tr></table>";
+	}
+	else {
+	 // table for mobile view
+	  console.log("window width is under 400px");
+	  document.getElementById("object-overview-table").innerHTML = "<table id='object-overview-table'>"+"<tr><th></th><th></th><th></th><th></th><th></th></tr><tr><td rowspan=3><a id='view-object-button' onclick='toggleObjectView();'><i style='font-size:24px' class='fas'>&#xf49e;</i></a></td><td id='object-overview-table-td-name'>" + obj.cardboard[0].name + "</td><td id='object-overview-table-td-weight'>" + obj.cardboard[0].weight + "</td></tr><tr><td 'object-overview-table-td-description'>" + obj.cardboard[0].descrition + "</td><td id='object-overview-table-td-handling'>" + obj.cardboard[0].handling + "</td></tr><tr><td id='object-overview-table-td-id'>" + obj.cardboard[0].id + "</td><td 'object-overview-table-td-goingtoroom'>" + obj.cardboard[0].goingToRoom + "</td></tr></table>";  
+	 }
+  } 
+}
 
 /*****************************************************************************
 
@@ -443,7 +418,7 @@ function toggleObjectView(){
 function populateObjectView(){
 	console.log("entered populateObjectView()");
 	
-	// This stored item is a JSON = string. It must be parsed into an object before using it.
+	// This stored item is a JSON = string. It must be parsed into an object before using it. Stored previously sessionStorage.setItem();
 	var cardboardretrieved = sessionStorage.getItem("cardboard");
 	//console.log("Item type: ", typeof(itemGotten));
 	//console.log("cardboardretrieved : ", cardboardretrieved);
@@ -460,14 +435,7 @@ function populateObjectView(){
 	
 	//console.log("object : ", obj);
 	
-	// If the screen width is under 400px :
-	if(window.matchMedia("(min-width:400px)").matches){
-	  console.log("window width is under 400px");	
-	  formatResultsSmallScren(obj);
-	}
-	else { // If the screen width is over 400px
-	  console.log("window width is over 400px wide");
-	  	
+	// If the screen width is over 400px
 	  document.getElementsByClassName("objectview-title")[0].getElementsByTagName("h2")[0].innerHTML = obj.cardboard[0].name;
 	  document.getElementById("objectview-info-details-description").innerHTML = obj.cardboard[0].descrition;
 	  document.getElementById("objectview-info-details-items").innerHTML = obj.cardboard[0].items;
@@ -475,7 +443,64 @@ function populateObjectView(){
 	  document.getElementById("objectview-info-details-state").innerHTML = obj.cardboard[0].state;
 	  document.getElementById("objectview-info-details-room").innerHTML = obj.cardboard[0].goingToRoom;
 	  document.getElementById("objectview-info-details-weight").innerHTML = obj.cardboard[0].weight;
-	}
 }
+
+/*****************************************************************************
+
+/*-------------------- For Unit testing purpose ---------------------
+
+/*********************************************************************
+
+
+// progress on transfers from the server to the client (downloads)
+// from https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest#Handling_responses
+function updateProgress (oEvent) {
+  if (oEvent.lengthComputable) {
+    var percentComplete = oEvent.loaded / oEvent.total * 100;
+    // ...
+  } else {
+    // Unable to compute progress information since the total size is unknown
+  }
+}
+
+function transferComplete(evt) {
+  console.log("The transfer is complete.");
+}
+
+function transferFailed(evt) {
+  console.log("An error occurred while transferring the file.");
+}
+
+function transferCanceled(evt) {
+  console.log("The transfer has been canceled by the user.");
+}
+
+function testFormatResults(){
+  var json={"id": ["5e17195c54745"], "name": ["Deco Noel"], "items": [], "state": "NEW", "weight": 7, "document": null, "handling": "NORMAL", "descrition": null, "goingToRoom": null, "classifiedAs": ["CARDBOARD"]};
+  
+  return document.getElementById("p1").innerHTML = formatResults(json);
+}
+
+/*****************************************************************************
+
+/*-------------------- For Unit testing purpose ---------------------
+
+/****************************************************************************/
+/* Note: For Object View Only */
+
+
+/* @data param : JSON string parsed into a JS object. */	
+/* function formatResults(data) {
+  var listresult = "<table id='object-overview-table'>"+"<tr><th></th><th>Id</th><th>Name</th><th>Weight</th><th>Handling</th></tr><tr><td><a id='view-object-button' onclick='toggleObjectView();'><i style='font-size:24px' class='fas'>&#xf49e;</i></a></td><td id='object-overview-table-td-id'>" + data.id + "</td><td id='object-overview-table-td-name'>" + data.name + "</td><td id='object-overview-table-td-weight'>" + data.weight + "</td> <td id='object-overview-table-td-handling'>" + data.handling + "</td></tr><tr><td 'object-overview-table-td-description'>" + data.descrition + "</td><td 'object-overview-table-td-goingtoroom'>" + data.goingToRoom + "</td></tr></table>";
+
+  return listresult; 
+} */
+
+/* @data param : JSON string parsed into a JS object. */
+/* function formatResultsSmallScren(data) {
+  var listresult = "<table id='object-overview-table'>"+"<tr><td id='view-object-button'><a id='view-object-button' onclick='toggleObjectView();'><i style='font-size:24px' class='fas'>&#xf49e;</i></a></td><td id='object-overview-table-td-name'>" + data.name + "</td><td id='object-overview-table-td-weight'>" + data.weight + "</td></tr><tr><td id='object-overview-table-td-description'>" + data.descrition + "</td><td id='object-overview-table-td-handling'>" + data.handling + "</td></tr><tr><td id='object-overview-table-td-id'>" + data.id + "</td><td id='object-overview-table-td-goingtoroom'>" + data.goingToRoom + "</td></tr></table>";
+
+  return listresult; 
+} */
 
 

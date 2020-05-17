@@ -21,7 +21,7 @@ This search page helps to find objects (here mainly cardboard). This search capa
 		<title>Cardboard search</title>
 	</head>
 	
-	<body class="searchview">
+	<body class="searchview" onresize="rearrangeObjectOverviewTable();">
 		<!--*****************************************************************************
 
 		------------------------------Search Bar--------------------------
