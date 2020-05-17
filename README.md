@@ -50,5 +50,5 @@ Current solution in a short video:<br>
 [Getting Started with Home Inventory Web (Dev and Test)](https://github.com/sroccoli1/homeinventoryweb/blob/master/GettingStartedDevandTest.md)
 
 ## Note
-If you have any questions or ideas about Home Inventory (or other ideas), feel free to reach out to me on Twitter: **@SRoccoli** 
+If you have any questions or ideas about Home Inventory (or other ideas), feel free to reach out to me on Twitter: [@SRoccoli](https://twitter.com/SRoccoli) 
 <br>If you like this repo and find it useful, please consider ★ starring it (on top right of the page) and forking it :)
