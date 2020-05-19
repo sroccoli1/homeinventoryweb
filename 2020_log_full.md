@@ -19,16 +19,18 @@
   - Wrote a script in case of future DB issues investigations.
   - Figured out a DB Admin Use Case. 
 
-**Thoughts:** It was a tough week of investigation, I felt very uncapable, but diving into MySQL PHP and Wampserver documentation with a bug perspective I learn lot more than ever about this systems.  
+**Thoughts:** It was a tough week of investigation, I felt very uncapable, but diving into MySQL, PHP and Wampserver documentation with a bug perspective made me learn more than ever about these systems.  
 
 **Link to tweet:** [@SRoccoli Week 17](https://twitter.com/SRoccoli/status/1259842830421327874?s=20)
 
-**Link to work:** []
+**Link to work:** 
+- HomeInventoryWeb May 2, 2020 [Commit](https://github.com/sroccoli1/homeinventoryweb/commit/272ff0908963f6065edb6f94b122c1160a30435f)
+- HomeInventoryWeb May 2, 2020 [Commit](https://github.com/sroccoli1/homeinventoryweb/commit/87ed033f4a6f6a9299a08a2488706b3736041b0b)
 
 ### Full story
 
 My Lubuntu installation for web development crashed and I may have to  reinstalled the  OS!<br>
-On a second partition, I had installed Win 10. I recreated my web dev environment, based on: <br>
+Fortunately on a second partition, I had installed Win 10. I recreated my web dev environment, based on: <br>
 - WAMPServer
 - Notepad++
 - Git<br> 
