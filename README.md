@@ -35,7 +35,7 @@ Current solution in a short video:<br>
 - I have noticed the movables weight is over the limit... I can save this configuration for later, unselect items and set a new configuration… and save them for later (without deleting).
 - Tired of entering data with the GUI? You can instead edit the inventory in XLS then upload it and use the service. 
 - Record items and add them to their cardboard!
-- View the global number of cardboard and staff weight!
+- View the global stuff weight!
 - Record item info such as name, weight, purchase date, purchase price, and even picture !
 - Dispatch them each to a cardboard (cardboard ID)!
 - Quick check on cardboards with their color tag!
