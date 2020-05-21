@@ -25,7 +25,7 @@ Onneksi viikonloppuna korjasin vian pois ja keksin koodin, joka voisi auttaa sii
 tulisi vika taas. Toisaalta, [**Struggle is a sign of progress**](https://twitter.com/js_tut/status/1241764474866012165) Taistelu on merkki edistymisestä, niin kuin
 Javascript Teacher sanoi.
 
-**Linkki tweetille:** [@SRoccoli Week 17](https://twitter.com/SRoccoli/status/1259842830421327874?s=20)
+**Linkki tweetille:** [@SRoccoli Viikko 17](https://twitter.com/SRoccoli/status/1263352878770651136?s=20)
 
 **Linkki teoksille:** 
 - HomeInventoryWeb May 2, 2020 [Commit](https://github.com/sroccoli1/homeinventoryweb/commit/272ff0908963f6065edb6f94b122c1160a30435f)
