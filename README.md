@@ -8,6 +8,7 @@
 - [2020 Milestones](https://github.com/sroccoli1/homeinventoryweb/blob/master/2020_milestones.md)
 - [2020 Weekly Log](https://github.com/sroccoli1/homeinventoryweb/blob/master/2020_log.md)
 - [If you want to start testing or developing](https://github.com/sroccoli1/homeinventoryweb/blob/master/GettingStartedDevandTest.md)
+- [Log - Suomeksi](https://github.com/sroccoli1/homeinventoryweb/blob/master/lokikirja.md)
 
 ## Problems when preparing your next move
 
