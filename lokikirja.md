@@ -43,7 +43,7 @@ Javascript Teacher sanoi.
 **Ajatukset:** Mallinnuksen avulla näen helpommin, miten olen sen koodannut, mitä kohtaa saa tai ei
 saa muokata, jotta saavuttaisin sivun ulkoasun mallin.
 
-**Linkki Tweetille:**
+**Linkki Tweetille:** [@SRoccoli, Viikko 19](https://twitter.com/SRoccoli/status/1263373750101131264?s=20)
 
 **Linkki teoksille:** [HomeInventoryWeb, 9.5.2020 Commit](https://github.com/sroccoli1/homeinventoryweb/commit/5f381a0fc37459b513f2fc48cc89708cd2f966b4)
 
