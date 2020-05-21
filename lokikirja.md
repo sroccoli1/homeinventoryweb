@@ -35,6 +35,9 @@ Javascript Teacher sanoi.
 
 **Viikon edistys:** 
 - Kuvasin sitä, miten Etsi Laatikko -sivu etsii ja näyttää laatikkoa, kaavio keskittyy nykyiseen
+![Design-Gui-Livesearch-01](https://github.com/sroccoli1/homeinventoryweb/blob/be50fe3406ac4f70a9d6d94f239c94d36363c485/design-gui-livesearch-01.PNG)
+![Design-Gui-Livesearch-02](https://github.com/sroccoli1/homeinventoryweb/blob/assets/design-gui-livesearch-02.PNG)
+
 AJAX arkkitehtuuriin. Kaavio näyttää yleiskuvaa sivusta Etsi Laatikko ja auttaa ymmärtämään, miten koodata Laatikko-olion näkymä.
 - Aloitin Aloitin HTLM ja CSS puhdistamisen ja uudistamisen Etsi laatikko -sivulla.
 
