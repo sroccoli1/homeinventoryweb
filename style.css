@@ -1,0 +1,1175 @@
+/* InternalFileName: style.css
+/* Project: Home Inventory Helper
+/* Version : 0.1
+/* Branch : 2
+/* Last updated : 2020_03_17
+
+/* PURPOSE: Style the pages : 
+/* - Top Navigation Bar
+/* - Side navigation bar
+/* - Header Body and Footer of all Forms
+*/
+
+/* Improve display : 
+* with no media queries / JS with this pen :
+https://andy-bell.design/wrote/create-a-responsive-grid-layout-with-no-media-queries-using-css-grid/#heading-example
+* of fonts and save space:
+https://www.sitepoint.com/understanding-and-using-rem-units-in-css/ */
+
+
+/* The HTML normal font size is 16px = Base for using REM unit. */
+html{
+	font-size: 16px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+/* Accessibility : This black outline make the page more accessible to keyboards, if no mouse. */
+a:focus, input:focus, button:focus, select:focus{
+ outline: 2px solid black;  
+}
+
+/**************************************************************
+
+/*------------------------------Home Page Top Navigation Bar---------
+
+/*********************************************************** */
+
+/* NB: Resizing screen under 400px with Chrome : just enable dev tools! */
+
+/* Style the bar */
+.topnav {
+  /* overflow: hidden; /*disabled for the dropdown content to come of it */
+  padding: auto;
+  margin: 0;
+  background-color: #6495ed;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  left: 0;
+  width: 100%; /* Full width */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19); /* *Set a shadow on the bottom of the bar. The box-shadow property can be used to create paper-like cards. */
+  z-index: 3;
+  height: auto;
+  font-size: 1.6em;
+  font-family: "Lato", "Helvetica", "Trebuchet MS", "Arial", "FontAwesome", sans-serif;
+  
+  /* Mobile design first : when the screen width is under 400px, the topbar is only one column, Menu, Home, Search, [...] are displayed in letters on  separated rows --> JS classes*/
+  /* Trying these utilies instead of media queries and Java*/
+  display: grid;
+  --auto-grid-min-size: 9rem; 
+  grid-template-columns: repeat(auto-fit, minmax(var(--auto-grid-min-size),1fr));
+  grid-gap: 0.5rem;
+}
+
+  /* Mobile design first : when the screen is over 400px wide, topbar is only one row, with Menu, Home, Search, [...] icons --> JS classes */
+/* @media screen and (min-width: 400px) { */
+	/* Topbar is divided into 8 equally sized columns */
+	 /* display: grid; */
+	 /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; */
+	 /* grid-column-gap: 2px; */
+
+	/* 4 items will fit in 8 columns. It is not useful to add text-align: center */
+	/* .item1 { */
+	  /* grid-column: 1 / 2; */
+	  /* } */
+
+	/* .item2 { */
+	  /* grid-column: 2 / 3; */
+	  /* } */
+
+	/* .item3 { */
+	  /* grid-column: 7 / 8; */
+	  /* } */
+
+	/* .item4 { */
+	/* grid-column: 8 / 9; */
+	/* display: grid; */
+	/* } */
+	
+/* } */
+
+/* Style the topnav links & buttons */
+.topnav a, .dropbtn {
+  font-size: inherit;
+  color: white;
+  padding: 20px 12px;
+  background: #6495ed;
+  font-family: inherit;
+  margin: 0;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  align-self: center;
+}
+
+/* Add a white background color to navbar links on hover */
+.topnav a:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Feature a search in line with the other topbar icons. When hover on it it turns white and black, then when clicking it displays the search field */
+.topnav .search-container {
+  color: inherit;
+  padding: 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  background: #6495ed;
+  margin: 0;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.topnav .search-container input {
+	padding: 0px;
+	margin: 0;
+	/* border: none; */
+	font-size: 1em;
+	display: none;
+	width: 100%; /* Full width */
+	cursor: pointer;
+}
+
+.topnav .search-container button {
+  font-size: inherit;
+  color: white;
+  padding: 20px 20px;
+  background: #6495ed;
+  margin: 0;
+  cursor: pointer;
+  width: 100%; /* Full width */
+}
+
+.topnav .search-container button:hover, .search-container:hover {
+  background-color: white;
+  color: black;
+}
+
+/* The div that contains the dropdown */
+.dropdown {
+  float: left;
+  overflow: hidden;
+  text-align: center; /* This center horizontally the icon and text in the div. */
+}
+
+/* Style the dropdown button. To center vertically I had to set the container display as grid and remove the margin-bottom*/
+.dropdown .dropbtn {
+  background-color: inherit;
+  font-family: inherit;
+  width: 100%;
+  /* outline: none; */
+}
+
+/* Add a white background color to button on hover */
+.dropdown:hover .dropbtn, .dropdown:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none; 		/* Hidden by default */
+  position: absolute;
+  right: 0; 				/* The dropdown-content goes from right to left. */
+  min-width: 230px; /* This is enough to display the text on 1 line.*/
+  z-index: 3;
+  background-color : #6495ed;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19); /* Set a shadow on the bottom of the bar.
+  The box-shadow property can be used to create paper-like cards. */
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 16px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Change dropdown links color on hover */
+.dropdown-content a:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button)
+Note : that it will show only if the topbar overflow is allowed. */
+.show {
+  display: block;
+}
+
+/*------------------------- Keyboard accessibility : outlining controls -------------------------*/
+
+/* This black outline make the page more accessible to keyboards, if no mouse. */
+.topnav a:focus {
+  outline: 2px solid black;  
+}
+
+/* This black outline make the page more accessible to keyboards, if no mouse. */
+.topnav .search-container input:focus, .topnav .search-container button:focus {
+  outline: 2px solid black;  
+}
+
+.dropbtn button:focus, .dropdown:focus, .dropdown-content a:focus{
+  outline: 2px solid black;  
+}
+
+/* .dropdown .dropbtn button:focus, .dropdown:focus, .dropdown-content a:focus{ */
+  /* outline: 2px solid black;   */
+/* } */
+
+/* .dropdown .dropbtn button:focus, .dropdown-content a:focus{ */
+  /* outline: 2px solid black;   */
+/* } */
+
+/*****************************************************************************
+
+------------------------------Home Page Menu sidenav------------------------
+
+-*****************************************************************************/
+/* The side navigation menu */
+.sidenav {
+  font-family: "Lato", "Helvetica", "Trebuchet MS", "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 20%;
+  visibility:hidden;
+  background-color: #6495ed;
+  position: fixed;/* Make it stick, even on scroll */
+  height: 100%;
+  overflow: auto;/* Enable scrolling if the sidenav has too much content */
+  font-weight:bold;
+  font-size:1em;
+  transition: 0.5s;
+  left:0;
+  top:60; /* Place the sidenav just below the topbar (=at 60px).*/
+  z-index:3;
+}
+
+/* Sidenav links */
+.sidenav a {
+  display: block;
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+}
+
+/* Active/current link */
+.sidenav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* Links on mouse-over */
+.sidenav a:hover:not(.active) {
+  background-color: #white;
+  color: black;
+}
+
+/* .sidenav a:focus{ */
+ /* outline: 2px solid black;   */
+/* } */
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+
+/* On screens that are less than 700px wide, make the sidenav into a topbar */
+@media screen and (max-width: 700px) {
+  .sidenav {
+    width: 100%;
+    height: auto;
+    position: fixed;
+	float: none;
+  }
+  .sidenav a {float: left;}
+  }
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+  .sidenav {
+    width: 100%;
+    height: auto;
+    position: fixed;
+	float: none;
+  }
+  .sidenav a {
+    text-align: center;
+    float: none;
+  }
+}
+
+
+/******************************************************************************
+
+/*-------------------------------------Forms----------------------------------
+
+/*******************************************************************************/
+
+
+/******************************************************************************
+											Form : Home Page 
+/******************************************************************************/
+
+#homePageMainDiv ,#homePageRightDiv,#homePageGraph {
+	font-family: "Lato", "Helvetica", "Trebuchet MS", "Arial", sans-serif;
+}
+
+#homePageMainDiv {
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+  top: 60; /* Place the sidenav just below the topbar (=at 60px).*/
+  left: 0;
+  background-color: white;
+  font-weight: normal;
+}
+
+#homePageGraph {
+	background-color: white;
+	color: black;
+	padding: auto;
+	/*font-family: "Lato", "Helvetica", "Trebuchet MS", "Arial", sans-serif;*/
+	/*height:30px;/*Just for quick draft layout*/
+	width: 100%;
+	z-index: 0;
+} 
+
+#homePageRightDiv {
+  /* Design for mobile first*/
+    width: 100%;
+    height: auto;
+	text-align:center;
+	padding:0;
+	z-index:0;
+	background-color:#e5e5e5;
+}
+
+/* On screens that are bigger than 400px, display the right section and the main section in two columns.*/
+@media only screen and (min-width: 400px) {
+	  #homePageRightDiv {
+	  float:left;
+	  width:30%;
+	  margin-top:7px;
+	  right:0;
+	  position:relative;
+	}
+	#homePageMainDiv {
+	  position:relative;
+	  float:left;
+	  width:70%;
+	}
+}
+
+/********************************************************************************/
+/*																				*/
+/*											New <Object> Forms					*/
+/*																				*/
+/* New item, cardboard, room...													*/
+/********************************************************************************/
+
+/*------------------------ General view definition ------------------------*/
+
+/* .form-section places the beginning of any form just below the top bar.
+	See Javascript for toggling the label (depending on the screen size). */
+.form-section {
+	position: relative;
+	top: 60px; /* Place the form just below the topbar (=at 60px).*/
+	left: 0;
+	margin: 0;
+
+  /* Mobile design first : the form is only one column */
+	display: grid;
+	grid-template-areas:
+		'topbar topbar topbar topbar topbar topbar topbar topbar topbar topbar topbar topbar'
+		'title title title title title title title title title title title title'
+		'info info info info info info info info info info info info'
+		'main main main main main main main main main main main main';
+}
+
+.form-section-title{
+  grid-area: title;
+  padding: 8px 8px 0px 8px;
+  text-align: left;
+}
+
+.form-section-info{
+  grid-area: info;
+  padding: 8px;
+}
+
+.form-section-main{
+	grid-area: main;
+	display:grid;
+	padding: 0px;
+}
+
+/*------------------------------ Top Bar --------------------*/
+
+.forms-top-bar {
+	height: auto;
+	color: white;
+	text-align: center;
+	background-color: #6495ed;
+	font-family: "Lato", "Helvetica", "Trebuchet MS", "Arial", sans-serif;
+	font-size: 1.2em;
+}
+
+/* 3 items will fit in 12 columns. It is not useful to add text-align: center */
+.item1-goback {
+	grid-area: 1 / 1 / 2 / 2;
+	padding: 9.5px 10px;
+	align-self: center;
+}
+
+.item1-goback i{
+	align-self: center;
+	padding: 0px;
+}
+
+.item1-goback:hover {
+  background-color: #1b61e4; /* Blue */
+}
+
+.item2-title {
+	grid-area: 1 / 2 / 2 / 10;
+	align-self: center;
+	padding: 8px;
+}
+
+.item3-save {
+	grid-area: 1 / 10 / 2 / 13;
+	padding: 0x;
+}
+
+.item3-save:hover {
+  background-color: #1b61e4; /* Blue */
+}
+
+/*------------------------------ Object definition main section --------------------*/
+
+
+div.form-section-main > label{
+  display : none;
+  grid-column: 1 / 2;
+  font-size: 1em;
+  align-self: center; 
+}
+
+.record-form-input, .record-form-reset  {
+  grid-column: 1 / 13;
+  font-size: 1em;
+}
+
+/* Style the font*/
+h1, h2, h3, h4, body, input, p, button {
+	font-family: "Lato", "Helvetica", "Trebuchet MS", "Arial", sans-serif;
+}
+
+h1 {
+	height: auto;
+	width: 100%; /* Full width */
+	padding: auto;
+	background-color: #white;
+	font-size: 1.6em;/* 30/16 = 1.875em ; 18px = */
+	color: black;
+	text-align: center;
+	left: 0;
+	margin: 0;
+}
+
+h2 {
+	display: inline;
+	/*grid-column: 1 / 2;*/
+	height: auto;
+	width: 100%;
+	padding: auto;
+	background-color: white;
+	font-size: 1.4em;
+	color: black;
+	text-align: center;
+	left: 0;
+	margin: 0;
+  font-weight: bold;
+}
+
+h3 {
+  display: inline;
+  /*grid-column: 1 / 2;*/
+  height: auto;
+  width: 100%;
+  padding: auto;
+  background-color: white;
+  font-size: 1.2em;
+  color: black;
+  text-align: center;
+  left: 0;
+  margin: 0;
+  font-weight: bold;
+}
+
+h4 {
+  display: inline;
+  /*grid-column: 1 / 2;*/
+  height: auto;
+  width: 100%;
+  padding: auto;
+  background-color: white;
+  font-size: 1.2em;
+  color: black;
+  text-align: center;
+  left: 0;
+  margin: 0;
+  font-weight:normal;
+}
+
+.system-history-info {
+  display: inline;
+  /*grid-column: 1 / 2;*/
+  height: auto;
+  width: 100%;
+  padding: auto;
+  background-color: white;
+  font-size: 1em;
+  color: grey;
+  text-align: center;
+  left: 0;
+  margin: 0;
+  font-weight:normal;
+}
+
+.system-history-info-value{}
+
+.devpurpose h2 {
+	display: none;
+}
+
+.error {
+	color: #FF0000;
+}
+
+.dev {
+	color: #FF0000;
+}
+
+
+
+input.record-form-input, .error {
+	font-size: 0.875em;
+}
+
+input[type=text].record-form-input, select.record-form-input {
+  padding: 8px 8px;
+  margin: 2px 0px;
+  border: 1px solid #ccc;
+  border-radius: 1px;
+  cursor: pointer;
+  font-size:1em;
+  background-color:white;
+}
+
+select.record-form-input {
+  padding: 8px 4px;
+  color: Gray;
+}
+
+input, button {
+	cursor: pointer;
+	border: none;
+}
+
+/* Save blue Button*/
+input[type=button].record-form-input, input[type=submit].record-form-input {
+	background-color:#6495ed;
+	font-weight: bold;
+	color:white;
+	padding: 8px 8px;
+	margin: 8px;
+	border-radius: 1px;
+	font-size: 1em;
+}
+
+/* Cancel Blue Button*/
+input[type=reset] {
+	background-color:#cccccc;
+	font-weight: bold;
+	color:white;
+	padding: 8px 8px;
+	margin: 8px;
+	border-radius: 1px;
+	font-size: 1em;
+}
+
+input[type=submit]:hover {
+  background-color: #1b61e4; /* Blue */
+}
+
+input[type=reset]:hover {
+  background-color: #1b61e4; /* Blue */
+}
+
+.record-form-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: Gray;
+  opacity: 1; /* Firefox */
+  overflow: hidden;
+}
+
+.record-form-input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: Gray;
+  overflow: hidden;
+}
+
+.record-form-input::-ms-input-placeholder { /* Microsoft Edge */
+  color: Gray;
+  overflow: hidden;
+}
+
+/* For screens bigger than 400px */
+@media only screen and (min-width: 400px) {
+	/* Display labels */
+	div.form-section-main > label{
+	  display : inline;
+	}
+	.form-section-title{
+	  text-align: center;
+	}
+	.record-form-input, .record-form-reset  {
+	  grid-column: 2 / 13;
+	}
+}  
+
+/********************************************************************************/
+/*																				*/
+/* 							Search view 										*/ 
+/*																				*/
+/* Common to all objects search, on Home Page for items, cardboards, rooms...	*/
+/********************************************************************************/
+
+/*------------------------ General view definition ------------------------*/
+
+  /* Mobile design first : the form is only one column. 
+  Note : 
+	A. 	We choose to use Grid layout, and yet we don't master Subgrid. 
+	B.	After many tries, no need to set the last section in the grid-template-areas, which is set with .searchview-results. Otherwise as A. it is redundant.
+	C.  This  special section covers the rest of the screen. We set it as a grid here so we do not need to set the grid previously.
+	D. 	Now we start trying Subgrid. 
+	E.  Used Andy Bell's trick https://andy-bell.design/wrote/create-a-responsive-grid-layout-with-no-media-queries-using-css-grid/#heading-example.
+		However auto-fit instead of auto-fit https://css-tricks.com/auto-sizing-columns-css-grid-auto-fill-vs-auto-fit/*/
+
+	
+/* See notes above A B C.*/
+.searchview {
+	position: relative;
+	top: 0; /* Place the form just below the topbar (=at 60px).*/
+	left: 0;
+	margin: 0;
+
+	display: grid;
+	grid-template-areas:
+	  'topbar'
+	  'filters'
+	  'cate'
+	  'res'
+	  'obj';
+	grid-gap: 3px 0px;
+}
+
+/* For screens bigger than 400px */
+@media only screen and (min-width: 400px) {
+ .searchview{
+	grid-template-areas:
+	  'topbar topbar topbar topbar topbar topbar topbar topbar topbar topbar topbar topbar'
+	  'filters filters filters filters filters filters filters filters filters filters filters filters'
+	  'cate cate cate cate cate cate cate cate cate cate cate cate'
+	  'res res res res res res res res res res res res'
+	  'obj obj obj obj obj obj obj obj obj obj obj obj';
+ }
+}
+
+/* More styling on the following section "Search view topbar"*/
+.searchview-topbar{
+  grid-area: topbar;
+  grid-gap: 0px; /* '0' here requires later for the items some padding. */
+  display: inherit; /* Grid benefits also the children. */
+  padding: 0px;
+  height: auto; /* 'auto' here requires later a more precise definition for each contained items. */
+  color: white;
+  text-align: center;
+  background-color: #6495ed;
+  font-family: "Lato", "Helvetica", "Trebuchet MS", "Arial", sans-serif;
+  font-size: 1.2em;
+}
+
+/* More styling on the following section "Search view filters"*/
+.searchview-filters{
+  grid-area: filters;
+  display: flex; /* Here inherits means Grid. Because of the HTML structure, we children need to benefit also. */
+  /* flex-direction: row; */
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 0px;
+  font-family: "Lato", "Helvetica", "Trebuchet MS", "Arial","FontAwesome", sans-serif;
+  font-size: 1em;
+  color: Gray;
+}
+
+/* More styling on the following section "Search view filter categories" -. */
+.searchview-categories{
+  grid-area: cate;
+}
+
+/* See above note A E.*/
+/* More styling on the following section "Search view results "*/
+.searchview-list-results{
+  grid-area: res;
+  text-align: center;
+  display: inherit; /* Here inherits means Grid. Because of the HTML structure, we children need to benefit also. */
+}
+
+.searchview-mozaic-results{
+	grid-area: res;
+	--auto-grid-min-size: 13rem; /* 16px * 13 = */
+	display: inherit; /* Here inherits means Grid. Because of the HTML structure, we children need to benefit also. */
+	grid-template-columns: repeat(auto-fit, minmax(var(--auto-grid-min-size),1fr));
+	grid-gap: 1rem;
+	/* the Grid property justify-items: strech does not work here */
+  text-align: center;
+}
+
+/*------------------------------ Search view topbar ------------------------*/
+
+.searchview-topbar-goback {
+	grid-area: 1 / 1 / 2 / 2;
+	align-self: center;
+	text-decoration: none;
+	padding: 4px;
+}
+
+.searchview-topbar-goback i{
+	padding: 0;
+	margin:0;
+	font-family: "FontAwesome"; /* This enables the icon. */
+	font-style: normal;
+    font-weight: normal;
+	text-decoration: none;
+}
+
+.searchview-topbar-goback:hover {
+  background-color: #1b61e4; /* Blue */
+}
+
+.searchview-topbar-form {
+	grid-area: 1 / 2 / 2 / 13; 
+	display: flex; /* Too much grids for that simple GUI so we moved to flex.*/
+	justify-content: space-between;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	color: inherit;
+	background-color: inherit;
+	/* width:auto; */
+}
+
+input[type=search].searchview-topbar-input{
+	width: 70%;
+}
+
+.searchview-topbar-input{
+	color: inherit;
+	background-color: inherit;
+	font-family: "Arial", "FontAwesome"; /* FontAwesome enables the icon. */
+	padding-left: 10px; /* Little gap between the button on the left. */
+	align-self: center;
+	
+}
+
+/* This is for customising the style of the search-cancel-button; this is not a cross browser solution.
+ The recomendation is to put a button and add JS make it delete. */
+/* .searchview-topbar-input::-webkit-search-cancel-button{ */
+  /* Remove default */
+  /* -webkit-appearance: none; */
+    
+  /* Will place small red box on the right of input (positioning carries over) */
+  /* height: 10px; */
+  /* width: 10px; */
+  /* background: red; */
+/* } */
+
+
+
+.searchview-topbar-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1; /* Firefox */
+  overflow: hidden;
+}
+
+.searchview-topbar-input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: white;
+  overflow: hidden;
+}
+
+.searchview-topbar-input::-ms-input-placeholder { /* Microsoft Edge */
+  color: red;
+  overflow: hidden;
+}
+
+.searchview-topbar-delete {
+	/* grid-area: 1 / 11 / 1 / 12; */
+	color: inherit;
+	background-color: inherit;
+	padding: 4px 10px;
+	align-self: center;
+	right: 0px;
+	display: none;
+}
+
+.searchview-topbar-delete:hover,
+.searchview-topbar-goback:hover, 
+.searchview-topbar-goback a:hover {
+  background-color: white;
+  color:black;
+}
+
+/*------------------------------ Search view filters ------------------------*/
+
+.searchview-filters-name{
+	/* grid-area: 1 / 1 / 1 / 4; */
+	min-width: 20%;
+	text-decoration: none;
+	font-style: normal;
+    font-weight: bold;
+	padding-left: 0.5rem;
+}
+
+.searchview-filters-name-i{ 
+	font-style: normal;
+    font-weight: normal;
+	padding-left: 0.25rem;
+}
+
+.searchview-filters-settings{
+	/* grid-area: 1 / 4 / 1 / 10; */
+	width: 30%;
+	text-align: center;
+}
+
+.searchview-filters-view{
+	/* grid-area: 1 / 12 / 1 / 13; *//* Too much grids for that simple GUI.*/
+	background-color: white;
+	min-width: 10%;
+}
+
+
+/*------------------------------ Search view filter categories ------------------------*/
+
+.searchview-filters-dropdown-content{
+	display:none;
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button)
+Note : that it will show only if the topbar overflow is allowed. */
+/* 'auto-fit vs autofill' explanation here https://css-tricks.com/auto-sizing-columns-css-grid-auto-fill-vs-auto-fit/*/
+.searchview-filters-dropdown-content-show-js {
+  display: inherit; /* Here inherits means Grid. Because of the HTML structure, we children need to benefit also. */
+  --auto-grid-min-size: 9rem; 
+  grid-template-columns: repeat(auto-fit, minmax(var(--auto-grid-min-size),1fr));
+  grid-gap: 0.5rem;
+}
+
+.searchview-filters-settings-dropbtn-js{
+  background-color:white;
+  color: Gray;
+  font-weight: bold;
+}
+
+/* Note that now the button width is calculated by a grid property. */
+/* .searchview-filters-category-button{ */
+  /* width:24%; */
+/* } */
+
+/*------------------------------ Search view results ------------------------*/
+
+/* The result view is a grid. 
+ We are thinking mobile design first. On small device mostly where pictures are small, users prefer see well the picture and scrolling from up to down. So it should take up to the device's browser's width. 
+ As there are other device dimensions, there comes enough place for 2 picture or + pictures on the same rows. 
+ So the result grid layout should be flexible and picture fully responsive. */
+
+ /* Improve this section so that the grid layout be flexible.
+  Various solutions to consider: JS, media-queries, or/and note to top of the page. */
+
+/* Children of the searchview-results. See note E. Does not require grid-column. */
+.searchview-result{
+	display: inherit; /* = Grid */
+	margin-top: 0rem;
+	border-bottom: 4px solid LightGray; /* Grey line at the card bottom to better see the end of it. */
+	/* the Grid property justify-items: strech does not work here */
+}
+
+.searchview-result-a{
+	/* display: inherit; */
+	grid-column: 1 / 12;
+	max-width: 100%;
+	position: relative;
+}
+
+/* Trying to make the cardboard image fully responsive. 
+ If the image is missing then a white '?' on a grey background should be displayed instead. */
+.searchview-result-a-img{
+	max-width: 100%;
+	height: auto;
+	z-index: 1;
+    position:static;
+	/* background-color: LightGray; */
+	background-image: url('nouserpicture.jpg');
+	background-size: cover;
+	/* background-repeat: no-repeat; */
+}
+
+/* "Heavy" or/and "Fragile" icons will appear on top of the cardboard picture. 
+	Obviously it does not goes in the right up corner so removed from the HTML. */
+.searchview-result-fragile i{
+	position: absolute;
+	right:0;
+	top: 0;
+	padding : 4px; /* Otherwise it touchs the side. */
+	z-index: 10;
+	font-family: FontAwesome;
+	font-size: 2rem;
+    font-weight: normal;
+}
+
+.searchview-result-heavy i{
+	position: absolute;
+	right:0;
+	top: 0; /* = padding-top + padding-bottom + icon height */
+	padding : 4px;
+	z-index: 10;
+	font-family: FontAwesome;
+	font-size: 1.5rem;
+    font-weight: normal;
+}
+
+.searchview-result-name{
+	grid-column: 1 / 5;
+	overflow: scroll;
+}
+
+.searchview-result-price{
+	grid-column: 5 / 9;
+	overflow: scroll;
+}
+
+.searchview-result-weight{
+	grid-column: 9 / 13;
+	overflow: scroll;
+}
+
+/* Now the result view is a list.
+
+/* ---- please improve this section 
+
+
+/******************************************************************************
+
+/*-------------------------------------Footer----------------------------------
+
+/*******************************************************************************/
+.footer {
+	height:auto;
+	width:100%; /* Full width */
+	padding:auto;
+	background-color:#6495ed;
+	font-size: 0.875em;
+	color:white;
+	text-align: center;
+	bottom:0; /* At the bottom of the page */
+	position:fixed; /* At the bottom of the page */
+	font-family: "Lato", "Helvetica", "Trebuchet MS", "Arial", sans-serif;
+	font-weight: normal;
+	z-index:0;
+}
+
+/********************************************************************************/
+/*                                        */
+/*--------------- Object view ---------------  */ 
+/*                                        */
+/* Common to all objects search, for items, cardboards, rooms... */
+/********************************************************************************/
+
+/*------------------------ General  ------------------------*/
+
+.searchview-results{
+  position: relative;
+  grid-area: res;
+}
+
+#objectview-wrapper-js {
+  display: none; /* Hide the object view by default */
+  position: relative;
+  /*top: 0; /* Place the form just below the topbar (=at 60px).*/
+  left: 0;
+  margin: 0;
+
+/* Mobile design first : the form is only one column */
+/* If Mobile first title is place under the slideshow.
+   If larger screen, title comes above the slideshow!  
+*/
+  grid-area: obj;
+  display: grid;
+  grid-gap: 1em;
+  grid-template-areas:
+    'pict'
+    'title'
+    'info';
+}
+
+.objectview-wrapper-js-show {
+  display: block;
+}
+
+.objectview-title{
+  grid-area: title;
+  padding: 8px;
+  text-align: left;
+}
+
+.objectview-info{
+  grid-area: info;
+  padding: 8px;
+}
+
+.objectview-pict{
+  grid-area: pict;
+  padding: 8px;
+}
+
+
+/*------------------------ Slideshow / Carousel ------------------------*/
+
+  /* Mobile design first : the form is only one column. 
+  Note : 
+  A.  We choose to use Grid layout
+  
+/* See notes above A B C.*/
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/*------------------------ Title ------------------------*/
+
+/* h2 is defined earlier*/
+/* Cf. object view general definition   
+*/
+
+/*------------------------ Object Info  ------------------------*/
+
+/* Info Text below edit/share/save button */
+.info-edit-button {
+  display: inline;
+  /*grid-column: 1 / 2;*/
+  height: auto;
+  width: 100%;
+  padding: auto;
+  background-color: white;
+  font-size: 0.8em;
+  color: black;
+  text-align: center;
+  left: 0;
+  margin: 0;
+  font-weight:normal;
+}
+
+.objectview-info-details-label{}
+.objectview-info-details-label-value{}
+
+/* For screens bigger than 400px */
+@media only screen and (min-width: 400px) {
+  #objectview-wrapper-js {
+    /*grid-template-columns: 20% auto;*/
+    grid-template-areas:
+      'title title'
+      'pict pict'
+      'info info';	
+	display: none; /* Hide the object view by default */
+  }
+}
