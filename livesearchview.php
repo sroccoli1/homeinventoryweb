@@ -1,10 +1,8 @@
 <!--
 Project: Home Inventory Helper
-File Name : searchView.php
 Version : 0.1                              
-Branch : 1
 Started  : 2019_07_30
-Last updated : 2020_03_12
+Last updated : 2020_05_12
 PURPOSE: 
 This search page helps to find objects (here mainly cardboard). This search capable of filtering by object type.
 -->
@@ -13,11 +11,11 @@ This search page helps to find objects (here mainly cardboard). This search capa
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" type="text/css" href="style.css">
 		<!-- Special icons fonts need to be fetch from here. -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">	
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<link rel="stylesheet" type="text/css" href="style.css">
 		<title>Cardboard search</title>
 	</head>
 	
@@ -170,9 +168,14 @@ This search page helps to find objects (here mainly cardboard). This search capa
 
 			<!-----------------Object Description--------------------->
 			<div class="objectview-info">
-			  <h3 class="" id="" action="">General</h3>
+			  <h3 style="display:none" class="" id="" action="">General</h3>
+			  <div id="objectview-info-weight" class="objectview-info-label-value" style="display:none">(undefined)</div>
+			  <div id="objectview-info-price" class="objectview-info-label-price-value" style="display:none">(undefined)</div>
+			  <div id="objectview-info-price" class="objectview-info-label-price-value" style="display:none">(undefined)</div>
+			  <div id="" class="system-history-info">Last edited</div>
+			  <div id="" class="system-history-info-value">22h ago</div>
 
-			  <div class="objectview-info-details-label" id="">Description</div>
+			  <h3 class="objectview-info-details-label" id="">Description</h3>
 			  <div class="objectview-info-details-label-value" id="objectview-info-details-description">(no description)</div>
 
 			  <div class="info-edit-button" id="" action="">
@@ -184,8 +187,8 @@ This search page helps to find objects (here mainly cardboard). This search capa
 			  <!-----------------Object Details-------------------------->
 			  <div id="objectview-info-details" class=""><h3>Details</h3></div>
 
-			  <div id="" class="objectview-info-details-label">Weight</div>
-			  <div id="objectview-info-details-weight" class="objectview-info-details-label-value">(undefined)</div>
+			  <div id="" class="objectview-info-details-label" style="display:none">Weight</div>
+			  <div id="objectview-info-details-weight" class="objectview-info-details-label-value" style="display:none">(undefined)</div>
 			  <div id="" class="objectview-info-details-label">Items</div>
 			  <div id="objectview-info-details-items" class="objectview-info-details-label-value">(no selection)</div>
 			  <div id="" class="objectview-info-details-label">Handling</div>
@@ -194,8 +197,7 @@ This search page helps to find objects (here mainly cardboard). This search capa
 			  <div id="objectview-info-details-state" class="objectview-info-details-label-value">New</div>
 			  <div id="" class="objectview-info-details-label">Going to</div>
 			  <div id="objectview-info-details-room" class="objectview-info-details-label-value">Kid's room</div>
-			  <div id="" class="system-history-info">Last edited</div>
-			  <div id="" class="system-history-info-value">22h ago</div>
+			 
 
 			</div>
 

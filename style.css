@@ -472,8 +472,9 @@ div.form-section-main > label{
 }
 
 /* Style the font*/
-h1, h2, h3, h4, body, input, p, button {
-	font-family: "Lato", "Helvetica", "Trebuchet MS", "Arial", sans-serif;
+html, h1, h2, h3, h4, body, input, p, button {
+	/* font-family: "Lato", "Helvetica", "Trebuchet MS", "Arial", sans-serif; */
+	font-family: "Arial", sans-serif;
 }
 
 h1 {
@@ -481,7 +482,7 @@ h1 {
 	width: 100%; /* Full width */
 	padding: auto;
 	background-color: #white;
-	font-size: 1.6em;/* 30/16 = 1.875em ; 18px = */
+	font-size: 2.4em;/* 30/16 = 1.875em ; 18px = */
 	color: black;
 	text-align: center;
 	left: 0;
@@ -495,7 +496,7 @@ h2 {
 	width: 100%;
 	padding: auto;
 	background-color: white;
-	font-size: 1.4em;
+	font-size: 2em;
 	color: black;
 	text-align: center;
 	left: 0;
@@ -525,7 +526,7 @@ h4 {
   width: 100%;
   padding: auto;
   background-color: white;
-  font-size: 1.2em;
+  font-size: 1em;
   color: black;
   text-align: center;
   left: 0;
@@ -1025,12 +1026,6 @@ Note : that it will show only if the topbar overflow is allowed. */
    If larger screen, title comes above the slideshow!  
 */
   grid-area: obj;
-  display: grid;
-  grid-gap: 1em;
-  grid-template-areas:
-    'pict'
-    'title'
-    'info';
 }
 
 .objectview-wrapper-js-show {
@@ -1039,18 +1034,18 @@ Note : that it will show only if the topbar overflow is allowed. */
 
 .objectview-title{
   grid-area: title;
-  padding: 8px;
+  padding: 0 8px;
   text-align: left;
 }
 
 .objectview-info{
   grid-area: info;
-  padding: 8px;
+  padding: 0 8px;
 }
 
 .objectview-pict{
   grid-area: pict;
-  padding: 8px;
+  padding: 0 8px;
 }
 
 
@@ -1161,6 +1156,8 @@ Note : that it will show only if the topbar overflow is allowed. */
 
 .objectview-info-details-label{}
 .objectview-info-details-label-value{}
+.system-history-info{}
+.system-history-info-value{}
 
 /* For screens bigger than 400px */
 @media only screen and (min-width: 400px) {

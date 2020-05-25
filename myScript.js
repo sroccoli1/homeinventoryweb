@@ -435,7 +435,6 @@ function populateObjectView(){
 	
 	//console.log("object : ", obj);
 	
-	// If the screen width is over 400px
 	  document.getElementsByClassName("objectview-title")[0].getElementsByTagName("h2")[0].innerHTML = obj.cardboard[0].name;
 	  document.getElementById("objectview-info-details-description").innerHTML = obj.cardboard[0].descrition;
 	  document.getElementById("objectview-info-details-items").innerHTML = obj.cardboard[0].items;
