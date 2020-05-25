@@ -25,7 +25,7 @@ Onneksi viikonloppuna korjasin vian pois ja keksin koodin, joka voisi auttaa sii
 tulisi vika taas. Toisaalta, [**Struggle is a sign of progress**](https://twitter.com/js_tut/status/1241764474866012165) Taistelu on merkki edistymisestä, niin kuin
 Javascript Teacher sanoi.
 
-**Linkki tweetille:** [@SRoccoli Week 17](https://twitter.com/SRoccoli/status/1259842830421327874?s=20)
+**Linkki tweetille:** [@SRoccoli Viikko 17](https://twitter.com/SRoccoli/status/1263352878770651136?s=20)
 
 **Linkki teoksille:** 
 - HomeInventoryWeb May 2, 2020 [Commit](https://github.com/sroccoli1/homeinventoryweb/commit/272ff0908963f6065edb6f94b122c1160a30435f)
@@ -34,14 +34,16 @@ Javascript Teacher sanoi.
 ## Viikko 18 - 2020.5.9 
 
 **Viikon edistys:** 
-- Kuvasin sitä, miten Etsi Laatikko -sivu etsii ja näyttää laatikkoa, kaavio keskittyy nykyiseen
-AJAX arkkitehtuuriin. Kaavio näyttää yleiskuvaa sivusta Etsi Laatikko ja auttaa ymmärtämään, miten koodata Laatikko-olion näkymä.
+- Kuvasin sitä, miten Etsi Laatikko -sivu etsii ja näyttää laatikkoa, kaavio keskittyy nykyiseen AJAX arkkitehtuuriin. Kaavio näyttää yleiskuvaa sivusta Etsi Laatikko ja auttaa ymmärtämään, miten koodata Laatikko-olion näkymä.
+![Design-Gui-Livesearch-01](https://github.com/sroccoli1/homeinventoryweb/blob/be50fe3406ac4f70a9d6d94f239c94d36363c485/design-gui-livesearch-01.PNG)
+![Design-Gui-Livesearch-02](https://github.com/sroccoli1/homeinventoryweb/blob/assets/design-gui-livesearch-02.PNG)
+
 - Aloitin Aloitin HTLM ja CSS puhdistamisen ja uudistamisen Etsi laatikko -sivulla.
 
 **Ajatukset:** Mallinnuksen avulla näen helpommin, miten olen sen koodannut, mitä kohtaa saa tai ei
 saa muokata, jotta saavuttaisin sivun ulkoasun mallin.
 
-**Linkki Tweetille:**
+**Linkki Tweetille:** [@SRoccoli, Viikko 19](https://twitter.com/SRoccoli/status/1263373750101131264?s=20)
 
 **Linkki teoksille:** [HomeInventoryWeb, 9.5.2020 Commit](https://github.com/sroccoli1/homeinventoryweb/commit/5f381a0fc37459b513f2fc48cc89708cd2f966b4)
 
