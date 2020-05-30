@@ -99,7 +99,7 @@ This search page helps to find objects (here mainly cardboard). This search capa
 		<div id="objectview-wrapper-js" class="">
 
 			<!--Go back button and photo carousel -->
-			<div class="objectview-pict" id="">
+			<section class="objectview-pict" id="">
 
 				<!-- A GO BACK button -->
 				<!--  Caution : id used by JS script // not at the moment
@@ -138,7 +138,7 @@ This search page helps to find objects (here mainly cardboard). This search capa
 				  <span class="dot" onclick="currentSlide(2)"></span>
 				  <span class="dot" onclick="currentSlide(3)"></span>
 				</div>
-			</div>
+			</section>
 
 
 			<!--*****************************************************************************
@@ -169,37 +169,59 @@ This search page helps to find objects (here mainly cardboard). This search capa
 			<!-----------------Object Description--------------------->
 			<div class="objectview-info">
 			  <h3 style="display:none" class="" id="" action="">General</h3>
-			  <div id="objectview-info-weight" class="objectview-info-label-value" style="display:none">(undefined)</div>
-			  <div id="objectview-info-price" class="objectview-info-label-price-value" style="display:none">(undefined)</div>
-			  <div id="objectview-info-price" class="objectview-info-label-price-value" style="display:none">(undefined)</div>
-			  <div id="" class="system-history-info">Last edited</div>
-			  <div id="" class="system-history-info-value">22h ago</div>
+			  <div id="" class="objectview-info-undertitle">
+				<div id="objectview-info-weight-js" class="objectview-info-undertitle-value">(undefined)</div>
+				<div id="objectview-info-price-js" class="objectview-info-undertitle-value-right">(undefined)</div>
+			  </div>
+			  <div id="" class="system-history-info">Last edited
+				<div id="" class="system-history-info-value">22h ago</div>
+			  </div>
 
-			  <h3 class="objectview-info-details-label" id="">Description</h3>
-			  <div class="objectview-info-details-label-value" id="objectview-info-details-description">(no description)</div>
+			  <section><h3 class="" id="">Description</h3>
+			    <div class="" id="objectview-info-details-description-js">(no description)</div>
+			  </section>
 
-			  <div class="info-edit-button" id="" action="">
-				<button id="" class="info-edit-button" onclick="">Forward<i class="fa fa-share" aria-hidden="true"></i></button>
-				<button id="" class="info-edit-button" onclick="">Save<i class="fa fa-flag" aria-hidden="true"></i></button>
-				<button id="" class="info-edit-button" onclick="">Edit<i class="fa fa-pencil" aria-hidden="true"></i></button>
+			  <div class="info-edit-button-zone" id="" action="">
+				<button id="" class="info-edit-button" onclick=""><i class="fa fa-share fa-2x info-edit-button-i" aria-hidden="true" ></i></button>
+				<button id="" class="info-edit-button" onclick=""><i class="fa fa-flag fa-2x info-edit-button-i" aria-hidden="true"></i></button>
+				<button id="" class="info-edit-button" onclick=""><i class="fa fa-pencil fa-2x info-edit-button-i" aria-hidden="true"></i></button>
+			  </div>
+			  <div class="info-edit-button-zone" id="" action="">
+				<div class="" id="">Share</div>
+				<div class="" id="">Save</div>
+				<div class="" id="">Edit</div>
 			  </div>
 
 			  <!-----------------Object Details-------------------------->
-			  <div id="objectview-info-details" class=""><h3>Details</h3></div>
+			  <section id="objectview-info-details" class=""><div><h3>Details</h3></div>
 
-			  <div id="" class="objectview-info-details-label" style="display:none">Weight</div>
-			  <div id="objectview-info-details-weight" class="objectview-info-details-label-value" style="display:none">(undefined)</div>
-			  <div id="" class="objectview-info-details-label">Items</div>
-			  <div id="objectview-info-details-items" class="objectview-info-details-label-value">(no selection)</div>
-			  <div id="" class="objectview-info-details-label">Handling</div>
-			  <div id="objectview-info-details-handling" class="objectview-info-details-label-value">Normal</div>
-			  <div id="" class="objectview-info-details-label">State</div>
-			  <div id="objectview-info-details-state" class="objectview-info-details-label-value">New</div>
-			  <div id="" class="objectview-info-details-label">Going to</div>
-			  <div id="objectview-info-details-room" class="objectview-info-details-label-value">Kid's room</div>
-			 
-
-			</div>
+				<div class="objectview-info-details-line">
+				  <div id="" class="objectview-info-details-label" style="display:none">Weight</div>
+				  <div id="objectview-info-details-weight-js" class="objectview-info-details-label-value" style="display:none">(undefined)</div>
+				</div>
+				<div class="objectview-info-details-line">
+				  <div id="" class="objectview-info-details-label">Items</div>
+				  <div id="objectview-info-details-items-js" class="objectview-info-details-label-value">(no selection)</div>
+				</div>
+				<div class="objectview-info-details-line">
+				  <div id="" class="objectview-info-details-label">Handling</div>
+				  <div id="objectview-info-details-handling-js" class="objectview-info-details-label-value">Normal</div>
+				</div>
+				<div class="objectview-info-details-line">
+				  <div id="" class="objectview-info-details-label">State</div>
+				  <div id="objectview-info-details-state-js" class="objectview-info-details-label-value">New</div>
+				</div>
+				<div class="objectview-info-details-line">
+				  <div id="" class="objectview-info-details-label">Going to</div>
+				  <div id="objectview-info-details-room-js" class="objectview-info-details-label-value">Kid's room</div>
+				</div>
+				<div class="objectview-info-details-line">
+				  <div id="" class="objectview-info-details-label">ID</div>
+				  <div id="objectview-info-details-id-js" class="objectview-info-details-label-value">10</div>
+				</div>
+			  </section>
+		</div>
+			
 
 	  </div>
 

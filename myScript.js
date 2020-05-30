@@ -269,16 +269,23 @@ function showResultsAfterSuggestions(str) {
 	  text = '{ "cardboard" :[' + this.responseText +']}';
 	  console.log("text",text );
 	  
-	  var data = JSON.parse(text);
+	  var data = JSON.parse(text, function (key, value) { 
+		if (value == null) { 
+		  return value = '-';
+		}else{ 
+		  return value;
+	    }});
+	  
+	  //var data = JSON.parse(text);
 	  var formatteddata ="";//for table formatting
 	  
 	  if(window.matchMedia("(min-width:400px)").matches){
 	    console.log("window width is over 400px");
 	  
-	    formatteddata = "<table id='object-overview-table'>"+"<tr><th></th><th>Id</th><th>Name</th><th>Weight</th><th>Handling</th></tr><tr><td><a id='view-object-button' onclick='toggleObjectView();'><i style='font-size:24px' class='fas'>&#xf49e;</i></a></td><td id='object-overview-table-td-id'>" + data.cardboard[0].id + "</td><td id='object-overview-table-td-name'>" + data.cardboard[0].name + "</td><td id='object-overview-table-td-weight'>" + data.cardboard[0].weight + "</td> <td id='object-overview-table-td-handling'>" + data.cardboard[0].handling + "</td></tr><tr><td 'object-overview-table-td-description'>" + data.cardboard[0].descrition + "</td><td 'object-overview-table-td-goingtoroom'>" + data.cardboard[0].goingToRoom + "</td></tr></table>";
+	    formatteddata = "<table id='object-overview-table'>"+"<tr><th></th><th>Id</th><th>Name</th><th>Weight</th><th>Handling</th></tr><tr><td><a id='view-object-button' onclick='toggleObjectView();'><i style='font-size:24px' class='fas'>&#xf49e;</i></a></td><td id='object-overview-table-td-id'>" + data.cardboard[0].id + "</td><td id='object-overview-table-td-name'>" + data.cardboard[0].name + "</td><td id='object-overview-table-td-weight'>" + data.cardboard[0].weight + "kg" + "</td> <td id='object-overview-table-td-handling'>" + data.cardboard[0].handling + "</td></tr><tr><td 'object-overview-table-td-description'>" + data.cardboard[0].descrition + "</td><td 'object-overview-table-td-goingtoroom'>" + data.cardboard[0].goingToRoom + "</td></tr></table>";
 	  }
 	  else{
-		formatteddata = "<table id='object-overview-table'>"+"<tr><th></th><th></th><th></th><th></th><th></th></tr><tr><td rowspan=3><a id='view-object-button' onclick='toggleObjectView();'><i style='font-size:24px' class='fas'>&#xf49e;</i></a></td><td id='object-overview-table-td-name'>" + data.cardboard[0].name + "</td><td id='object-overview-table-td-weight'>" + data.cardboard[0].weight + "</td></tr><tr><td 'object-overview-table-td-description'>" + data.cardboard[0].descrition + "</td><td id='object-overview-table-td-handling'>" + data.cardboard[0].handling + "</td></tr><tr><td id='object-overview-table-td-id'>" + data.cardboard[0].id + "</td><td 'object-overview-table-td-goingtoroom'>" + data.cardboard[0].goingToRoom + "</td></tr></table>";  
+		formatteddata = "<table id='object-overview-table'>"+"<tr><th></th><th></th><th></th><th></th><th></th></tr><tr><td rowspan=3><a id='view-object-button' onclick='toggleObjectView();'><i style='font-size:24px' class='fas'>&#xf49e;</i></a></td><td id='object-overview-table-td-name'>" + data.cardboard[0].name + "</td><td id='object-overview-table-td-weight'>" + data.cardboard[0].weight + "kg" + "</td></tr><tr><td 'object-overview-table-td-description'>" + data.cardboard[0].descrition + "</td><td id='object-overview-table-td-handling'>" + data.cardboard[0].handling + "</td></tr><tr><td id='object-overview-table-td-id'>" + data.cardboard[0].id + "</td><td 'object-overview-table-td-goingtoroom'>" + data.cardboard[0].goingToRoom + "</td></tr></table>";  
 	  }
 	  
 	  document.getElementById("liveresults").innerHTML=formatteddata;
@@ -286,7 +293,7 @@ function showResultsAfterSuggestions(str) {
 	  
 	  //rearrangeObjectOverviewTable(data);
 	  
-	  // Save the key/value paris in the web browser, for only one session (the data is deleted when the browser tab is closed).
+	  // Save the key/value paris in the web browser, for only one session (the data is deleted when the browser tab is closed).
 	  if (typeof(Storage)!=="undefined"){
 		// Store  
 		sessionStorage.setItem("cardboard", text);
@@ -361,10 +368,12 @@ function rearrangeObjectOverviewTable(){
   // If 'null' is found replace with '(undefined)'
   var obj = JSON.parse(cardboardretrieved, function (key, value) { 
     if (value == null) { 
-	return value = "(undefined)";
+	return value = '-';
   }else{ 
 	return value;
   }});
+  
+  var handlingIcon ="";
 
   // A: if there is a table id with 'object-overview-table'
   if(document.getElementById("object-overview-table")){
@@ -372,13 +381,23 @@ function rearrangeObjectOverviewTable(){
 	if(window.matchMedia("(min-width:400px)").matches){
 	  console.log("window width is over 400px");
 	  
-	  document.getElementById("object-overview-table").innerHTML = "<table id='object-overview-table'>"+"<tr><th></th><th>Id</th><th>Name</th><th>Weight</th><th>Handling</th></tr><tr><td><a id='view-object-button' onclick='toggleObjectView();'><i style='font-size:24px' class='fas'>&#xf49e;</i></a></td><td id='object-overview-table-td-id'>" + obj.cardboard[0].id + "</td><td id='object-overview-table-td-name'>" + obj.cardboard[0].name + "</td><td id='object-overview-table-td-weight'>" + obj.cardboard[0].weight + "</td> <td id='object-overview-table-td-handling'>" + obj.cardboard[0].handling + "</td></tr><tr><td 'object-overview-table-td-description'>" + obj.cardboard[0].descrition + "</td><td 'object-overview-table-td-goingtoroom'>" + obj.cardboard[0].goingToRoom + "</td></tr></table>";
+	  document.getElementById("object-overview-table").innerHTML = "<table id='object-overview-table'>"+"<tr><th></th><th>Id</th><th>Name</th><th>Weight</th><th>Handling</th></tr><tr><td><a id='view-object-button' onclick='toggleObjectView();'><i style='font-size:24px' class='fas'>&#xf49e;</i></a></td><td id='object-overview-table-td-id'>" + obj.cardboard[0].id + "</td><td id='object-overview-table-td-name'>" + obj.cardboard[0].name + "</td><td id='object-overview-table-td-weight'>" + obj.cardboard[0].weight + "kg" + "</td> <td id='object-overview-table-td-handling'>" + obj.cardboard[0].handling + "</td></tr><tr><td 'object-overview-table-td-description'>" + obj.cardboard[0].descrition + "</td><td 'object-overview-table-td-goingtoroom'>" + obj.cardboard[0].goingToRoom + "</td></tr></table>";
 	}
 	else {
 	 // table for mobile view
+	 // Add a condition here for displaying a glass instead of text. <i class="fa fa-glass"></i>
+
+	   /*
+	  if(obj.cardboard[0].handling == "FRAGILE"){
+		handlingIcon ="<i class="'fa fa-glass'"></i>";
+	  }
+	  else{
+		handlingIcon = obj.cardboard[0].handling;
+	  }*/
+	 
 	  console.log("window width is under 400px");
-	  document.getElementById("object-overview-table").innerHTML = "<table id='object-overview-table'>"+"<tr><th></th><th></th><th></th><th></th><th></th></tr><tr><td rowspan=3><a id='view-object-button' onclick='toggleObjectView();'><i style='font-size:24px' class='fas'>&#xf49e;</i></a></td><td id='object-overview-table-td-name'>" + obj.cardboard[0].name + "</td><td id='object-overview-table-td-weight'>" + obj.cardboard[0].weight + "</td></tr><tr><td 'object-overview-table-td-description'>" + obj.cardboard[0].descrition + "</td><td id='object-overview-table-td-handling'>" + obj.cardboard[0].handling + "</td></tr><tr><td id='object-overview-table-td-id'>" + obj.cardboard[0].id + "</td><td 'object-overview-table-td-goingtoroom'>" + obj.cardboard[0].goingToRoom + "</td></tr></table>";  
-	 }
+	  document.getElementById("object-overview-table").innerHTML = "<table id='object-overview-table'>"+"<tr><th></th><th></th><th></th><th></th><th></th></tr><tr><td rowspan=3><a id='view-object-button' onclick='toggleObjectView();'><i style='font-size:24px' class='fas'>&#xf49e;</i></a></td><td id='object-overview-table-td-name'>" + obj.cardboard[0].name + "</td><td id='object-overview-table-td-weight'>" + obj.cardboard[0].weight + "kg" + "</td></tr><tr><td 'object-overview-table-td-description'>" + obj.cardboard[0].descrition + "</td><td id='object-overview-table-td-handling'>" + handlingIcon + "</td></tr><tr><td id='object-overview-table-td-id'>" + obj.cardboard[0].id + "</td><td 'object-overview-table-td-goingtoroom'>" + obj.cardboard[0].goingToRoom + "</td></tr></table>";  
+	}
   } 
 }
 
@@ -436,12 +455,15 @@ function populateObjectView(){
 	//console.log("object : ", obj);
 	
 	  document.getElementsByClassName("objectview-title")[0].getElementsByTagName("h2")[0].innerHTML = obj.cardboard[0].name;
-	  document.getElementById("objectview-info-details-description").innerHTML = obj.cardboard[0].descrition;
-	  document.getElementById("objectview-info-details-items").innerHTML = obj.cardboard[0].items;
-	  document.getElementById("objectview-info-details-handling").innerHTML = obj.cardboard[0].handling;
-	  document.getElementById("objectview-info-details-state").innerHTML = obj.cardboard[0].state;
-	  document.getElementById("objectview-info-details-room").innerHTML = obj.cardboard[0].goingToRoom;
-	  document.getElementById("objectview-info-details-weight").innerHTML = obj.cardboard[0].weight;
+	  document.getElementById("objectview-info-details-description-js").innerHTML = obj.cardboard[0].descrition;
+	  document.getElementById("objectview-info-details-items-js").innerHTML = obj.cardboard[0].items;
+	  document.getElementById("objectview-info-details-handling-js").innerHTML = obj.cardboard[0].handling;
+	  document.getElementById("objectview-info-details-state-js").innerHTML = obj.cardboard[0].state;
+	  document.getElementById("objectview-info-details-room-js").innerHTML = obj.cardboard[0].goingToRoom;
+	  document.getElementById("objectview-info-details-weight-js").innerHTML = obj.cardboard[0].weight;
+	  document.getElementById("objectview-info-weight-js").innerHTML = obj.cardboard[0].weight + " kg";
+	  document.getElementById("objectview-info-price-js").innerHTML = obj.cardboard[0].price + " €";
+	  document.getElementById("objectview-info-details-id-js").innerHTML = obj.cardboard[0].id;
 }
 
 /*****************************************************************************

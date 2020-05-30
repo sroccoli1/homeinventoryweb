@@ -371,6 +371,28 @@ Note : that it will show only if the topbar overflow is allowed. */
 	}
 }
 
+/******************************************************************************
+
+/*-------------------------------------Footer----------------------------------
+
+/*******************************************************************************/
+.footer {
+	height:auto;
+	width:100%; /* Full width */
+	padding:auto;
+	background-color:#6495ed;
+	font-size: 0.875em;
+	color:white;
+	text-align: center;
+	bottom:0; /* At the bottom of the page */
+	position:fixed; /* At the bottom of the page */
+	font-family: "Lato", "Helvetica", "Trebuchet MS", "Arial", sans-serif;
+	font-weight: normal;
+	z-index:0;
+}
+
+
+
 /********************************************************************************/
 /*																				*/
 /*											New <Object> Forms					*/
@@ -677,11 +699,11 @@ input[type=reset]:hover {
 
 	display: grid;
 	grid-template-areas:
-	  'topbar'
-	  'filters'
-	  'cate'
-	  'res'
-	  'obj';
+	  'topbar topbar'
+	  'filters filters'
+	  'cate cate'
+	  'res res'
+	  'obj obj';
 	grid-gap: 3px 0px;
 }
 
@@ -980,25 +1002,6 @@ Note : that it will show only if the topbar overflow is allowed. */
 /* ---- please improve this section 
 
 
-/******************************************************************************
-
-/*-------------------------------------Footer----------------------------------
-
-/*******************************************************************************/
-.footer {
-	height:auto;
-	width:100%; /* Full width */
-	padding:auto;
-	background-color:#6495ed;
-	font-size: 0.875em;
-	color:white;
-	text-align: center;
-	bottom:0; /* At the bottom of the page */
-	position:fixed; /* At the bottom of the page */
-	font-family: "Lato", "Helvetica", "Trebuchet MS", "Arial", sans-serif;
-	font-weight: normal;
-	z-index:0;
-}
 
 /********************************************************************************/
 /*                                        */
@@ -1138,26 +1141,57 @@ Note : that it will show only if the topbar overflow is allowed. */
 
 /*------------------------ Object Info  ------------------------*/
 
-/* Info Text below edit/share/save button */
-.info-edit-button {
-  display: inline;
-  /*grid-column: 1 / 2;*/
-  height: auto;
-  width: 100%;
-  padding: auto;
-  background-color: white;
-  font-size: 0.8em;
-  color: black;
-  text-align: center;
-  left: 0;
-  margin: 0;
-  font-weight:normal;
+/*---- Formatting the object (cardboard) overview table  ----*/
+
+#object-overview-table{
+  border-style: none;
 }
 
-.objectview-info-details-label{}
-.objectview-info-details-label-value{}
-.system-history-info{}
-.system-history-info-value{}
+/*---- Formatting the object (cardboard) details view ----*/
+
+/* Edit/share/save button */
+.info-edit-button-zone {
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.info-edit-button{
+  border-radius: 50%;
+  width: 30%;
+  background-color: #BBBBBB;
+  padding: 4px;
+}
+
+.info-edit-button-i {
+  height: auto;
+  width: 100%;
+  color: black;
+  text-align: center;
+  margin: 0;
+}
+
+.objectview-info-details-line, .objectview-info-undertitle{
+  display: flex;
+}
+
+.objectview-info-details-label, .objectview-info-undertitle-value, .objectview-info-undertitle-value-right, .objectview-info-details-label-value{
+  width: 50%;
+  padding: 0;
+}
+
+.objectview-info-undertitle-value-right, .objectview-info-details-label-value{
+  text-align: right;
+}
+
+.system-history-info{
+}
+
+.system-history-info-value{
+  display: inline;
+}
 
 /* For screens bigger than 400px */
 @media only screen and (min-width: 400px) {
