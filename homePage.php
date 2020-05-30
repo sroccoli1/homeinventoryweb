@@ -33,30 +33,30 @@ https://google-developers.appspot.com/chart/interactive/docs/drawing_charts
 		<?php include 'var_quick_draft.php';?>
 		
 		<div class="main" id="homePageMainDiv">
-			<h1>Dashboard</h1>
-			<h2>Edited recently</h2>
-			<div id="recent">
+		  <h1>Dashboard</h1>
+		  <h2>Edited recently</h2>
+		  <div id="recent">
 			<a href="#">item01Name</a>
 			<a href="#">item02Name</a>
 			<a href="#">item03Name</a>
 			<a href="#">item04Name</a>
 			<a href="#">carboard01Name</a>
 			<a href="#">carboard02Name</a>
-			</div>
-			<h2>Evolution</h2>
-			<div id="homePageGraph">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-			</div>
+		  </div>
+		  <h2>Evolution</h2>
+		  <div id="homePageGraph">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+		  </div>
 		</div>
 		
 		<div class="right" id="homePageRightDiv">
-		<h3>Stats</h3>
-		<p>Limit:<br><?php include 'var_quick_draft.php'; echo "$weightLimit $unit" ?></p>
-		<p>Left:<br><?php include 'var_quick_draft.php'; echo "$weightLeft $unit" ?></p>
+		  <h3>Stats</h3>
+		  <p>Limit:<br><?php include 'var_quick_draft.php'; echo "$weightLimit $unit" ?></p>
+		  <p>Left:<br><?php include 'var_quick_draft.php'; echo "$weightLeft $unit" ?></p>
 		</div>
 		
 		<div class="footer">
-			<?php echo date("Y.m.d") . " " . date("l") . ". The server time is " . date("h:i:sa");?>
-			<br>&copy; Samuel Roccoli<br><?php echo date("Y");?>
+		  <?php echo date("Y.m.d") . " " . date("l") . ". The server time is " . date("h:i:sa");?>
+		  <br>&copy; Samuel Roccoli<br><?php echo date("Y");?>
 		</div>
 		
 		<!--This button opens a form to add a new cardboard box.-->
