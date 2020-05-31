@@ -285,7 +285,19 @@ function showResultsAfterSuggestions(str) {
 	    formatteddata = "<table id='object-overview-table'>"+"<tr><th></th><th>Id</th><th>Name</th><th>Weight</th><th>Handling</th></tr><tr><td><a id='view-object-button' onclick='toggleObjectView();'><i style='font-size:24px' class='fas'>&#xf49e;</i></a></td><td id='object-overview-table-td-id'>" + data.cardboard[0].id + "</td><td id='object-overview-table-td-name'>" + data.cardboard[0].name + "</td><td id='object-overview-table-td-weight'>" + data.cardboard[0].weight + "kg" + "</td> <td id='object-overview-table-td-handling'>" + data.cardboard[0].handling + "</td></tr><tr><td 'object-overview-table-td-description'>" + data.cardboard[0].descrition + "</td><td 'object-overview-table-td-goingtoroom'>" + data.cardboard[0].goingToRoom + "</td></tr></table>";
 	  }
 	  else{
-		formatteddata = "<table id='object-overview-table'>"+"<tr><th></th><th></th><th></th><th></th><th></th></tr><tr><td rowspan=3><a id='view-object-button' onclick='toggleObjectView();'><i style='font-size:24px' class='fas'>&#xf49e;</i></a></td><td id='object-overview-table-td-name'>" + data.cardboard[0].name + "</td><td id='object-overview-table-td-weight'>" + data.cardboard[0].weight + "kg" + "</td></tr><tr><td 'object-overview-table-td-description'>" + data.cardboard[0].descrition + "</td><td id='object-overview-table-td-handling'>" + data.cardboard[0].handling + "</td></tr><tr><td id='object-overview-table-td-id'>" + data.cardboard[0].id + "</td><td 'object-overview-table-td-goingtoroom'>" + data.cardboard[0].goingToRoom + "</td></tr></table>";  
+		
+		/* -- Add FRAGILE ICON --*/
+		var handlingIcon = "";
+		  
+		if(data.cardboard[0].handling == 'FRAGILE'){
+		  handlingIcon ="<i class='fa fa-glass'></i>";
+	    }
+	    else{
+		  handlingIcon = data.cardboard[0].handling;
+	    }	
+		
+		/* -- Formatted result : table --*/
+		formatteddata = "<table id='object-overview-table'>"+"<tr><th></th><th></th><th></th><th></th><th></th></tr><tr><td rowspan=3><a id='view-object-button' onclick='toggleObjectView();'><i style='font-size:24px' class='fas'>&#xf49e;</i></a></td><td id='object-overview-table-td-name'>" + data.cardboard[0].name + "</td><td id='object-overview-table-td-weight'>" + data.cardboard[0].weight + "kg" + "</td></tr><tr><td 'object-overview-table-td-description'>" + data.cardboard[0].descrition + "</td><td id='object-overview-table-td-handling'>" + handlingIcon + "</td></tr><tr><td id='object-overview-table-td-id'>" + data.cardboard[0].id + "</td><td 'object-overview-table-td-goingtoroom'>" + data.cardboard[0].goingToRoom + "</td></tr></table>";  
 	  }
 	  
 	  document.getElementById("liveresults").innerHTML=formatteddata;
@@ -385,17 +397,15 @@ function rearrangeObjectOverviewTable(){
 	}
 	else {
 	 // table for mobile view
-	 // Add a condition here for displaying a glass instead of text. <i class="fa fa-glass"></i>
-
-	   /*
-	  if(obj.cardboard[0].handling == "FRAGILE"){
-		handlingIcon ="<i class="'fa fa-glass'"></i>";
+	 console.log("window width is under 400px");
+	 
+	  if(obj.cardboard[0].handling == 'FRAGILE'){
+		handlingIcon ="<i class='fa fa-glass'></i>";
 	  }
 	  else{
 		handlingIcon = obj.cardboard[0].handling;
-	  }*/
-	 
-	  console.log("window width is under 400px");
+	  }	  
+ 
 	  document.getElementById("object-overview-table").innerHTML = "<table id='object-overview-table'>"+"<tr><th></th><th></th><th></th><th></th><th></th></tr><tr><td rowspan=3><a id='view-object-button' onclick='toggleObjectView();'><i style='font-size:24px' class='fas'>&#xf49e;</i></a></td><td id='object-overview-table-td-name'>" + obj.cardboard[0].name + "</td><td id='object-overview-table-td-weight'>" + obj.cardboard[0].weight + "kg" + "</td></tr><tr><td 'object-overview-table-td-description'>" + obj.cardboard[0].descrition + "</td><td id='object-overview-table-td-handling'>" + handlingIcon + "</td></tr><tr><td id='object-overview-table-td-id'>" + obj.cardboard[0].id + "</td><td 'object-overview-table-td-goingtoroom'>" + obj.cardboard[0].goingToRoom + "</td></tr></table>";  
 	}
   } 
