@@ -50,7 +50,7 @@ saa muokata, jotta saavuttaisin sivun ulkoasun mallin.
 ## Viikko 19 - 2020.5.12 
 
 **Viikon edistys:** 
-- Etsi laatikko –sivulla jatkoin sivun muotoilua: nyt kun painaa laatiko-kuvakkeella voi näyttää tai piilota laatiko-näkymän. 
+- Etsi laatikko –sivulla jatkoin sivun muotoilua: nyt kun painaa laatikko-kuvakkeella voi näyttää tai piilottaa laatikko-näkymän. 
 ![Week 19 Gif](https://media.giphy.com/media/JsQHjIe6Sn4g2Lgr2b/giphy.gif)
 
 - Etsi laatikko –sivulla viikonloppuna aloitin PHP ja JS koodin uudistamisen.
