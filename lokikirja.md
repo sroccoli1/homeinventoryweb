@@ -63,7 +63,7 @@ saa muokata, jotta saavuttaisin sivun ulkoasun mallin.
 
 **Ajatukset:** Aika hämmentävää, että ei voi tietää etukäteen JSON-datan muotoa. Pitää koko ajan tarkistaa, mitä datan muotoa koodi vaatii (mm. taulukko, olio, string) kun käytetään JS DOM ja menelmää, `JSON.parse()` esim. ja omia funktioita. Ainakin nämä verkkosivustot auttavat [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference) ja [W3Schools.com](https://www.w3schools.com/jsref/default.asp). 
 
-**Linkki Tweetille:** 
+**Linkki Tweetille:** [@SRoccoli] (https://twitter.com/SRoccoli/status/1267337341384847361?s=09) 
 
 **Linkki teoksille:** 
 - [Commit 2020.05.12](https://github.com/sroccoli1/homeinventoryweb/commit/ac8df4b428c61e2932fe8a7a68c9564e47b143ec)
