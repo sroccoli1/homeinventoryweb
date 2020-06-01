@@ -50,18 +50,18 @@ saa muokata, jotta saavuttaisin sivun ulkoasun mallin.
 ## Viikko 19 - 2020.5.12 
 
 **Viikon edistys:** 
-- Etsi laatikko –sivulla jatkoin sivun muotoilua: Nyt kun painaa laatiko-kuvakkeella voi näyttää tai piilota laatiko-näkymän. 
+- Etsi laatikko –sivulla jatkoin sivun muotoilua: nyt kun painaa laatiko-kuvakkeella voi näyttää tai piilota laatiko-näkymän. 
 ![Week 19 Gif](https://media.giphy.com/media/JsQHjIe6Sn4g2Lgr2b/giphy.gif)
 
-- Etsi laatikko –sivulla viikonloppuna aloitin PHP ja JS koodin uudistamisen. Tavoitteena on muokata palvelimen PHP koodi, jotta se lähettää välttämätöntä raakaa JSON dataa, lisätä JS koodaus, jotta se formatoisi JSON datan serveriltä tauluksi. 
+- Etsi laatikko –sivulla viikonloppuna aloitin PHP ja JS koodin uudistamisen.
 
-  - Tilanne: Palvelin formatoi vähän dataa tauluksi ja lähettää sen selaimelle. Mutta sitten selaimella tarvitaan edelleen formatoimista ja enemmän dataa palvelimesta ja vaikeita koodauksen lauseita.  
+  - Tilanne: Palvelin formatoi vähän dataa tauluksi ja lähettää sen selaimelle. Mutta sitten selaimella tarvitaan edelleen formatoimista ja enemmän dataa palvelimesta, eli enemmän AJAX-pyyntöä ja muita vaikeita koodauksen lauseita.  
 
   - Toivo: Olisi yksinkertaisempaa, että, palvelin lähettäisi tarpeellista raakaa dataa selaimeen, joka formatoisi sen tauluksi ja edelleen.  
  
-  - Tavoite: Tavoitteena on muokata palvelimen PHP koodausta, jotta se lähettää välttämätöntä raakaa JSON dataa, ja selaimen kohdalla lisätä JS koodaus, jotta se formatoisi tauluksi JSON datan serveriltä. 
+  - Tavoite: Tavoitteena on muokata palvelimen PHP koodausta, jotta se lähettää välttämätöntä raakaa JSON-dataa, ja selaimen kohdalla lisätä JS koodaus, jotta se formatoisi tauluksi JSON datan serveriltä. 
 
-**Ajatukset:** Ei voi tietää etukäteen JSON-datan muotoa, aika hämmentävää. Pitää koko ajan tarkistaa, mitä datan muotoa koodi vaatii (mm. taulukko, olio, string) kun käytetään JS DOM ja menelmää, `JSON.parse()` esim. ja omia funktioita. Ainakin nämä verkkosivustot auttavat [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference) ja [W3Schools.com](https://www.w3schools.com/jsref/default.asp). 
+**Ajatukset:** Aika hämmentävää, että ei voi tietää etukäteen JSON-datan muotoa. Pitää koko ajan tarkistaa, mitä datan muotoa koodi vaatii (mm. taulukko, olio, string) kun käytetään JS DOM ja menelmää, `JSON.parse()` esim. ja omia funktioita. Ainakin nämä verkkosivustot auttavat [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference) ja [W3Schools.com](https://www.w3schools.com/jsref/default.asp). 
 
 **Linkki Tweetille:** 
 
