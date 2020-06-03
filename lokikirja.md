@@ -7,7 +7,7 @@
 - [2020 Milestones](https://github.com/sroccoli1/homeinventoryweb/edit/master/2020_milestones.md)
 - [2019 Milestones](https://github.com/sroccoli1/homeinventoryweb/edit/master/2019_milestones.md)
 - [2020 Full Log](https://github.com/sroccoli1/homeinventoryweb/blob/master/2020_log_full.md)
-- [2020 Log](https://github.com/sroccoli1/homeinventoryweb/blob/master/2020_log.md)
+- [2020 Weekly Log](https://github.com/sroccoli1/homeinventoryweb/blob/master/2020_log.md)
 
 ## Viikko 17 - 2020.5.4 
 
