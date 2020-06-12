@@ -83,9 +83,9 @@ Asettelutavoite on näin:
 
 **Ajatukset:** Tuntuu hyvältä, että olen tajunnut, miten käsitellään JSON-dataa JavaScriptin avulla, ja että nyt pääsen muokkaamaan sivun ulkoasua... 
 
-**Linkki Tweetille** 
+**Linkki Tweetille**: [@SRoccoli](https://twitter.com/SRoccoli/status/1271320828055924742?s=20)
 
-**Linkki töille:** Commit 20200517 https://github.com/sroccoli1/homeinventoryweb/commit/52355dab706680d042197f5cfa76184665851acc 
+**Linkki töille:** [Commit 20200517](https://github.com/sroccoli1/homeinventoryweb/commit/52355dab706680d042197f5cfa76184665851acc)
 
 ## Viikko 21 - 2020.5.24 
 
@@ -101,7 +101,7 @@ Asettelutavoite on näin:
 
 **Linkki Tweetille:**
 
-**Linkki töille:** Commit 20200525 https://github.com/sroccoli1/homeinventoryweb/commit/81691cb9815e2d06fccb08c1d5474cbdbbd4ef17
+**Linkki töille:** [Commit 20200525](https://github.com/sroccoli1/homeinventoryweb/commit/81691cb9815e2d06fccb08c1d5474cbdbbd4ef17)
 
 ## Sisällysluettelo
 - [Home Inventory Web project](https://github.com/sroccoli1/homeinventoryweb)
