@@ -72,7 +72,7 @@ saa muokata, jotta saavuttaisin sivun ulkoasun mallin.
 ## Viikko 20 - 2020.5.16   
 
 **Viikon edistys** 
-- Onnistuin muuttaa PHP ja JS koodia, nyt PHP lähettää vain JSON-dataa tietokannalta verkkoselaimelle ja JS formatoi taulukoksi, olen - saavuttanut viime viikon asetetun tavoitteen. 
+- Onnistuin muuttaa PHP ja JS koodia, nyt PHP lähettää vain JSON-dataa tietokannalta verkkoselaimelle ja JS formatoi taulukoksi, olen saavuttanut viime viikon asetetun tavoitteen. 
 - Olen aloittanut tehdä sivu reagoivaksi. Nyt olion taulukko on reagoiva JS ja CSS -avulla.  
 ![Week 20 Gif](https://media.giphy.com/media/YpeCk5jn3WGMEUdMcQ/giphy.gif) 
 
