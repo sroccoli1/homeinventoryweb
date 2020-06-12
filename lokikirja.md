@@ -74,7 +74,7 @@ saa muokata, jotta saavuttaisin sivun ulkoasun mallin.
 **Viikon edistys** 
 - Onnistuin muuttaa PHP ja JS koodia, nyt PHP lähettää vain JSON-dataa tietokannalta verkkoselaimelle ja JS formatoi taulukoksi, olen - saavuttanut viime viikon asetetun tavoitteen. 
 - Olen aloittanut tehdä sivu reagoivaksi. Nyt olion taulukko on reagoiva JS ja CSS -avulla.  
-- ![Week 20 Gif](https://media.giphy.com/media/YpeCk5jn3WGMEUdMcQ/giphy.gif) 
+![Week 20 Gif](https://media.giphy.com/media/YpeCk5jn3WGMEUdMcQ/giphy.gif) 
 
 Asettelutavoite on näin:
 ![design-gui-livesearch-04.PNG](https://github.com/sroccoli1/homeinventoryweb/blob/assets/design-gui-livesearch-04.PNG). 
@@ -86,3 +86,19 @@ Asettelutavoite on näin:
 **Linkki Tweetille** 
 
 **Linkki töille:** Commit 20200517 https://github.com/sroccoli1/homeinventoryweb/commit/52355dab706680d042197f5cfa76184665851acc 
+
+## Viikko 21 - 2020.5.24 
+
+**Viikon edistys**
+- Olen etsinyt web-kehityksen sanastoa suomenkielisiltä nettisivuilta ja olen kirjoittanut loppuun kertomukset viikosta. 
+- Olen päivittänyt Home Inventory Webin tiedoston rakenteen. 
+- Olen etsinyt parempaa muotoa / rakennetta Home Inventory Webin päiväkirjalle Githubissa ja muuttanut sen. 
+- Esti laatikko -sivulla olen jatkanut Laatikko-olion näkymän tyylin muotoilua, muokannut fontin tyyliä ja valia. 
+
+![Week 21 Gif](https://media.giphy.com/media/PkS9eV0dtaCp2JayLa/giphy.gif) 
+
+**Ajatukset:** Komentokehotteesta. Haluaisin käyttää vain komentokehotteessa Git-komentoja jotta päivittäisin tiedoston rakenteen. Mutta ei se onnistunut. Miksi piti tuhlata tunti, että löysin cmd.exe:n komennon, joka siirtää kaikki tiedostot ylempään kansioon? Muistan, että DEV communityssä, joku sanoi, että *huono koodari sanoo, että hän tietää. Mutta hyvää koodari sanoo, että hän ei tietää mitään.* 
+
+**Linkki Tweetille:**
+
+**Linkki töille:** Commit 20200525 https://github.com/sroccoli1/homeinventoryweb/commit/81691cb9815e2d06fccb08c1d5474cbdbbd4ef17
