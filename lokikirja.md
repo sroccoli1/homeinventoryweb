@@ -68,3 +68,21 @@ saa muokata, jotta saavuttaisin sivun ulkoasun mallin.
 **Linkki teoksille:** 
 - [Commit 2020.05.12](https://github.com/sroccoli1/homeinventoryweb/commit/ac8df4b428c61e2932fe8a7a68c9564e47b143ec)
 - [Commit 2020.05.11](https://github.com/sroccoli1/homeinventoryweb/commit/e2d0beeeffcbb5c7ad286ecd301ef85371c1208f)
+
+## Viikko 20 - 2020.5.16   
+
+**Viikon edistys** 
+- Onnistuin muuttaa PHP ja JS koodia, nyt PHP lähettää vain JSON-dataa tietokannalta verkkoselaimelle ja JS formatoi taulukoksi, olen - saavuttanut viime viikon asetetun tavoitteen. 
+- Olen aloittanut tehdä sivu reagoivaksi. Nyt olion taulukko on reagoiva JS ja CSS -avulla.  
+- ![Week 20 Gif](https://media.giphy.com/media/YpeCk5jn3WGMEUdMcQ/giphy.gif) 
+
+Asettelutavoite on näin:
+![design-gui-livesearch-04.PNG](https://github.com/sroccoli1/homeinventoryweb/blob/assets/design-gui-livesearch-04.PNG). 
+
+- Kirjoitin ja lähetin hakemuksen H2C:n koulutukseen [H2C.fi](https://h2c.fi/)
+
+**Ajatukset:** Tuntuu hyvältä, että olen tajunnut, miten käsitellään JSON-dataa JavaScriptin avulla, ja että nyt pääsen muokkaamaan sivun ulkoasua... 
+
+**Linkki Tweetille** 
+
+**Linkki töille:** Commit 20200517 https://github.com/sroccoli1/homeinventoryweb/commit/52355dab706680d042197f5cfa76184665851acc 
