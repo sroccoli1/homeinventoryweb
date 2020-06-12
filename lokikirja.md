@@ -99,7 +99,7 @@ Asettelutavoite on näin:
 
 **Ajatukset:** Komentokehotteesta. Haluaisin käyttää vain komentokehotteessa Git-komentoja jotta päivittäisin tiedoston rakenteen. Mutta ei se onnistunut. Miksi piti tuhlata tunti, että löysin cmd.exe:n komennon, joka siirtää kaikki tiedostot ylempään kansioon? Muistan, että DEV communityssä, joku sanoi, että *huono koodari sanoo, että hän tietää. Mutta hyvää koodari sanoo, että hän ei tietää mitään.* 
 
-**Linkki Tweetille:**
+**Linkki Tweetille:** [@SRoccoli](https://twitter.com/SRoccoli/status/1271324433186091011?s=20)
 
 **Linkki töille:** [Commit 20200525](https://github.com/sroccoli1/homeinventoryweb/commit/81691cb9815e2d06fccb08c1d5474cbdbbd4ef17)
 
