@@ -102,3 +102,10 @@ Asettelutavoite on näin:
 **Linkki Tweetille:**
 
 **Linkki töille:** Commit 20200525 https://github.com/sroccoli1/homeinventoryweb/commit/81691cb9815e2d06fccb08c1d5474cbdbbd4ef17
+
+## Sisällysluettelo
+- [Home Inventory Web project](https://github.com/sroccoli1/homeinventoryweb)
+- [2020 Milestones](https://github.com/sroccoli1/homeinventoryweb/edit/master/2020_milestones.md)
+- [2019 Milestones](https://github.com/sroccoli1/homeinventoryweb/edit/master/2019_milestones.md)
+- [2020 Full Log](https://github.com/sroccoli1/homeinventoryweb/blob/master/2020_log_full.md)
+- [2020 Weekly Log](https://github.com/sroccoli1/homeinventoryweb/blob/master/2020_log.md)
