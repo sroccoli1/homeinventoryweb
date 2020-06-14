@@ -97,7 +97,13 @@ Asettelutavoite on näin:
 
 ![Week 21 Gif](https://media.giphy.com/media/PkS9eV0dtaCp2JayLa/giphy.gif) 
 
-**Ajatukset:** Komentokehotteesta. Haluaisin käyttää vain komentokehotteessa Git-komentoja jotta päivittäisin tiedoston rakenteen. Mutta ei se onnistunut. Miksi piti tuhlata tunti, että löysin cmd.exe:n komennon, joka siirtää kaikki tiedostot ylempään kansioon? Muistan, että DEV communityssä, joku sanoi, että *huono koodari sanoo, että hän tietää. Mutta hyvää koodari sanoo, että hän ei tietää mitään.* 
+**Ajatukset:** Komentokehotteesta. Haluaisin käyttää vain komentokehotteessa Git-komentoja jotta päivittäisin tiedoston rakenteen. Mutta ei se onnistunut. Miksi piti tuhlata tunti, että löysin cmd.exe:n komennon, joka siirtää kaikki tiedostot ylempään kansioon?<br>
+Muistan, että DEV communityssä, joku sanoi, että 
+
+> huono koodari sanoo, että hän tietää. Mutta hyvää koodari sanoo, että hän ei tietää mitään.
+
+
+Jatkuvasti oppiminen.
 
 **Linkki Tweetille:** [@SRoccoli](https://twitter.com/SRoccoli/status/1271324433186091011?s=20)
 
