@@ -97,7 +97,7 @@ Asettelutavoite on näin:
 
 ![Week 21 Gif](https://media.giphy.com/media/PkS9eV0dtaCp2JayLa/giphy.gif) 
 
-**Ajatukset:** Komentokehotteesta. Haluaisin käyttää vain komentokehotteessa Git-komentoja jotta päivittäisin tiedoston rakenteen. Mutta ei se onnistunut. Miksi piti tuhlata tunti, että löysin cmd.exe:n komennon, joka siirtää kaikki tiedostot ylempään kansioon?<br>
+**Ajatukset:** Komentokehotteesta. Haluaisin käyttää vain komentokehotteessa Git-komentoja jotta päivittäisin tiedoston rakenteen. Mutta ei se onnistunut. Miksi piti tuhlata tunti, että löysin cmd.exe:n komennon, joka siirtää kaikki tiedostot ylempään kansioon?<br> `cp foldername .`<br>
 Muistan, että DEV communityssä, joku sanoi, että: 
 
 > Huono koodari sanoo, että hän tietää. Mutta hyvää koodari sanoo, että hän ei tietää mitään.
