@@ -68,3 +68,50 @@ saa muokata, jotta saavuttaisin sivun ulkoasun mallin.
 **Linkki teoksille:** 
 - [Commit 2020.05.12](https://github.com/sroccoli1/homeinventoryweb/commit/ac8df4b428c61e2932fe8a7a68c9564e47b143ec)
 - [Commit 2020.05.11](https://github.com/sroccoli1/homeinventoryweb/commit/e2d0beeeffcbb5c7ad286ecd301ef85371c1208f)
+
+## Viikko 20 - 2020.5.16   
+
+**Viikon edistys** 
+- Onnistuin muuttaa PHP ja JS koodia, nyt PHP lähettää vain JSON-dataa tietokannalta verkkoselaimelle ja JS formatoi taulukoksi, olen saavuttanut viime viikon asetetun tavoitteen. 
+- Olen aloittanut tehdä sivu reagoivaksi. Nyt olion taulukko on reagoiva JS ja CSS -avulla.  
+![Week 20 Gif](https://media.giphy.com/media/YpeCk5jn3WGMEUdMcQ/giphy.gif) 
+
+Asettelutavoite on näin:
+![design-gui-livesearch-04.PNG](https://github.com/sroccoli1/homeinventoryweb/blob/assets/design-gui-livesearch-04.PNG). 
+
+- Kirjoitin ja lähetin hakemuksen H2C:n koulutukseen [H2C.fi](https://h2c.fi/)
+
+**Ajatukset:** Tuntuu hyvältä, että olen tajunnut, miten käsitellään JSON-dataa JavaScriptin avulla, ja että nyt pääsen muokkaamaan sivun ulkoasua... 
+
+**Linkki Tweetille**: [@SRoccoli](https://twitter.com/SRoccoli/status/1271320828055924742?s=20)
+
+**Linkki töille:** [Commit 20200517](https://github.com/sroccoli1/homeinventoryweb/commit/52355dab706680d042197f5cfa76184665851acc)
+
+## Viikko 21 - 2020.5.24 
+
+**Viikon edistys**
+- Olen etsinyt web-kehityksen sanastoa suomenkielisiltä nettisivuilta ja olen kirjoittanut loppuun kertomukset viikosta. 
+- Olen päivittänyt Home Inventory Webin tiedoston rakenteen. 
+- Olen etsinyt parempaa muotoa / rakennetta Home Inventory Webin päiväkirjalle Githubissa ja muuttanut sen. 
+- Esti laatikko -sivulla olen jatkanut Laatikko-olion näkymän tyylin muotoilua, muokannut fontin tyyliä ja valia. 
+
+![Week 21 Gif](https://media.giphy.com/media/PkS9eV0dtaCp2JayLa/giphy.gif) 
+
+**Ajatukset:** Komentokehotteesta. Haluaisin käyttää vain komentokehotteessa Git-komentoja jotta päivittäisin tiedoston rakenteen. Mutta ei se onnistunut. Miksi piti tuhlata tunti, että löysin cmd.exe:n komennon, joka siirtää kaikki tiedostot ylempään kansioon?<br> `cp foldername .`<br>
+Muistan, että DEV communityssä, joku sanoi, että: 
+
+> Huono koodari sanoo, että hän tietää. Mutta hyvää koodari sanoo, että hän ei tietää mitään.
+
+
+Jatkuva oppiminen ja nöyryys.
+
+**Linkki Tweetille:** [@SRoccoli](https://twitter.com/SRoccoli/status/1271324433186091011?s=20)
+
+**Linkki töille:** [Commit 20200525](https://github.com/sroccoli1/homeinventoryweb/commit/81691cb9815e2d06fccb08c1d5474cbdbbd4ef17)
+
+## Sisällysluettelo
+- [Home Inventory Web project](https://github.com/sroccoli1/homeinventoryweb)
+- [2020 Milestones](https://github.com/sroccoli1/homeinventoryweb/edit/master/2020_milestones.md)
+- [2019 Milestones](https://github.com/sroccoli1/homeinventoryweb/edit/master/2019_milestones.md)
+- [2020 Full Log](https://github.com/sroccoli1/homeinventoryweb/blob/master/2020_log_full.md)
+- [2020 Weekly Log](https://github.com/sroccoli1/homeinventoryweb/blob/master/2020_log.md)
