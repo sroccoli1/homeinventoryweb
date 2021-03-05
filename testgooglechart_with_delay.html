@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+
+      // Load the Visualization API and the corechart package.
+      google.charts.load('current', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+	  google.charts.setOnLoadCallback(drawChart);
+
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+	    // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Weight range');
+        data.addColumn('number', 'Occurence');
+
+		var myVar, occur;
+		  function serverDelay() {
+		  myVar = setTimeout(
+			()=>{ occur = 12;}, 3000);
+		}
+        data.addRows([['0-7', occur],['7-11', 3],['11-13', 4],['13-15', 2],['15-20', 0]]);
+		
+		var data2 = new google.visualization.DataTable();
+        data2.addColumn('string', 'Weight Unit');
+        data2.addColumn('number', 'Current Weight');
+		data2.addColumn({ role: 'style' });
+		//data2.addColumn('number', 'Total Weight Limit');
+        data2.addRows([['KG', 10, 'grey']]);
+		//data2.addRows([['KG', 10, '#b87333']]);
+		
+		
+		// Set barchart options
+		var barchart_options = {'title':'Poids des cartons', 'width':400, 'height':300,legend:{position:"none"}};
+	  
+		// Instantiate and draw our barchart, passing in some options.
+		var barchart = new google.visualization.BarChart(document.getElementById('barchart_div'));
+		barchart.draw(data, barchart_options);
+		
+		// Set Stacked bar chart options
+		var onebarchart_options = {'title':'Poids du chargement actuel', 'width':400, 'height':100, 'isStacked':true, legend:{position:"none"}};
+	  
+		// Instantiate and draw our stacked barchart, passing in some options.
+		var onebarchart = new google.visualization.BarChart(document.getElementById('onebarchart_div'));
+		onebarchart.draw(data2, onebarchart_options);
+
+	  }
+
+  </script>
+</head>
+<body>
+
+  <h2>My First (Pie)Chart with Google Charts API</h2>
+
+  <p id="barchart_div">Hello World!</p>
+  <p id="onebarchart_div">Hello World!</p>
+
+</body>
+</html>
+
+
+
+
+
