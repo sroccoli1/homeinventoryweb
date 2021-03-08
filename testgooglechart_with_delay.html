@@ -20,7 +20,7 @@
 
 		// "Consuming Code" (Must wait for a fulfilled Promise)
 		myPromise.then(
-			google.charts.setOnLoadCallback(drawChart)
+			()=> google.charts.setOnLoadCallback(drawChart)
 		);
 
 
@@ -38,6 +38,7 @@
 		//   myVar = setTimeout(
 		// 	()=>{ occur = 12;}, 3000);
 		// }
+				console.log("occur", occur);
         data.addRows([['0-7', occur],['7-11', 3],['11-13', 4],['13-15', 2],['15-20', 0]]);
 		
 		var data2 = new google.visualization.DataTable();
