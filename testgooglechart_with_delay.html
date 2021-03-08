@@ -7,22 +7,23 @@
     // Load the Visualization API and the corechart package.
 		google.charts.load('current', {'packages':['corechart']});
 
-    // Set a callback to run when the Google Visualization API is loaded.
+		var occur; // The value must be first fetched from the server and used later drawing the chart
 
-		var occur;
+		// Using a Promise to simulate a request to the server and waiting 3 sec to receive it
+		// The Promise guarantees it's done before drawing the chart
+		// See later in the comments why using setTimeOut() does not work. 
 
 		let myPromise = new Promise(
 			(resolve)=>{
-				setTimeout(()=>{			// "Simulate a request to the server and waiting 3 sec to receive it"
+				setTimeout(()=>{			// Simulate a request to the server and waiting 3 sec to receive it
 						resolve(occur = 12);
 					}, 3000); // when successful
 		});
 
 		// "Consuming Code" (Must wait for a fulfilled Promise)
 		myPromise.then(
-			()=> google.charts.setOnLoadCallback(drawChart)
+			()=> google.charts.setOnLoadCallback(drawChart)   // Set a callback to run when the Google Visualization API is loaded.
 		);
-
 
     // Callback that creates and populates a data table,
    // instantiates the pie chart, passes in the data and
@@ -33,6 +34,10 @@
         data.addColumn('string', 'Weight range');
         data.addColumn('number', 'Occurence');
 
+		// Using setTimeOut. 
+		// The following does not work.
+		// The chart is drawned before the time's up.
+		
 		// var myVar, occur;
 		//   function serverDelay() {
 		//   myVar = setTimeout(
