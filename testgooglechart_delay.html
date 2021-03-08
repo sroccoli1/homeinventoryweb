@@ -2,22 +2,56 @@
 <html>
 <body>
 
-<p>Click the button to wait 3 seconds, then alert "Hello".</p>
+<p>Click the button to fetch a value within 3 seconds, then display it.</p>
 <p id="message">Message</p>
-<button onclick="myFunction()">Try it</button>
+<button onclick="getAndDisplayRemoteValues()">Try it</button>
 
 <script>
-var myVar,occur;
+// With a setTimeOut
 
-function myFunction() {
-  myVar = setTimeout(
-	()=>{occur = "12";
-		document.getElementById("message").innerHTML = occur;
-		},3000);
+// var myVar,occur;
+
+// function getAndDisplayRemoteValues() {
+//   myVar = setTimeout(
+// 	()=>{occur = "12";
+// 		document.getElementById("message").innerHTML = occur;
+// 		},3000);
+// }
+
+
+// With a setTimeOut and a callback
+// function getAndDisplayRemoteValues(){
+
+// 	// occur is a single value fetched from the server
+// 	var occur;
+
+// 	setTimeout(function(){ occur = 12; myFunction(occur)}, 3000);
+
+// 	function myFunction(value){
+// 		document.getElementById("message").innerHTML = value;
+// 	}
+// }
+
+// // With a Promise
+
+function getAndDisplayRemoteValues(){
+
+	var occur;
+
+	let myPromise = new Promise(
+		(resolve)=>{
+			setTimeout(()=>{			// "Simulate a request to the server and waiting 3 sec to receive it"
+					resolve(occur = 12);
+				}, 3000); // when successful
+	});
+
+	// "Consuming Code" (Must wait for a fulfilled Promise)
+	myPromise.then(
+	  (value) => { /* print the graph if successful */ 
+			document.getElementById("message").innerHTML = value; 
+	  }
+	);
 }
-
-//document.getElementById("message").innerHTML = occur;
-
 
 
 </script>
