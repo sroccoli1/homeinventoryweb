@@ -5,7 +5,7 @@
   <script type="text/javascript">
 
     // Load the Visualization API and the corechart package.
-		google.charts.load('current', {'packages':['bar']});
+		google.charts.load('current', {'packages':['corechart']});
 
 		var occur; // The value must be first fetched from the server and used later drawing the chart
 
@@ -25,11 +25,12 @@
 			()=> google.charts.setOnLoadCallback(drawChart)   // Set a callback to run when the Google Visualization API is loaded.
 		);
 
-    // Callback that creates and populates a data table,
-   // instantiates the pie chart, passes in the data and
-    // draws it.
+    // Callback that creates and populates 2 data tables,
+   	// instantiates the bar charts, passes in the data and
+    // draws them.
     function drawChart() {
-	    // Create the data table.
+			
+	    // Create the data table for the weight disbribution bar chart
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Weight range');
         data.addColumn('number', 'Occurence');
@@ -38,9 +39,7 @@
 			var view = new google.visualization.DataView(data);
 			view.setColumns(
 				[0, 1, {	
-					calc: "stringify",
 					sourceColumn: 1,
-					type: "string",
 					role: "annotation"	}
 				]
 			);   
@@ -55,22 +54,13 @@
 		// 	()=>{ occur = 12;}, 3000);
 		// }
 			console.log("occur", occur);
-      data.addRows([['0-7', occur],['7-11', 3],['11-13', 4],['13-15', 2],['15-20', 0]]);
-		
-			var data2 = new google.visualization.DataTable();
-      data2.addColumn('string', 'Weight Unit');
-      data2.addColumn('number', 'Current Weight');
-			data2.addColumn({ role: 'style' });
-			//data2.addColumn('number', 'Total Weight Limit');
-      data2.addRows([['KG', 10, 'grey']]);
-			//data2.addRows([['KG', 10, '#b87333']]);
-		
-		
+      data.addRows([['0-7 kg', occur],['7-11 kg', 3],['11-13 kg', 4],['13-15 kg', 2],['15-20 kg', 0]]);
+				
 			// Set barchart options
 			var options = {
-				'title':'Poids des cartons',
-				'width':400,
-				'height':300,
+				'title':'Nombre de cartons selon le poids',
+				'width': 400,
+				'height': 300,
 				'bars': 'horizontal', // Required for Material Bar Charts
 				axes: {
 					x:{
@@ -80,28 +70,44 @@
 				legend:{position:"none"}};
 	  
 			// Instantiate and draw our barchart, passing in some options.
-			var barchart = new google.charts.Bar(document.getElementById('barchart_div'));
+			var barchart = new google.visualization.BarChart(document.getElementById('barchart_div'));
 			barchart.draw(view, options);
+
+			// Create the data table for the total weight bar chart
+			var data2 = new google.visualization.DataTable();
+
+      data2.addColumn('string', 'Weight Unit');
+      data2.addColumn('number', 'Current Weight');
+			data2.addColumn({ role: 'style' });
+      data2.addRows([['KG', 10, 'grey']]); // #b87333 could be another color
 			
-			// Set Stacked bar chart options
+			// Set the bar chart options
 			var onebarchart_options = {
-				'title':'Poids du chargement actuel',
-				'width':400,
-				'height':100,
+				'title':'Poids total du chargement',
+				'width': 400,
+				'height': 100,
 				'isStacked':true,
 				'bars': 'horizontal',
 				legend:{position:"none"}};
+
+			// Set the total weight column style as a label on bars
+			var onebarchart_view = new google.visualization.DataView(data2);
+			onebarchart_view.setColumns(
+				[0, 1, {	
+					sourceColumn: 1,
+					role: "annotation"	}, 
+					2
+				]
+			);   
 			
 			// Instantiate and draw our stacked barchart, passing in some options.
-			var onebarchart = new google.charts.Bar(document.getElementById('onebarchart_div'));
-			onebarchart.draw(data2, onebarchart_options);
+			var onebarchart = new google.visualization.BarChart(document.getElementById('onebarchart_div'));
+			onebarchart.draw(onebarchart_view, onebarchart_options);
 		}// end of callback
 
   </script>
 </head>
 <body>
-
-  <h2>My First (Pie)Chart with Google Charts API</h2>
 
   <p id="barchart_div">Hello World!</p>
   <p id="onebarchart_div">Hello World!</p>
