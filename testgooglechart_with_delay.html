@@ -5,13 +5,13 @@
   <script type="text/javascript">
 
     // Load the Visualization API and the corechart package.
-		google.charts.load('current', {'packages':['corechart']});
+		google.charts.load('current', {'packages':['bar']});
 
 		var occur; // The value must be first fetched from the server and used later drawing the chart
 
 		// Using a Promise to simulate a request to the server and waiting 3 sec to receive it
 		// The Promise guarantees it's done before drawing the chart
-		// See later in the comments why using setTimeOut() does not work. 
+		// See later in the comments why using just setTimeOut() does not work. 
 
 		let myPromise = new Promise(
 			(resolve)=>{
@@ -34,6 +34,17 @@
         data.addColumn('string', 'Weight range');
         data.addColumn('number', 'Occurence');
 
+			// Set the weight occurence column style as a label on bars
+			var view = new google.visualization.DataView(data);
+			view.setColumns(
+				[0, 1, {	
+					calc: "stringify",
+					sourceColumn: 1,
+					type: "string",
+					role: "annotation"	}
+				]
+			);   
+
 		// Using setTimeOut. 
 		// The following does not work.
 		// The chart is drawned before the time's up.
@@ -43,33 +54,48 @@
 		//   myVar = setTimeout(
 		// 	()=>{ occur = 12;}, 3000);
 		// }
-				console.log("occur", occur);
-        data.addRows([['0-7', occur],['7-11', 3],['11-13', 4],['13-15', 2],['15-20', 0]]);
+			console.log("occur", occur);
+      data.addRows([['0-7', occur],['7-11', 3],['11-13', 4],['13-15', 2],['15-20', 0]]);
 		
-		var data2 = new google.visualization.DataTable();
-        data2.addColumn('string', 'Weight Unit');
-        data2.addColumn('number', 'Current Weight');
-		data2.addColumn({ role: 'style' });
-		//data2.addColumn('number', 'Total Weight Limit');
-        data2.addRows([['KG', 10, 'grey']]);
-		//data2.addRows([['KG', 10, '#b87333']]);
+			var data2 = new google.visualization.DataTable();
+      data2.addColumn('string', 'Weight Unit');
+      data2.addColumn('number', 'Current Weight');
+			data2.addColumn({ role: 'style' });
+			//data2.addColumn('number', 'Total Weight Limit');
+      data2.addRows([['KG', 10, 'grey']]);
+			//data2.addRows([['KG', 10, '#b87333']]);
 		
 		
-		// Set barchart options
-		var barchart_options = {'title':'Poids des cartons', 'width':400, 'height':300,legend:{position:"none"}};
+			// Set barchart options
+			var options = {
+				'title':'Poids des cartons',
+				'width':400,
+				'height':300,
+				'bars': 'horizontal', // Required for Material Bar Charts
+				axes: {
+					x:{
+						0: {side:'top'} // Top x-axis
+					}
+				},
+				legend:{position:"none"}};
 	  
-		// Instantiate and draw our barchart, passing in some options.
-		var barchart = new google.visualization.BarChart(document.getElementById('barchart_div'));
-		barchart.draw(data, barchart_options);
-		
-		// Set Stacked bar chart options
-		var onebarchart_options = {'title':'Poids du chargement actuel', 'width':400, 'height':100, 'isStacked':true, legend:{position:"none"}};
-	  
-		// Instantiate and draw our stacked barchart, passing in some options.
-		var onebarchart = new google.visualization.BarChart(document.getElementById('onebarchart_div'));
-		onebarchart.draw(data2, onebarchart_options);
-
-	  }
+			// Instantiate and draw our barchart, passing in some options.
+			var barchart = new google.charts.Bar(document.getElementById('barchart_div'));
+			barchart.draw(view, options);
+			
+			// Set Stacked bar chart options
+			var onebarchart_options = {
+				'title':'Poids du chargement actuel',
+				'width':400,
+				'height':100,
+				'isStacked':true,
+				'bars': 'horizontal',
+				legend:{position:"none"}};
+			
+			// Instantiate and draw our stacked barchart, passing in some options.
+			var onebarchart = new google.charts.Bar(document.getElementById('onebarchart_div'));
+			onebarchart.draw(data2, onebarchart_options);
+		}// end of callback
 
   </script>
 </head>
