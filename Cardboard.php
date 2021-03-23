@@ -11,7 +11,15 @@ require 'Product.php';
 class Cardboard extends Product //implements JsonSerializable
 {
 	// Remember the inherited properties : 
-	// $id, $name, $description, $classifiedAs, state, handling, goingToRoom; $document; $weight; $state; $handling;
+	// $id, 
+	// $name, 
+	// $description, 
+	// $classifiedAs,  
+	// $document; 
+	// $weight; 
+	// $state; 
+	// $handling;
+	// $goingToRoom;
 
 	// Specific properties:
 	// $items [0..*] : Item ; a set of Items

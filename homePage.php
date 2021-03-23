@@ -44,8 +44,8 @@ https://google-developers.appspot.com/chart/interactive/docs/drawing_charts
 			<a href="#">carboard02Name</a>
 		  </div>
 		  <h2>Evolution</h2>
-		  <div id="homePageGraph">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-		  </div>
+		    <p id="barchart_div">Hello World!</p>
+  			<p id="onebarchart_div">Hello World!</p>
 		</div>
 		
 		<div class="right" id="homePageRightDiv">
@@ -67,5 +67,7 @@ https://google-developers.appspot.com/chart/interactive/docs/drawing_charts
 		</button>
 	</body>
 	<script src="myScript.js"></script>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript" src="weightChart.js"></script>
 </html>
 
