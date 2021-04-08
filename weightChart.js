@@ -55,20 +55,27 @@ function drawChart() {
 // 	()=>{ occur = 12;}, 3000);
 // }
 	console.log("occur", occur);
-	data.addRows([['0-7 kg', occur],['7-11 kg', 3],['11-13 kg', 4],['13-15 kg', 2],['15-20 kg', 0]]);
+	data.addRows([
+		['0-7 kg', occur],
+		['7-11 kg', 3],
+		['11-13 kg', 4],
+		['13-15 kg', 2],
+		['15-20 kg', 0]
+	]);
 		
 	// Set barchart options
 	var options = {
-		'title':'Nombre de cartons selon le poids',
+		'title':'Weight distribution',
 		'width': 400,
 		'height': 300,
-		'bars': 'horizontal', // Required for Material Bar Charts
+		'bar': {groupWidth: '75%'}, 
 		axes: {
 			x:{
 				0: {side:'top'} // Top x-axis
 			}
 		},
-		legend:{position:"none"}};
+		legend:{position:"none"}
+	};
 
 	// Instantiate and draw our barchart, passing in some options.
 	var barchart = new google.visualization.BarChart(document.getElementById('barchart_div'));
@@ -80,15 +87,15 @@ function drawChart() {
 	data2.addColumn('string', 'Weight Unit');
 	data2.addColumn('number', 'Current Weight');
 	data2.addColumn('number', 'Target Weight');
-	data2.addRows([['KG', 10, 100 ]]); // #b87333 could be another color
+	data2.addRows([['Max weight : 100 kg', 10, 90 ]]); // #b87333 could be another color
 	
 	// Set the bar chart options
 	var onebarchart_options = {
-		'title': 'Poids total du chargement',
+		'title': 'Total load weight (in kg)',
 		'width': 400,
 		'height': 100,
 		'isStacked': true,
-		'bars': 'horizontal',
+		'bar': {groupWidth: '75%'}, 
 		legend: {position:"none"}
 	};
 
@@ -98,7 +105,9 @@ function drawChart() {
 		[0, 1, {	
 			sourceColumn: 1,
 			role: "annotation"	}, 
-			2
+			2, {	
+				sourceColumn: 2,
+				role: "annotation"	}
 		]
 	);   
 	
