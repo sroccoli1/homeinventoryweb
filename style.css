@@ -50,7 +50,7 @@ a:focus, input:focus, button:focus, select:focus{
   left: 0;
   width: 100%; /* Full width */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19); /* *Set a shadow on the bottom of the bar. The box-shadow property can be used to create paper-like cards. */
-  z-index: 3;
+  z-index: 1;
   height: auto;
   font-size: 1.6em;
   font-family: "Lato", "Helvetica", "Trebuchet MS", "Arial", "FontAwesome", sans-serif;
@@ -267,7 +267,7 @@ Note : that it will show only if the topbar overflow is allowed. */
 
 /* Links on mouse-over */
 .sidenav a:hover:not(.active) {
-  background-color: #white;
+  background-color: white;
   color: black;
 }
 
@@ -325,50 +325,42 @@ Note : that it will show only if the topbar overflow is allowed. */
 	font-family: "Lato", "Helvetica", "Trebuchet MS", "Arial", sans-serif;
 }
 
-#homePageMainDiv {
-  position: absolute;
-  width: 100%;
-  z-index: 0;
-  top: 60; /* Place the sidenav just below the topbar (=at 60px).*/
+
+/*------------------------ Home page structure ------------------------*/
+
+/* .home places the beginning of any form just below the top bar. */
+.home {
+  position: relative;
+  top: 120; /* Place the form just below the topbar (=at 60px).*/
   left: 0;
-  background-color: white;
-  font-weight: normal;
+  margin: 0;
+
+  /* Mobile design first : the form is only one column */
+  display: grid;
+  grid-template-areas:
+    'topbar'
+    'main'
+    'footer';
+}
+.home-topbar{
+  grid-area: topbar;
 }
 
-#homePageGraph {
-	background-color: white;
-	color: black;
-	padding: auto;
-	/*font-family: "Lato", "Helvetica", "Trebuchet MS", "Arial", sans-serif;*/
-	/*height:30px;/*Just for quick draft layout*/
-	width: 100%;
-	z-index: 0;
-} 
-
-#homePageRightDiv {
-  /* Design for mobile first*/
-    width: 100%;
-    height: auto;
-	text-align:center;
-	padding:0;
-	z-index:0;
-	background-color:#e5e5e5;
+.home-main{
+  grid-area: main;
+  padding: 8px;
+  text-align: left;
 }
 
-/* On screens that are bigger than 400px, display the right section and the main section in two columns.*/
-@media only screen and (min-width: 400px) {
-	  #homePageRightDiv {
-	  float:left;
-	  width:30%;
-	  margin-top:7px;
-	  right:0;
-	  position:relative;
-	}
-	#homePageMainDiv {
-	  position:relative;
-	  float:left;
-	  width:70%;
-	}
+.home-footer{
+  grid-area: footer;
+  padding: 8px;
+}
+
+@media only screen and (min-width: 578px) {
+  .home {
+    top: 60;
+  }
 }
 
 /******************************************************************************
@@ -385,12 +377,17 @@ Note : that it will show only if the topbar overflow is allowed. */
 	color:white;
 	text-align: center;
 	bottom:0; /* At the bottom of the page */
-	position:fixed; /* At the bottom of the page */
+	/* position: fixed; /* At the bottom of the page */
 	font-family: "Lato", "Helvetica", "Trebuchet MS", "Arial", sans-serif;
 	font-weight: normal;
 	z-index:0;
 }
 
+
+#homePage_add {
+  bottom: 1rem;
+  right: 1rem;
+}
 
 
 /********************************************************************************/
@@ -503,7 +500,7 @@ h1 {
 	height: auto;
 	width: 100%; /* Full width */
 	padding: auto;
-	background-color: #white;
+	background-color: white;
 	font-size: 2.4em;/* 30/16 = 1.875em ; 18px = */
 	color: black;
 	text-align: center;
@@ -571,7 +568,7 @@ h4 {
   font-weight:normal;
 }
 
-.system-history-info-value{}
+/* .system-history-info-value{} */
 
 .devpurpose h2 {
 	display: none;
@@ -1186,12 +1183,12 @@ Note : that it will show only if the topbar overflow is allowed. */
   text-align: right;
 }
 
-.system-history-info{
-}
+/* .system-history-info{
+} */
 
-.system-history-info-value{
+/* .system-history-info-value{
   display: inline;
-}
+} */
 
 /* For screens bigger than 400px */
 @media only screen and (min-width: 400px) {

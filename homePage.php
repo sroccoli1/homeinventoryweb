@@ -10,7 +10,7 @@ If it's the first time it helps the user to set up the first info.
 
 This code has been moved to a linux based OS.
 
-ADD CHARTS :
+Google Charts :
 https://google-developers.appspot.com/chart/interactive/docs/drawing_charts
 
 
@@ -25,43 +25,42 @@ https://google-developers.appspot.com/chart/interactive/docs/drawing_charts
 		<title>Home</title>
 	</head>
 
-	<body onload="setHomePageUnderTopBar(); closeDropdownAtClickOutside();" onresize="setHomePageUnderTopBar();">
+	<body 
+		class="home" 
+		onload="setHomePageUnderTopBar(); closeDropdownAtClickOutside();" 
+		onresize="setHomePageUnderTopBar();" >
 		
 		<!--Includes a Top Navigation Menu-->
 		<!--Another way	 to include is : <object type="text/html" data="topAndSideNav.php"></object>-->
-		<?php include 'topAndSideNav.php';?>
-		<?php include 'var_quick_draft.php';?>
+		<div class="home-topbar">
+			<?php include 'topAndSideNav.php';?>
+		</div>
 		
-		<div class="main" id="homePageMainDiv">
+		<div class="home-main">
 		  <h1>Dashboard</h1>
 		  <h2>Edited recently</h2>
-		  <div id="recent">
-			<a href="#">item01Name</a>
-			<a href="#">item02Name</a>
-			<a href="#">item03Name</a>
-			<a href="#">item04Name</a>
-			<a href="#">carboard01Name</a>
-			<a href="#">carboard02Name</a>
-		  </div>
+			<div id="recent">
+				<a href="#">item01Name</a>
+				<a href="#">item02Name</a>
+				<a href="#">item03Name</a>
+				<a href="#">item04Name</a>
+				<a href="#">carboard01Name</a>
+				<a href="#">carboard02Name</a>
+			</div>
 		  <h2>Evolution</h2>
-		    <p id="barchart_div">Hello World!</p>
-  			<p id="onebarchart_div">Hello World!</p>
+			<p id="onebarchart_div">Loading global weight barchart...</p>
+			<p id="barchart_div">Loading disbribution barchart...</p>
 		</div>
 		
-		<div class="right" id="homePageRightDiv">
-		  <h3>Stats</h3>
-		  <p>Limit:<br><?php include 'var_quick_draft.php'; echo "$weightLimit $unit" ?></p>
-		  <p>Left:<br><?php include 'var_quick_draft.php'; echo "$weightLeft $unit" ?></p>
-		</div>
-		
-		<div class="footer">
+		<div class="home-footer footer">
 		  <?php echo date("Y.m.d") . " " . date("l") . ". The server time is " . date("h:i:sa");?>
-		  <br>&copy; Samuel Roccoli<br><?php echo date("Y");?>
+		  <br>&copy; Samuel Roccoli<br>
+			<?php echo date("Y");?>
 		</div>
 		
 		<!--This button opens a form to add a new cardboard box.-->
 		<button id="homePage_add"
-			class="w3-button w3-xlarge w3-circle w3-red w3-card-4 w3-display-bottomright w3-margin" 
+			class="w3-button w3-xlarge w3-circle w3-red w3-card-4 w3-margin w3-display-bottomright" 
 			onclick="location.href='recordNewCardboard.php';" >
 			+
 		</button>

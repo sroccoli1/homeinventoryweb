@@ -32,7 +32,7 @@ Define a top navigation (4 buttons) and a responsive menu sidebar with 8 section
 
 	------------------------------Top Navigation Bar--------------------------
 
-	-********************************************************************************
+	<!-******************************************************************************** -->
 	<!--Menu icon, Home page icon, Search and Page Relative menu, all in a static top bar always visible-->
 	<div class="topnav grid-container" id="myTopnav">
 
