@@ -45,15 +45,15 @@ function drawChart() {
 		]
 	);   
 
-// Using setTimeOut. 
-// The following does not work.
-// The chart is drawned before the time's up.
+	// Using setTimeOut. 
+	// The following does not work.
+	// The chart is drawned before the time's up.
 
-// var myVar, occur;
-//   function serverDelay() {
-//   myVar = setTimeout(
-// 	()=>{ occur = 12;}, 3000);
-// }
+	// var myVar, occur;
+	//   function serverDelay() {
+	//   myVar = setTimeout(
+	// 	()=>{ occur = 12;}, 3000);
+	// }
 	console.log("occur", occur);
 	data.addRows([
 		['0-7 kg', occur],
