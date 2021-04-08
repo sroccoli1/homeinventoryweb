@@ -11,7 +11,6 @@ $servername = "localhost";
 $username = "homeinventorydev";
 $password = "855265600PLk";
 $dbname = "homeinventorydevdb";
-// $conn = ""; 
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);

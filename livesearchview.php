@@ -26,26 +26,42 @@ This search page helps to find objects (here mainly cardboard). This search capa
 
 		-********************************************************************************-->
 		<!--Go back button and Search bar all in a blue top bar -->
-		<div class="searchview-topbar" id="cardboardSearch-searchBar">
+		<div class="searchview-topbar" 
+			id="cardboardSearch-searchBar">
 
 			<!-- A GO BACK button -->
 			<!--  Caution : id used by JS script // not at the moment-->
-			<a class="searchview-topbar-goback" id="cardboardSearch-searchBar-goBackButton" href="homePage.php" onclick="">
+			<a class="searchview-topbar-goback" 
+				id="cardboardSearch-searchBar-goBackButton" 
+				href="homePage.php"
+				onclick="">
 				<i class="fas fa-arrow-left searchview-topbar-goback"></i>
 			</a>
 
 			<!--Search
 			See https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_searchbar3-->
-			<form class="searchview-topbar-form" id="cardboardSearch-searchBar-searchInput" role="search" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" onsubmit="return false">
+			<form class="searchview-topbar-form" 
+				id="cardboardSearch-searchBar-searchInput" 
+				role="search" 
+				method="post" 
+				action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" 
+				onsubmit="return false">
 				
-				<input type="search" id="livesearch-input" class="searchview-topbar-input"  
-				name="search" 
-				placeholder="&#xf002; Cardboard name..."
-				aria-label="Search cardboard through site content"
-				onkeyup="showSuggestions(this.value)" onsearch="showResultsAfterSuggestions(this.value)"/>
+				<input type="search" 
+					id="livesearch-input" 
+					class="searchview-topbar-input"  
+					name="search" 
+					placeholder="&#xf002; Cardboard name..."
+					aria-label="Search cardboard through site content"
+					onkeyup="showSuggestions(this.value)"
+					onsearch="showResultsAfterSuggestions(this.value)"/>
 				
-				<button class="searchview-topbar-delete" id="cardboardSearch-searchBar-deleteBtn"><i class="fa fa-times"></i></button>
-				<input type="submit" style="visibility: hidden; position: absolute;"/>
+				<button class="searchview-topbar-delete" 
+					id="cardboardSearch-searchBar-deleteBtn">
+					<i class="fa fa-times"></i>
+				</button>
+				<input type="submit" 
+					style="visibility: hidden; position: absolute;"/>
 				<div id="livesearch"></div>
 			</form>
 		</div>
@@ -56,33 +72,50 @@ This search page helps to find objects (here mainly cardboard). This search capa
 		----------------------------Filter settings bar------------------------
 
 		***************************************************************************-->
-		<div class="searchview-filters" id="cardboardSearch-filterBar">
+		<div class="searchview-filters" 
+			id="cardboardSearch-filterBar">
 			
 			<!-- Name sorting -->
 			<!--  Caution : id used by JS script // not at the moment-->
-			<a class="searchview-filters-name" id="cardboardSearch-filterBar-nameFilter" href="#" onclick="">
-				Name<i class="fas fa-arrow-down searchview-filters-name-i"></i>
+			<a class="searchview-filters-name" 
+				id="cardboardSearch-filterBar-nameFilter" 
+				href="#" 
+				onclick="">
+				Name
+				<i class="fas fa-arrow-down searchview-filters-name-i"></i>
 			</a>
 
 			<!--Filter settings dropdown-->
-			<div class="sea1rchview-filters-settings" id="cardboardSearch-filterBar-filterSettings" action="">
-				<button id="cardboardSearch-filterBar-filterSettings-Button" class="searchview-filters-settings-dropbtn-js" onclick="showSearchFiltersSettingsAtClick()">
+			<div class="searchview-filters-settings" 
+				id="cardboardSearch-filterBar-filterSettings" 
+				action="">
+				<button
+					id="cardboardSearch-filterBar-filterSettings-Button"
+					class="searchview-filters-settings-dropbtn-js" 
+					onclick="showSearchFiltersSettingsAtClick()">
 					Filters settings
 				</button>
 			</div>
 			
 			<!--Search filter view button-->
-			<button id="cardboardSearch-filterBar-ViewBtn" class="searchview-filters-view" onclick="">
+			<button id="cardboardSearch-filterBar-ViewBtn" 
+				class="searchview-filters-view" 
+				onclick="">
 				<i class="material-icons">view_module</i>
 			</button>
 		</div>
 		
 		<!--Filter settings categories dropdown -->
-		<div class="searchview-categories searchview-filters-dropdown-content" id="cardboardSearch-filterBar-filterSettings-contents-js">
-			<button class="searchview-filters-category-button" id="searchFilterSettings-WeightBtn">Weight</button>
-			<button class="searchview-filters-category-button" id="searchFilterSettings-StateBtn">State</button>
-			<button class="searchview-filters-category-button" id="searchFilterSettings-HandlingBtn">Handling</button>
-			<button class="searchview-filters-category-button" id="searchFilterSettings-RoomBtn">Room</button>
+		<div class="searchview-categories searchview-filters-dropdown-content" 
+			id="cardboardSearch-filterBar-filterSettings-contents-js">
+			<button class="searchview-filters-category-button" 
+				id="searchFilterSettings-WeightBtn">Weight</button>
+			<button class="searchview-filters-category-button" 
+				id="searchFilterSettings-StateBtn">State</button>
+			<button class="searchview-filters-category-button" 
+				id="searchFilterSettings-HandlingBtn">Handling</button>
+			<button class="searchview-filters-category-button" 
+				id="searchFilterSettings-RoomBtn">Room</button>
 		</div>
 		<!--*****************************************************************************
 
@@ -167,6 +200,7 @@ This search page helps to find objects (here mainly cardboard). This search capa
 			<!-- Last edited time -->
 
 			<!-----------------Object Description--------------------->
+			
 			<div class="objectview-info">
 			  <h3 style="display:none" class="" id="" action="">General</h3>
 			  <div id="" class="objectview-info-undertitle">
@@ -190,10 +224,11 @@ This search page helps to find objects (here mainly cardboard). This search capa
 				<div class="" id="">Share</div>
 				<div class="" id="">Save</div>
 				<div class="" id="">Edit</div>
-			  </div>
+			</div>
 
 			  <!-----------------Object Details-------------------------->
-			  <section id="objectview-info-details" class=""><div><h3>Details</h3></div>
+
+			<section id="objectview-info-details" class=""><div><h3>Details</h3></div>
 
 				<div class="objectview-info-details-line">
 				  <div id="" class="objectview-info-details-label" style="display:none">Weight</div>
@@ -219,7 +254,7 @@ This search page helps to find objects (here mainly cardboard). This search capa
 				  <div id="" class="objectview-info-details-label">ID</div>
 				  <div id="objectview-info-details-id-js" class="objectview-info-details-label-value">10</div>
 				</div>
-			  </section>
+			</section>
 		</div>
 			
 
@@ -227,8 +262,8 @@ This search page helps to find objects (here mainly cardboard). This search capa
 
 	</body>
 	<script src="myScript.js">
-	<!-- This special icons font needs credentials called "Kit Code". -->
-		// to prevent a resubmit on refresh and back button.   
+		//	This special icons font needs credentials called "Kit Code".
+		// 	to prevent a resubmit on refresh and back button.   
 		if ( window.history.replaceState ) {
         window.history.replaceState( null, null, window.location.href );
     </script>
