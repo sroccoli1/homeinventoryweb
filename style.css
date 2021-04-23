@@ -53,7 +53,7 @@ a:focus, input:focus, button:focus, select:focus{
   z-index: 1;
   height: auto;
   font-size: 1.6em;
-  font-family: "Lato", "Helvetica", "Trebuchet MS", "Arial", "FontAwesome", sans-serif;
+  /* font-family: "Lato", "Helvetica", "Trebuchet MS", "Arial", "FontAwesome", sans-serif; */
   
   /* Mobile design first : when the screen width is under 400px, the topbar is only one column, Menu, Home, Search, [...] are displayed in letters on  separated rows --> JS classes*/
   /* Trying these utilies instead of media queries and Java*/
@@ -237,37 +237,36 @@ Note : that it will show only if the topbar overflow is allowed. */
   font-family: "Lato", "Helvetica", "Trebuchet MS", "Arial", sans-serif;
   margin: 0;
   padding: 0;
-  width: 20%;
-  visibility:hidden;
-  background-color: #6495ed;
-  position: fixed;/* Make it stick, even on scroll */
+
+  visibility: hidden;
+  background-color: white;
+  position: fixed; /* Make it stick, even on scroll */
   height: 100%;
-  overflow: auto;/* Enable scrolling if the sidenav has too much content */
-  font-weight:bold;
-  font-size:1em;
+  overflow: auto; /* Enable scrolling if the sidenav has too much content */
+  font-size: 1em;
   transition: 0.5s;
-  left:0;
-  top:60; /* Place the sidenav just below the topbar (=at 60px).*/
-  z-index:3;
+  left: 0;
+  top: 60; /* Place the sidenav just below the topbar (=at 60px).*/
+  z-index: 2;
 }
 
 /* Sidenav links */
 .sidenav a {
   display: block;
-  color: white;
-  padding: 16px;
+  color: black;
+  padding: 8px;
   text-decoration: none;
 }
 
 /* Active/current link */
 .sidenav a.active {
   background-color: #4CAF50;
-  color: white;
+  color: pink;
 }
 
 /* Links on mouse-over */
 .sidenav a:hover:not(.active) {
-  background-color: white;
+  background-color: #6495ed;
   color: black;
 }
 
@@ -290,10 +289,15 @@ Note : that it will show only if the topbar overflow is allowed. */
     width: 100%;
     height: auto;
     position: fixed;
-	float: none;
+	  float: none;
+    font-weight: bold;
+    background-color: #6495ed;
   }
-  .sidenav a {float: left;}
+  .sidenav a {
+    float: left;
+    color: white;
   }
+}
 
 /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
 @media screen and (max-width: 400px) {
@@ -301,11 +305,14 @@ Note : that it will show only if the topbar overflow is allowed. */
     width: 100%;
     height: auto;
     position: fixed;
-	float: none;
+  	float: none;
+    font-weight: bold;
+    background-color: #6495ed;
   }
   .sidenav a {
     text-align: center;
     float: none;
+    color: white;
   }
 }
 
@@ -320,11 +327,6 @@ Note : that it will show only if the topbar overflow is allowed. */
 /******************************************************************************
 											Form : Home Page 
 /******************************************************************************/
-
-#homePageMainDiv ,#homePageRightDiv,#homePageGraph {
-	font-family: "Lato", "Helvetica", "Trebuchet MS", "Arial", sans-serif;
-}
-
 
 /*------------------------ Home page structure ------------------------*/
 
@@ -357,10 +359,142 @@ Note : that it will show only if the topbar overflow is allowed. */
   padding: 8px;
 }
 
+.home-sidenav{
+  grid-area: sidenav;
+  padding: 8px;
+}
+
+.home-h1 {
+  height: auto;
+  width: 100%; /* Full width */
+  padding: auto;
+  background-color: white;
+  font-size: 2.4em;/* 30/16 = 1.875em ; 18px = */
+  color: black;
+  text-align: center;
+  left: 0;
+  margin: 0;
+}
+
+.home-h2 {
+  display: inline;
+  /*grid-column: 1 / 2;*/
+  height: auto;
+  width: 100%;
+  padding: auto;
+  background-color: white;
+  font-size: 2em;
+  color: black;
+  text-align: center;
+  left: 0;
+  margin: 0;
+  font-weight: bold;
+}
+
+.home-h3 {
+  display: inline;
+  /*grid-column: 1 / 2;*/
+  height: auto;
+  width: 100%;
+  padding: auto;
+  background-color: white;
+  font-size: 1.2em;
+  color: black;
+  text-align: center;
+  left: 0;
+  margin: 0;
+  font-weight: bold;
+}
+
+.home-h4 {
+  display: inline;
+  /*grid-column: 1 / 2;*/
+  height: auto;
+  width: 100%;
+  padding: auto;
+  background-color: white;
+  font-size: 1em;
+  color: black;
+  text-align: center;
+  left: 0;
+  margin: 0;
+  font-weight:normal;
+}
+
+
 @media only screen and (min-width: 578px) {
+
   .home {
     top: 60;
+    grid-template-areas:
+    'topbar topbar topbar topbar topbar topbar topbar topbar topbar topbar topbar topbar'
+    'sidenav sidenav main main main main main main main main main main'
+    'sidenav sidenav footer footer footer footer footer footer footer footer footer footer';
   }
+
+  .home-h1 {
+    height: auto;
+    width: 100%; /* Full width */
+    padding: 0;
+    background-color: transparent;
+    font-size: 1.2rem;/* 30/16 = 1.875em ; 18px = */
+    color: black;
+    text-align: left;
+    left: 0;
+    margin: 0;
+  }
+  
+  .home-h2 {
+    display: block;
+    /*grid-column: 1 / 2;*/
+    height: auto;
+    width: 100%;
+    padding: auto;
+    background-color: transparent;
+    font-size: 1rem;
+    color: grey;
+    text-align: left;
+    left: 0;
+    margin: 0;
+    font-weight: normal;
+  }
+  
+  .home-h3 {
+    display: block;
+    /*grid-column: 1 / 2;*/
+    height: auto;
+    width: 100%;
+    padding: auto;
+    background-color: white;
+    font-size: 1em;
+    color: grey;
+    text-align: left;
+    left: 0;
+    margin: 0;
+    font-weight: normal;
+  }
+  
+  .home-h4 {
+    display: inline;
+    /*grid-column: 1 / 2;*/
+    height: auto;
+    width: 100%;
+    padding: auto;
+    background-color: white;
+    font-size: 1em;
+    color: black;
+    text-align: left;
+    left: 0;
+    margin: 0;
+    font-weight:normal;
+  }
+
+  .home-hr{
+    margin-top: 8px;
+    color: darkgrey;
+    border-width: 3px;
+  }
+  
 }
 
 /******************************************************************************
@@ -378,13 +512,15 @@ Note : that it will show only if the topbar overflow is allowed. */
 	text-align: center;
 	bottom:0; /* At the bottom of the page */
 	/* position: fixed; /* At the bottom of the page */
-	font-family: "Lato", "Helvetica", "Trebuchet MS", "Arial", sans-serif;
+	/* font-family: "Lato", "Helvetica", "Trebuchet MS", "Arial", sans-serif; */
 	font-weight: normal;
 	z-index:0;
 }
 
 
 #homePage_add {
+  position: fixed;
+  z-index: 3;
   bottom: 1rem;
   right: 1rem;
 }
@@ -406,6 +542,8 @@ Note : that it will show only if the topbar overflow is allowed. */
 	top: 60px; /* Place the form just below the topbar (=at 60px).*/
 	left: 0;
 	margin: 0;
+  font-family: "Lato", "Helvetica", "Trebuchet MS", "Arial", sans-serif;
+
 
   /* Mobile design first : the form is only one column */
 	display: grid;
@@ -440,7 +578,6 @@ Note : that it will show only if the topbar overflow is allowed. */
 	color: white;
 	text-align: center;
 	background-color: #6495ed;
-	font-family: "Lato", "Helvetica", "Trebuchet MS", "Arial", sans-serif;
 	font-size: 1.2em;
 }
 
@@ -490,13 +627,7 @@ div.form-section-main > label{
   font-size: 1em;
 }
 
-/* Style the font*/
-html, h1, h2, h3, h4, body, input, p, button {
-	/* font-family: "Lato", "Helvetica", "Trebuchet MS", "Arial", sans-serif; */
-	font-family: "Arial", sans-serif;
-}
-
-h1 {
+.form-h1 {
 	height: auto;
 	width: 100%; /* Full width */
 	padding: auto;
@@ -508,7 +639,7 @@ h1 {
 	margin: 0;
 }
 
-h2 {
+.form-h2 {
 	display: inline;
 	/*grid-column: 1 / 2;*/
 	height: auto;
@@ -523,7 +654,7 @@ h2 {
   font-weight: bold;
 }
 
-h3 {
+.form-h3 {
   display: inline;
   /*grid-column: 1 / 2;*/
   height: auto;
@@ -538,7 +669,7 @@ h3 {
   font-weight: bold;
 }
 
-h4 {
+.form-h4 {
   display: inline;
   /*grid-column: 1 / 2;*/
   height: auto;

@@ -15,9 +15,11 @@
 	It should be used just after  loading screen and when  resizing the screen.  
 */
 function setHomePageUnderTopBar() {
-	console.log("'setHomePageUnderTopBar()");
+	console.log("setHomePageUnderTopBar()");
 	var topBarHeight = document.getElementById("myTopnav").offsetHeight; //This gets the current topbar height
-	document.getElementById("homePageMainDiv").style.top = topBarHeight+'px';
+	var homePageStyle = document.getElementById("homePageMainDiv").style;
+	homePageStyle.top = topBarHeight+'px';
+	document.getElementById("myMenuSideBar").style.top = topBarHeight+'px';
 }
 
 /*****************************************************************************

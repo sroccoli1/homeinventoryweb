@@ -78,8 +78,8 @@ function drawChart() {
 	};
 
 	// Instantiate and draw our barchart, passing in some options.
-	var barchart = new google.visualization.BarChart(document.getElementById('barchart_div'));
-	barchart.draw(view, options);
+	// var barchart = new google.visualization.BarChart(document.getElementById('barchart_div'));
+	// barchart.draw(view, options);
 
 	// Create the data table for the total weight bar chart
 	var data2 = new google.visualization.DataTable();

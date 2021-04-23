@@ -7,12 +7,20 @@
 - Pushed Home inventory on Github (created repository). 
 
 ### March
-Started learning ReactJS [(following this tutorial)](https://reactjs.org/tutorial/tutorial.html).
+Started learning ReactJS [(following this tutorial)](https://reactjs.org/tutorial/tutorial.html). And stopped not long after! This approach felt very difficult.
 
 ### April
-Github's Home Inventory Web repository becomes public.
+- Github's Home Inventory Web repository becomes public.
+- The cardboard search bar searches throught the database. Coded my own AJAX Http request and PDO query against the MySQL JSON Database!
 
-### May
+### Sept - Dec
+- Learning Angular via [(this course)](https://www.udemy.com/course/the-complete-guide-to-angular-2/) and looking forward to using in the next developments! 
+
+### Some Thoughts
+- Using Git & Github was very difficult at the beginning, then finally very rewarding at the end.
+- Managed to fetch data from the web server and database, with my own AJAX code! It does look ugly… I would probably have a cleaner code to fetch web server data with a framework (for instance RubyOnRails...)<br>
+- CSS on its own can be fun, but stylesheets are getting larger, more complex, and harder to maintain. This is where a preprocessor can help. Sass for instance? 
+- Why there's not a single job offer in Oulu looking for PHP skills ? 
 
 ## Contents
 - [Home Inventory Web project](https://github.com/sroccoli1/homeinventoryweb)
