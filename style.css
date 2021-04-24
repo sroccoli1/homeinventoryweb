@@ -227,6 +227,180 @@ Note : that it will show only if the topbar overflow is allowed. */
   /* outline: 2px solid black;   */
 /* } */
 
+
+
+
+/******************************************************************************
+
+/*-------------------------------------Forms----------------------------------
+
+/*******************************************************************************/
+
+
+/******************************************************************************
+											Form : Home Page 
+/******************************************************************************/
+
+/*------------------------ Home page structure ------------------------*/
+
+.home-page-flex-container{
+  display: flex;
+}
+
+.home-main{
+  padding: 8px;
+  text-align: left;
+}
+
+.home-footer{
+  padding: 8px;
+}
+
+.home-sidenav{
+  padding: 8px;
+}
+
+.home-h1 {
+  height: auto;
+  width: 100%; /* Full width */
+  padding: auto;
+  background-color: white;
+  font-size: 2.4em;/* 30/16 = 1.875em ; 18px = */
+  color: black;
+  text-align: center;
+  left: 0;
+  margin: 0;
+}
+
+.home-h2 {
+  display: inline;
+  /*grid-column: 1 / 2;*/
+  height: auto;
+  width: 100%;
+  padding: auto;
+  background-color: white;
+  font-size: 2em;
+  color: black;
+  text-align: center;
+  left: 0;
+  margin: 0;
+  font-weight: bold;
+}
+
+.home-h3 {
+  display: inline;
+  /*grid-column: 1 / 2;*/
+  height: auto;
+  width: 100%;
+  padding: auto;
+  background-color: white;
+  font-size: 1.2em;
+  color: black;
+  text-align: center;
+  left: 0;
+  margin: 0;
+  font-weight: bold;
+}
+
+.home-h4 {
+  display: inline;
+  /*grid-column: 1 / 2;*/
+  height: auto;
+  width: 100%;
+  padding: auto;
+  background-color: white;
+  font-size: 1em;
+  color: black;
+  text-align: center;
+  left: 0;
+  margin: 0;
+  font-weight:normal;
+}
+
+
+@media only screen and (min-width: 700px) {
+
+  .home-page-flex-container{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .home-main{
+    padding: 8px;
+    flex: 80%;
+  }
+    
+  .home-sidenav{
+    padding: 8px;
+    flex : 20%;
+  }
+  
+
+  .home-h1 {
+    height: auto;
+    width: 100%; /* Full width */
+    padding: 0;
+    background-color: transparent;
+    font-size: 1.2rem;/* 30/16 = 1.875em ; 18px = */
+    color: black;
+    text-align: left;
+    left: 0;
+    margin: 0;
+  }
+  
+  .home-h2 {
+    display: block;
+    /*grid-column: 1 / 2;*/
+    height: auto;
+    width: 100%;
+    padding: auto;
+    background-color: transparent;
+    font-size: 1rem;
+    color: grey;
+    text-align: left;
+    left: 0;
+    margin: 0;
+    font-weight: normal;
+  }
+  
+  .home-h3 {
+    display: block;
+    /*grid-column: 1 / 2;*/
+    height: auto;
+    width: 100%;
+    padding: auto;
+    background-color: white;
+    font-size: 1em;
+    color: grey;
+    text-align: left;
+    left: 0;
+    margin: 0;
+    font-weight: normal;
+  }
+  
+  .home-h4 {
+    display: inline;
+    /*grid-column: 1 / 2;*/
+    height: auto;
+    width: 100%;
+    padding: auto;
+    background-color: white;
+    font-size: 1em;
+    color: black;
+    text-align: left;
+    left: 0;
+    margin: 0;
+    font-weight:normal;
+  }
+
+  .home-hr{
+    margin-top: 8px;
+    color: darkgrey;
+    border-width: 3px;
+  }
+  
+}
+
 /*****************************************************************************
 
 ------------------------------Home Page Menu sidenav------------------------
@@ -315,202 +489,6 @@ Note : that it will show only if the topbar overflow is allowed. */
     float: none;
     color: white;
   }
-}
-
-
-/******************************************************************************
-
-/*-------------------------------------Forms----------------------------------
-
-/*******************************************************************************/
-
-
-/******************************************************************************
-											Form : Home Page 
-/******************************************************************************/
-
-/*------------------------ Home page structure ------------------------*/
-
-/* .home places the beginning of any form just below the top bar. */
-.home {
-  /* position: relative;
-  top: 120; /* Place the form just below the topbar (=at 60px).*/
-  left: 0;
-  margin: 0;
-
-  /* Mobile design first : the form is only one column */
-  /* display: grid;
-  grid-template-areas:
-    'topbar'
-    'sidenav'
-    'main'
-    'footer'; */
-}
-/* .home-topbar{
-  /* grid-area: topbar; 
-} */
-
-.home-page-flex-container{
-  display: flex;
-}
-
-.home-main{
-  /* grid-area: main; */
-  padding: 8px;
-  text-align: left;
-}
-
-.home-footer{
-  /* grid-area: footer; */
-  padding: 8px;
-}
-
-.home-sidenav{
-  /* grid-area: sidenav; */
-  padding: 8px;
-}
-
-.home-h1 {
-  height: auto;
-  width: 100%; /* Full width */
-  padding: auto;
-  background-color: white;
-  font-size: 2.4em;/* 30/16 = 1.875em ; 18px = */
-  color: black;
-  text-align: center;
-  left: 0;
-  margin: 0;
-}
-
-.home-h2 {
-  display: inline;
-  /*grid-column: 1 / 2;*/
-  height: auto;
-  width: 100%;
-  padding: auto;
-  background-color: white;
-  font-size: 2em;
-  color: black;
-  text-align: center;
-  left: 0;
-  margin: 0;
-  font-weight: bold;
-}
-
-.home-h3 {
-  display: inline;
-  /*grid-column: 1 / 2;*/
-  height: auto;
-  width: 100%;
-  padding: auto;
-  background-color: white;
-  font-size: 1.2em;
-  color: black;
-  text-align: center;
-  left: 0;
-  margin: 0;
-  font-weight: bold;
-}
-
-.home-h4 {
-  display: inline;
-  /*grid-column: 1 / 2;*/
-  height: auto;
-  width: 100%;
-  padding: auto;
-  background-color: white;
-  font-size: 1em;
-  color: black;
-  text-align: center;
-  left: 0;
-  margin: 0;
-  font-weight:normal;
-}
-
-
-@media only screen and (min-width: 700px) {
-
-  .home-page-flex-container{
-    display: flex;
-    flex-direction: row;
-  }
-
-  .home-main{
-    /* grid-area: main; */
-    padding: 8px;
-    flex: 80%;
-  }
-    
-  .home-sidenav{
-    /* grid-area: sidenav; */
-    padding: 8px;
-    flex : 20%;
-  }
-  
-
-  .home-h1 {
-    height: auto;
-    width: 100%; /* Full width */
-    padding: 0;
-    background-color: transparent;
-    font-size: 1.2rem;/* 30/16 = 1.875em ; 18px = */
-    color: black;
-    text-align: left;
-    left: 0;
-    margin: 0;
-  }
-  
-  .home-h2 {
-    display: block;
-    /*grid-column: 1 / 2;*/
-    height: auto;
-    width: 100%;
-    padding: auto;
-    background-color: transparent;
-    font-size: 1rem;
-    color: grey;
-    text-align: left;
-    left: 0;
-    margin: 0;
-    font-weight: normal;
-  }
-  
-  .home-h3 {
-    display: block;
-    /*grid-column: 1 / 2;*/
-    height: auto;
-    width: 100%;
-    padding: auto;
-    background-color: white;
-    font-size: 1em;
-    color: grey;
-    text-align: left;
-    left: 0;
-    margin: 0;
-    font-weight: normal;
-  }
-  
-  .home-h4 {
-    display: inline;
-    /*grid-column: 1 / 2;*/
-    height: auto;
-    width: 100%;
-    padding: auto;
-    background-color: white;
-    font-size: 1em;
-    color: black;
-    text-align: left;
-    left: 0;
-    margin: 0;
-    font-weight:normal;
-  }
-
-  .home-hr{
-    margin-top: 8px;
-    color: darkgrey;
-    border-width: 3px;
-  }
-  
 }
 
 /******************************************************************************
