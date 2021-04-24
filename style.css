@@ -45,7 +45,7 @@ a:focus, input:focus, button:focus, select:focus{
   padding: auto;
   margin: 0;
   background-color: #6495ed;
-  position: fixed; /* Set the navbar to fixed position */
+  position: static; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   left: 0;
   width: 100%; /* Full width */
@@ -237,17 +237,15 @@ Note : that it will show only if the topbar overflow is allowed. */
   font-family: "Lato", "Helvetica", "Trebuchet MS", "Arial", sans-serif;
   margin: 0;
   padding: 0;
-
-  visibility: hidden;
+  display: block;
   background-color: white;
-  position: fixed; /* Make it stick, even on scroll */
+  position: static; /* Make it stick, even on scroll */
   height: 100%;
   overflow: auto; /* Enable scrolling if the sidenav has too much content */
   font-size: 1em;
   transition: 0.5s;
   left: 0;
   top: 60; /* Place the sidenav just below the topbar (=at 60px).*/
-  z-index: 2;
 }
 
 /* Sidenav links */
@@ -280,6 +278,7 @@ Note : that it will show only if the topbar overflow is allowed. */
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
+  display: none;
 }
 
 
@@ -292,6 +291,7 @@ Note : that it will show only if the topbar overflow is allowed. */
 	  float: none;
     font-weight: bold;
     background-color: #6495ed;
+    display: none;
   }
   .sidenav a {
     float: left;
@@ -308,6 +308,7 @@ Note : that it will show only if the topbar overflow is allowed. */
   	float: none;
     font-weight: bold;
     background-color: #6495ed;
+    display: none;
   }
   .sidenav a {
     text-align: center;
@@ -332,35 +333,40 @@ Note : that it will show only if the topbar overflow is allowed. */
 
 /* .home places the beginning of any form just below the top bar. */
 .home {
-  position: relative;
+  /* position: relative;
   top: 120; /* Place the form just below the topbar (=at 60px).*/
   left: 0;
   margin: 0;
 
   /* Mobile design first : the form is only one column */
-  display: grid;
+  /* display: grid;
   grid-template-areas:
     'topbar'
+    'sidenav'
     'main'
-    'footer';
+    'footer'; */
 }
-.home-topbar{
-  grid-area: topbar;
+/* .home-topbar{
+  /* grid-area: topbar; 
+} */
+
+.home-page-flex-container{
+  display: flex;
 }
 
 .home-main{
-  grid-area: main;
+  /* grid-area: main; */
   padding: 8px;
   text-align: left;
 }
 
 .home-footer{
-  grid-area: footer;
+  /* grid-area: footer; */
   padding: 8px;
 }
 
 .home-sidenav{
-  grid-area: sidenav;
+  /* grid-area: sidenav; */
   padding: 8px;
 }
 
@@ -422,15 +428,25 @@ Note : that it will show only if the topbar overflow is allowed. */
 }
 
 
-@media only screen and (min-width: 578px) {
+@media only screen and (min-width: 700px) {
 
-  .home {
-    top: 60;
-    grid-template-areas:
-    'topbar topbar topbar topbar topbar topbar topbar topbar topbar topbar topbar topbar'
-    'sidenav sidenav main main main main main main main main main main'
-    'sidenav sidenav footer footer footer footer footer footer footer footer footer footer';
+  .home-page-flex-container{
+    display: flex;
+    flex-direction: row;
   }
+
+  .home-main{
+    /* grid-area: main; */
+    padding: 8px;
+    flex: 80%;
+  }
+    
+  .home-sidenav{
+    /* grid-area: sidenav; */
+    padding: 8px;
+    flex : 20%;
+  }
+  
 
   .home-h1 {
     height: auto;

@@ -26,9 +26,9 @@ https://google-developers.appspot.com/chart/interactive/docs/drawing_charts
 	</head>
 
 	<body 
-		class="home" 
-		onload="setHomePageUnderTopBar(); closeDropdownAtClickOutside();" 
-		onresize="setHomePageUnderTopBar();" >
+		class="" 
+		onload="closeDropdownAtClickOutside();" 
+		onresize="resizeOpenedSidenav()" >
 		
 		<!--Includes a Top Navigation Menu-->
 		<!-- PURPOSE: 
@@ -42,7 +42,7 @@ https://google-developers.appspot.com/chart/interactive/docs/drawing_charts
 		- Share
 		- Bin-->
 		<!--Another way	 to include is : <object type="text/html" data="topAndSideNav.php"></object>-->
-		<div class="home-topbar">
+		<div class="home-topbar topnav grid-container" id="myTopnav">
 			<!--*****************************************************************************
 
 			------------------------------Top Navigation Bar--------------------------
@@ -50,43 +50,43 @@ https://google-developers.appspot.com/chart/interactive/docs/drawing_charts
 			<!-******************************************************************************** -->
 			
 			<!--Menu icon, Home page icon, Search and Page Relative menu, all in a static top bar always visible-->
-			<div class="topnav grid-container" id="myTopnav">
+			
 
-				<!-- "Hamburger menu" / "Bar icon" to toggle the menu sidebar-->
-				<a class="item1" id="sideMenuBarOpenBtn" href="#" onclick="openMenuSideBar()">
-					<i class="fa fa-bars"></i>
-					</a>
+			<!-- "Hamburger menu" / "Bar icon" to toggle the menu sidebar-->
+			<a class="item1" id="sideMenuBarOpenBtn" href="#" onclick="openMenuSideBarOnClick()">
+				<i class="fa fa-bars"></i>
+				</a>
 
-				<!--Home page link-->
-				<a class="item2" id="homePageBtn" href="homePage.php">
-					<i class="fa fa-home"></i>
-					</a>
+			<!--Home page link-->
+			<a class="item2" id="homePageBtn" href="homePage.php">
+				<i class="fa fa-home"></i>
+				</a>
 
-				<!--Add homepage search and menu on the right side of the topNav-->
+			<!--Add homepage search and menu on the right side of the topNav-->
 
-				<!--Search
-					See https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_searchbar3-->
-				<div class="item3 search-container">
-				<form class="search-container" action="livesearchview.php">
-					<input type="text" placeholder="Search..." name="search">
-					<button id="topBarSearchBtn" type="submit"><i class="fa fa-search"></i></button>
-				</form>
-				</div>
-
-				<!--Page Relative menu-->
-				<div class="item4 dropdown">
-					<button id="topNavRelativeMenuDropButton" class="dropbtn" onclick="showDropdownAtClick()">
-						<i class="fa fa-ellipsis-v"></i>
-					</button>
-					<div class="dropdown-content" id="myDropdown">
-						<a href="#">Set moving date</a>
-						<a href="#">Set weight limit</a>
-						<a href="#">Set volume limit</a>
-					</div>
-				</div>
+			<!--Search
+				See https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_searchbar3-->
+			<div class="item3 search-container">
+			<form class="search-container" action="livesearchview.php">
+				<input type="text" placeholder="Search..." name="search">
+				<button id="topBarSearchBtn" type="submit"><i class="fa fa-search"></i></button>
+			</form>
 			</div>
 
+			<!--Page Relative menu-->
+			<div class="item4 dropdown">
+				<button id="topNavRelativeMenuDropButton" class="dropbtn" onclick="showDropdownAtClick()">
+					<i class="fa fa-ellipsis-v"></i>
+				</button>
+				<div class="dropdown-content" id="myDropdown">
+					<a href="#">Set moving date</a>
+					<a href="#">Set weight limit</a>
+					<a href="#">Set volume limit</a>
+				</div>
+			</div>
+		</div>
 
+		<div class="home-page-flex-container">
 			<!--*****************************************************************************
 
 			------------------------------Menu sidenav------------------------
@@ -119,61 +119,54 @@ https://google-developers.appspot.com/chart/interactive/docs/drawing_charts
 					Connect
 					</a>
 				</div>
-
 				<!--Link to the Home page-->
 				<a href="homePage.php" class="icon">
-				Home
+					Home
 				</a>
-
 				<!--Link to the page "I prepare my move"-->
 				<a href="#" class="icon">
-				I prepare my move.
+					I prepare my move.
 				</a>
-
 				<!--Link to the page "I receive my items"-->
 				<a href="#" class="icon">
-				I receive my items.
+					I receive my items.
 				</a>
-
 				<!--Link to the page "Objects List"-->
 				<a href="#" class="icon">
-				Objects Lists
+					Objects Lists
 				</a>
-
 				<!--Link to the page "Save"-->
 				<a href="#" class="icon">
-				Save
+					Save
 				</a>
-
 				<!--Link to the page "Share"-->
 				<a href="#" class="icon">
-				Share
+					Share
 				</a>
-
 				<!--Link to the page "Bin"-->
 				<a href="#" class="icon">
-				Bin
+					Bin
 				</a>
-
 			</div>
-		</div>
-		
-		<div id="homePageMainDiv" class="home-main">
-		  <h1 class="home-h1">My Dashboard</h1>
-			<hr class="home-hr">
-		  <h2 class="home-h2">Evolution</h2>
-			<p id="onebarchart_div">Loading global weight barchart...</p>
-			<!-- <p id="barchart_div">Loading disbribution barchart...</p> -->
-		
-			<h2 class="home-h2">Edited recently</h2>
-				<div id="recent">
-					<a href="#">item01Name</a>
-					<a href="#">item02Name</a>
-					<a href="#">item03Name</a>
-					<a href="#">item04Name</a>
-					<a href="#">carboard01Name</a>
-					<a href="#">carboard02Name</a>
-				</div>
+			
+			
+			<div id="homePageMainDiv" class="home-main">
+				<h1 class="home-h1">My Dashboard</h1>
+				<hr class="home-hr">
+				<h2 class="home-h2">Evolution</h2>
+				<p id="onebarchart_div">Loading global weight barchart...</p>
+				<!-- <p id="barchart_div">Loading disbribution barchart...</p> -->
+			
+				<h2 class="home-h2">Edited recently</h2>
+					<div id="recent">
+						<a href="#">item01Name</a>
+						<a href="#">item02Name</a>
+						<a href="#">item03Name</a>
+						<a href="#">item04Name</a>
+						<a href="#">carboard01Name</a>
+						<a href="#">carboard02Name</a>
+					</div>
+			</div>
 		</div>
 		<div class="home-footer footer">
 		  <?php echo date("Y.m.d") . " " . date("l") . ". The server time is " . date("h:i:sa");?>

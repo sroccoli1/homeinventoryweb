@@ -43,15 +43,19 @@ function setFormUnderTopBar() {
 
 *****************************************************************************/
 
-//Resizing the window should be "listened". The sidenav should react responsively when resizing. 
-
-/*Caution : Browser compatibility : window.innerWidth is not compatible with all browser*/
-
-function openMenuSideBar() {
 	/**
+	-- Logic :
+	The sidebar is hidden if browser inner window is < limitSizeForTablet => setSidebarVisibility() 
+	and can be displayed by clicking on the hamburger menu.
+	--> The sidebar is visible if browser inner window is >= limitSizeForTablet
+	And the main section of the page should be on the right.  
+	Caution : Browser compatibility : window.innerWidth is not compatible with all browser */
+function setSidebarVisibility() {
+		/**
 	-------Logic :
-	When the page is loaded the sidebar is hidden.
-	Unhide the sidebar and open (=>resize it)
+	The sidebar is hidden if browser inner window is < limitSizeForTablet => setSidebarVisibility() 
+	and can be displayed by clicking on the hamburger menu.
+	--> The sidebar is visible if browser inner window is >= limitSizeForTablet
 	
 	-------Detailed Logic:
 	Listen 
@@ -59,42 +63,63 @@ function openMenuSideBar() {
 		==> then set the menu side bar width equal to the limitSizeForMobile
 	If the browser inner window is bigger than limitSizeForMobile and not bigger than limitSizeForTablet
 		==> then set the menu side bar width equal to the limitSizeForTablet
-	If the browser inner window is bigger than limitSizeForTablet
-		==> then set the menu side bar width equal to 20%
-	*/
-	
 	var isSidebarVisible = ""; //status of the sidenav (=visible/hidden) for debugging/maintenance purpose
-	
-	//Unhide the bar
-	document.getElementById("myMenuSideBar").style.visibility = "visible";
-	isSidebarVisible = document.getElementById("myMenuSideBar").style.visibility;
-	console.log("Is myMenuSideBar visible ? "+ isSidebarVisible);
 	
 	/* If the browser inner window is bigger than limitSizeForTablet
 		==> then set the menu side bar width equal to 20% */
+	
+	isSidebarDisplayed = document.getElementById("myMenuSideBar").style.display;
+	isSidebarVisible = document.getElementById("myMenuSideBar").style.visibility;
+	document.getElementById("sideMenuBarCloseBtn").style.display = "none";
+
 	if(window.matchMedia("(min-width:700px)").matches){
 		console.log("window is greater than 700px wide");
 		document.getElementById("myMenuSideBar").style.width = "20%";
+		//Unhide the bar
+		isSidebarDisplayed = "block";
+		isSidebarVisible = "visible";
+ 
+		console.log("Is myMenuSideBar diplayed ? "+ isSidebarDisplayed + " " + isSidebarVisible);
+		
+		
 	}
-	/* If the browser inner window is bigger than limitSizeForMobile and not bigger than limitSizeForTablet
-		==> then set the menu side bar width equal to the limitSizeForTablet*/
-	else if(window.matchMedia("(min-width:400px)").matches){
-		console.log("window is greater than 400px wide");
-		document.getElementById("myMenuSideBar").style.width = window.innerWidth;
+}
+
+/**
+ * Open the sidebar
+ */
+function openMenuSideBarOnClick() {
+	console.log("openMenuSideBarOnClick()");
+	/* Status of the sidenav (=visible/hidden) */
+	var sidebarStyle = document.getElementById("myMenuSideBar").style; 	
+	var sidebarCloseButtonStyle = document.getElementById("sideMenuBarCloseBtn").style;
+
+	if(window.matchMedia("(max-width:700px)").matches){
+		// console.log("window is smaller than 700px wide");
+		sidebarStyle.display = "block";
+		sidebarStyle.width = window.innerWidth;
+		sidebarStyle.position = "fixed";
+		isSidebarVisible = ()=> sidebarStyle.visibility = "visible";
+		console.log("isSidebarVisible? "+ isSidebarVisible());
+
+		sidebarCloseButtonStyle.display = "inline";
 	}
 	/* If the browser inner window is not bigger than limitSizeForMobile 
 		==> then set the menu side bar width equal to the limitSizeForMobile*/
 	else {
-		document.getElementById("myMenuSideBar").style.width = window.innerWidth;
+		sidebarStyle.width = "20%";
+		sidebarCloseButtonStyle.display = "none";
 	}
 }
 function closeMenuSideBar() {
-  var isSidebarVisible = "";
-  document.getElementById("myMenuSideBar").style.width = "0";
-  //Hide the bar
-  document.getElementById("myMenuSideBar").style.visibility = "hidden";
-  isSidebarVisible = document.getElementById("myMenuSideBar").style.visibility;
-  console.log("Is myMenuSideBar visible ? "+ isSidebarVisible);
+	if(window.matchMedia("(max-width:700px)").matches){
+		var isSidebarVisible = "";
+		document.getElementById("myMenuSideBar").style.width = "0";
+		//Hide the bar
+		document.getElementById("myMenuSideBar").style.visibility = "hidden";
+		isSidebarVisible = document.getElementById("myMenuSideBar").style.visibility;
+		console.log("Is myMenuSideBar visible ? "+ isSidebarVisible);
+	}	
 }
 /*****************************************************************************
 
@@ -103,10 +128,21 @@ function closeMenuSideBar() {
 *****************************************************************************/
 function resizeOpenedSidenav(){
 	console.log("entered resizeOpenedSidenav()");
-	var isSidebarVisible = "";
-	isSidebarVisible = document.getElementById("myMenuSideBar").style.visibility;
-	if('visible' == isSidebarVisible){
-		openMenuSideBar();
+	var sidebarStyle = document.getElementById("myMenuSideBar").style;
+
+	if(window.matchMedia("(max-width:700px)").matches && sidebarStyle.display != "none"){
+		sidebarStyle.position = "fixed";
+		sidebarStyle.visibility = "visible";
+		sidebarStyle.width = window.innerWidth;
+		var sidebarCloseButtonStyle = document.getElementById("sideMenuBarCloseBtn").style;
+		sidebarCloseButtonStyle.display = "inline";
+	}
+	if(window.matchMedia("(min-width:700px)").matches && sidebarStyle.display != "none"){
+		sidebarStyle.width = "20%";
+		sidebarStyle.position = "static";
+		sidebarStyle.visibility = "visible";
+		var sidebarCloseButtonStyle = document.getElementById("sideMenuBarCloseBtn").style;
+		sidebarCloseButtonStyle.display = "none";
 	}
 }
 /*****************************************************************************
