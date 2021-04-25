@@ -43,48 +43,6 @@ function setFormUnderTopBar() {
 
 *****************************************************************************/
 
-	/**
-	-- Logic :
-	The sidebar is hidden if browser inner window is < limitSizeForTablet => setSidebarVisibility() 
-	and can be displayed by clicking on the hamburger menu.
-	--> The sidebar is visible if browser inner window is >= limitSizeForTablet
-	And the main section of the page should be on the right.  
-	Caution : Browser compatibility : window.innerWidth is not compatible with all browser */
-function setSidebarVisibility() {
-		/**
-	-------Logic :
-	The sidebar is hidden if browser inner window is < limitSizeForTablet => setSidebarVisibility() 
-	and can be displayed by clicking on the hamburger menu.
-	--> The sidebar is visible if browser inner window is >= limitSizeForTablet
-	
-	-------Detailed Logic:
-	Listen 
-	If the browser inner window is not bigger than limitSizeForMobile 
-		==> then set the menu side bar width equal to the limitSizeForMobile
-	If the browser inner window is bigger than limitSizeForMobile and not bigger than limitSizeForTablet
-		==> then set the menu side bar width equal to the limitSizeForTablet
-	var isSidebarVisible = ""; //status of the sidenav (=visible/hidden) for debugging/maintenance purpose
-	
-	/* If the browser inner window is bigger than limitSizeForTablet
-		==> then set the menu side bar width equal to 20% */
-	
-	isSidebarDisplayed = document.getElementById("myMenuSideBar").style.display;
-	isSidebarVisible = document.getElementById("myMenuSideBar").style.visibility;
-	document.getElementById("sideMenuBarCloseBtn").style.display = "none";
-
-	if(window.matchMedia("(min-width:700px)").matches){
-		console.log("window is greater than 700px wide");
-		document.getElementById("myMenuSideBar").style.width = "20%";
-		//Unhide the bar
-		isSidebarDisplayed = "block";
-		isSidebarVisible = "visible";
- 
-		console.log("Is myMenuSideBar diplayed ? "+ isSidebarDisplayed + " " + isSidebarVisible);
-		
-		
-	}
-}
-
 /**
  * Open the sidebar
  */
@@ -111,6 +69,11 @@ function openMenuSideBarOnClick() {
 		sidebarCloseButtonStyle.display = "none";
 	}
 }
+
+
+/**
+ * Close the sidebar
+ */
 function closeMenuSideBar() {
 	if(window.matchMedia("(max-width:700px)").matches){
 		var isSidebarVisible = "";
@@ -121,6 +84,7 @@ function closeMenuSideBar() {
 		console.log("Is myMenuSideBar visible ? "+ isSidebarVisible);
 	}	
 }
+
 /*****************************************************************************
 
 ------------------------------Resize sidenav when opened------------------------
@@ -134,62 +98,78 @@ function resizeOpenedSidenav(){
 		sidebarStyle.position = "fixed";
 		sidebarStyle.visibility = "visible";
 		sidebarStyle.width = window.innerWidth;
+		
 		var sidebarCloseButtonStyle = document.getElementById("sideMenuBarCloseBtn").style;
 		sidebarCloseButtonStyle.display = "inline";
+
 	}
 	if(window.matchMedia("(min-width:700px)").matches && sidebarStyle.display != "none"){
 		sidebarStyle.width = "20%";
 		sidebarStyle.position = "static";
 		sidebarStyle.visibility = "visible";
-		var sidebarCloseButtonStyle = document.getElementById("sideMenuBarCloseBtn").style;
-		sidebarCloseButtonStyle.display = "none";
+		
+		document.getElementById("sideMenuBarCloseBtn").style.display = "none";
+
 	}
 }
+
 /*****************************************************************************
 
-/*--------------------Re-arrange topbar when resizing------------------------
+/*-------------------- Re-arrange topbar ------------------------
 
 /****************************************************************************/
-/* Mobile design first : 
-- if the screen width is under 400px, topbar is only one column (1) : Menu, Home, Search, [...] are displayed in letters on separated rows. 
-- if the screen width is over 400px : topbar is only one row (1), with Menu, Home, Search, [...] are displayed as icons. 
-(1) covered by CSS media query
-
-Development : 
-1. if the screen width is under 400px : Menu, Home, Search, More links icons are not displayed (invisible) and link text are displayed by adding the text. 
-2. if the screen width is over 400px : Menu, Home, Search, More links icons are visible so links text are not dislayed by modifying/adding txt. 
-*/
-
 function rearrangeTopbar(){
 	console.log("entered rearrangeTopbar()");
-	// Implements 1.
-	if(window.matchMedia("(min-width:400px)").matches){
-		console.log("window is greater than 400px wide");
-		document.getElementById("sideMenuBarOpenBtn").innerHTML = "<i class=\"fa fa-bars\">";
-		document.getElementById("homePageBtn").innerHTML = "<i class=\"fa fa-home\">";
-		document.getElementById("topBarSearchBtn").innerHTML =  "<i class=\"fa fa-search\">";
-		document.getElementById("topNavRelativeMenuDropButton").innerHTML = "<i class=\"fa fa-ellipsis-v\">";
+
+	if(window.matchMedia("(min-width:700px)").matches){
+		document.getElementById("sideMenuBarOpenBtn").style.display = "none";
+		document.getElementById("sidenav-brand-logo-shape").style.display = "none";
+		document.getElementById("home-brand").style.display = "block";
+		document.getElementById("home-topbar").style.backgroundColor = "transparent";
+		document.getElementById("topBarSearchBtn").style.backgroundColor = "transparent";
+		var x = document.getElementsByClassName("search-container");
+		var i;
+		for (i = 0; i < x.length; i++) {
+			x[i].style.backgroundColor = "transparent";
+		}
+		var y = document.getElementsByClassName("dropdown-content");
+		var j;
+		for (j = 0; j < y.length; j++) {
+			y[j].style.backgroundColor = "transparent";
+		}	
 	}
-	else {
-		console.log("window is greater than 400px wide");
-		document.getElementById("sideMenuBarOpenBtn").innerHTML = "Menu";
-		document.getElementById("homePageBtn").innerHTML = "Home";
-		document.getElementById("topBarSearchBtn").innerHTML =  "Search";
-		document.getElementById("topNavRelativeMenuDropButton").innerHTML = "More";
+	if(window.matchMedia("(max-width:700px)").matches) {
+		document.getElementById("sideMenuBarOpenBtn").style.display = "block";
+		document.getElementById("sidenav-brand-logo-shape").style.display = "block";
+		document.getElementById("home-brand").style.display = "none";
+		document.getElementById("home-topbar").style.backgroundColor = "#6495ed";
+		document.getElementById("topBarSearchBtn").style.backgroundColor = "#6495ed";
+		var x = document.getElementsByClassName("search-container");
+		var i;
+		for (i = 0; i < x.length; i++) {
+			x[i].style.backgroundColor = "#6495ed";
+		}
+		var y = document.getElementsByClassName("dropdown-content");
+		var j;
+		for (j = 0; j < y.length; j++) {
+			y[j].style.backgroundColor = "#6495ed";
+		}	
 	}
 }
+
 /*****************************************************************************
 
 /*----------------Open and Close Object Search Filter Settings Menu-----------
 
-*****************************************************************************/
-/* When the user clicks on the button, 
+*****************************************************************************
+When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
 function showSearchFiltersSettingsAtClick(){
 	document.getElementById("cardboardSearch-filterBar-filterSettings-contents-js").classList.toggle("searchview-filters-dropdown-content-show-js");
 	console.log("showSearchFiltersSettingsAtClick()");
 }
-// Close the dropdown if the user clicks outside of it
+
+/** Close the dropdown if the user clicks outside of it. */
 function closeSearchFiltersAtClickOutside(){
 	window.onclick = function(e) {
 	  if (!e.target.matches('.searchview-filters-settings-dropbtn-js')) {
@@ -200,6 +180,7 @@ function closeSearchFiltersAtClickOutside(){
 	  }
 	}
 }
+
 /*****************************************************************************
 
 /*---------------------------Open and Close TopNav Relative Menu
