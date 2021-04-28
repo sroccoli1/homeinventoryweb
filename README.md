@@ -1,6 +1,9 @@
 # homeinventoryweb
 ## Managing your cardboard boxes for your next move !
-### Inventory your stuff, evaluate how much it weights, so contracting with a moving company becomes easier !<br>homeinventoryweb is a self-learning web development project developed by sroccoli1.<br>The digital twin of your packed stuff! 
+### Inventory your stuff, evaluate how much it weights, so contracting with a moving company becomes easier !<br>homeinventoryweb is a self-learning web development project developed by sroccoli1.<br>The digital twin of your packed stuff!<br> 
+
+[![Welcome video](https://media.giphy.com/media/BqYJQ43Aax7iyfrM6T/giphy.gif)](https://youtu.be/UWZg4aqFPVQ)
+
 #### [HomeInventoryWeb GUI concept (slideshow)](https://docs.google.com/presentation/d/1Q-WU6EXmCz8f2J5X9AstjjvyCnf4XlexK0z0Xx5O2q4/edit?usp=sharing)
 
 ## Content
@@ -27,8 +30,11 @@ From experience, moving is often a painstaking, slow but necessary process. Fort
 - Inventory checker at the destination place
 - Weight limit and overall value dashboard  
 
-Current solution in a short video:<br>
-[![Video update #1](https://media.giphy.com/media/MdegzNhqQnHdfV59vb/giphy.gif)](https://youtu.be/2eW1WiKwrd0)
+### Last feature update in a short video
+
+- 2021 April update coming soon...
+
+- [2020 April update](https://github.com/sroccoli1/homeinventoryweb/blob/master/2020_milestones.md) 
 
 ## homeinventoryweb features
 
@@ -51,5 +57,5 @@ Current solution in a short video:<br>
 [Getting Started with Home Inventory Web (Dev and Test)](https://github.com/sroccoli1/homeinventoryweb/blob/master/GettingStartedDevandTest.md)
 
 ## Note
-If you have any questions or ideas about Home Inventory (or other ideas), feel free to reach out to me on Twitter: [@SRoccoli](https://twitter.com/SRoccoli) 
+If you have any questions or ideas about Home Inventory (or other ideas), feel free to reach out to me on Twitter: [@SRoccoli](https://twitter.com/SRoccoli) or LinkedIn: [samuelroccoli](https://www.linkedin.com/in/samuelroccoli/) 
 <br>If you like this repo and find it useful, please consider ★ starring it (on top right of the page) and forking it :)
