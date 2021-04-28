@@ -94,6 +94,7 @@ a:focus, input:focus, button:focus, select:focus{
 .sidenav-brand-logo-shape{
   padding: 12px;
   text-align: center;
+  font-family: "Comfortaa", "Lato", "Helvetica", "Trebuchet MS", "Arial", sans-serif;
 }
 
 .sidenav-brand-logo-shape i{
@@ -649,7 +650,7 @@ Note : that it will show only if the topbar overflow is allowed. */
 	top: 0; /* Place the form just below the topbar (=at 60px).*/
 	left: 0;
 	margin: 0;
-  font-family: "Lato", "Helvetica", "Trebuchet MS", "Arial", sans-serif;
+  font-family: "Segoe UI", "Arial", sans-serif;
 
 
   /* Mobile design first : the form is only one column */
@@ -720,7 +721,7 @@ Note : that it will show only if the topbar overflow is allowed. */
 
 .item1-goback:hover {
   background-color: white; /* Blue */
-  color: #6495ed;
+  color: black;
 }
 
 .item2-title {
@@ -728,6 +729,7 @@ Note : that it will show only if the topbar overflow is allowed. */
 	align-self: center;
 	padding: 8px;
   color: white;
+  font-weight: bold;
 }
 
 .item3-save {
@@ -736,11 +738,7 @@ Note : that it will show only if the topbar overflow is allowed. */
   width: 100%;
   background-color: #6495ed;
   color: white;
-}
-
-.item3-save:hover {
-  background-color: white; /* Blue */
-  color: #6495ed;
+  font-weight: bold;
 }
 
 /*------------------------------ Object definition main section --------------------*/
@@ -893,7 +891,8 @@ input[type=reset] {
 }
 
 input[type=submit]:hover {
-  background-color: #1b61e4; /* Blue */
+  background-color: white; /* Blue */
+  color: black;
 }
 
 input[type=reset]:hover {

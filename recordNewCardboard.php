@@ -220,14 +220,14 @@ PURPOSE: It creates a form with controls, where user writes the cardboard name, 
 
 			  <!--The title-->
 			  <!--  Caution : id used by JS script // not at the moment-->
-			  <div class="item2-title forms-top-bar" 
+			  <div class="item2-title" 
 					id="newCardboardTopBarTitle">
 					New cardboard
 			  </div>
 
 			  <!--SAVE button -->
 			  <!--  Caution : button id used by JS script  // not at the moment-->
-			  <input class="item3-save forms-top-bar" 
+			  <input class="item3-save" 
 					type="submit" 
 					name="submit" 
 					value="SAVE"
