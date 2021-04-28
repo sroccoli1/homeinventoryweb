@@ -3,19 +3,15 @@
 
 <!--
 Project: Home Inventory Helper
-Branch : 2
-InternalFileName: 2018_22_01_001_RecordNewCarboard.html
-Version : 0.1
-Based originally on project : HTML_PHP_Training_p6_Printing_to_files
-Last updated : 2019_02_17_21_03
-
 PURPOSE: It creates a form with controls, where user writes the cardboard name, set the weight and the room into it should go, the handling care and cardboard state.
 -->
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-		<title>New Cardboard</title>
+		<script src="https://kit.fontawesome.com/1e0bf4fd11.js" crossorigin="anonymous"></script>
+		<link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
+		<title>Record New Cardboard</title>
 	</head>
 	
 	<!--When body is resized sidenav is dynamically resized too-->
@@ -120,12 +116,11 @@ PURPOSE: It creates a form with controls, where user writes the cardboard name, 
 			  // insert to mysql json db
 			  include 'db.php';
 
-			  /**
-			  $servername = "localhost:3307";
-			  $username = "root";
-			  $password = "";
-			  $dbname = "myDBPDO";
-			  */
+			  
+			  // $servername = "localhost:3307";
+			  // $username = "root";
+			  // $password = "";
+			  // $dbname = "myDBPDO";
 
 
 			  try {
@@ -176,8 +171,17 @@ PURPOSE: It creates a form with controls, where user writes the cardboard name, 
 		  return $data;
 		}
 
-		?><!--End of user input validation->
+		?><!--End of user input validation-->
 		
+
+		<div 
+			id="form-section-topbar-brand-logo" 
+			class="form-section-topbar-brand-logo">
+			<i class='fas fa-box-open'>
+			</i>
+				Oh! My Move	
+		</div>
+
 		<!--* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 										FORM SECTION 
 		* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *--> 
@@ -187,33 +191,48 @@ PURPOSE: It creates a form with controls, where user writes the cardboard name, 
 		set the weight and the room into it should go, 
 		the handling care and cardboard state.-->
 		
-		<form id="recordNewCardboard" class="form-section" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+		<form id="recordNewCardboard" 
+			class="form-section" 
+			method="post" 
+			action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"
+		>
 		
-			<!--*****************************************************************
+			<!--***************************************************************-->
 
 			<!------------------New Cardboard Top Bar---------------------------->
 		
 			<!--**********************************************************************-->
 			<!--A GO BACK button (=an arrow towards the left), a title, a SAVE button -->
 			<!-- Caution : id used by JS script // not at the moment-->
-			<!--<div class="forms-top-bar" id="newCardboardTopBar">
+			<div class="form-section-topbar" 
+				id="newCardboardTopBar"
+			>
 
 			  <!-- A GO BACK button -->
 			  <!--  Caution : id used by JS script // not at the moment-->
-			  <a class="item1-goback forms-top-bar" id="newCardboardTopBarGoBackBtn" href="homePage.php" onclick="">
+			  <a class="item1-goback" 
+					id="newCardboardTopBarGoBackBtn" 
+					href="homePage.php" 
+					onclick=""
+				>
 					<i class="fas fa-arrow-left"></i>
 			  </a>
 
 			  <!--The title-->
 			  <!--  Caution : id used by JS script // not at the moment-->
-			  <div class="item2-title forms-top-bar" id="newCardboardTopBarTitle">
+			  <div class="item2-title forms-top-bar" 
+					id="newCardboardTopBarTitle">
 					New cardboard
 			  </div>
 
 			  <!--SAVE button -->
 			  <!--  Caution : button id used by JS script  // not at the moment-->
-			  <input class="item3-save forms-top-bar" type="submit" name="submit" value="SAVE"/>	
-			<!--</div>
+			  <input class="item3-save forms-top-bar" 
+					type="submit" 
+					name="submit" 
+					value="SAVE"
+				/>	
+			</div>
 			
 			<!--*****************************************************************
 

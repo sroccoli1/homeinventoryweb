@@ -646,7 +646,7 @@ Note : that it will show only if the topbar overflow is allowed. */
 	See Javascript for toggling the label (depending on the screen size). */
 .form-section {
 	position: relative;
-	top: 60px; /* Place the form just below the topbar (=at 60px).*/
+	top: 0; /* Place the form just below the topbar (=at 60px).*/
 	left: 0;
 	margin: 0;
   font-family: "Lato", "Helvetica", "Trebuchet MS", "Arial", sans-serif;
@@ -655,12 +655,26 @@ Note : that it will show only if the topbar overflow is allowed. */
   /* Mobile design first : the form is only one column */
 	display: grid;
 	grid-template-areas:
+    'brand brand brand brand brand brand brand brand brand brand brand brand'
 		'topbar topbar topbar topbar topbar topbar topbar topbar topbar topbar topbar topbar'
 		'title title title title title title title title title title title title'
 		'info info info info info info info info info info info info'
 		'main main main main main main main main main main main main';
 }
 
+
+.form-section-topbar-brand-logo{
+  grid-area: brand;
+  padding: 12px;
+  text-align: center;
+  font-family: "Comfortaa", "Lato", "Helvetica", "Trebuchet MS", "Arial", sans-serif;
+}
+
+.form-section-topbar-brand-logo i{
+  font-size: 24px; 
+  color: #6495ed;
+}
+  
 .form-section-title{
   grid-area: title;
   padding: 8px 8px 0px 8px;
@@ -680,43 +694,53 @@ Note : that it will show only if the topbar overflow is allowed. */
 
 /*------------------------------ Top Bar --------------------*/
 
-.forms-top-bar {
+.form-section-topbar {
+  grid-area: topbar;
+  display: grid;
 	height: auto;
-	color: white;
-	text-align: center;
+	justify-items: center;
 	background-color: #6495ed;
-	font-size: 1.2em;
 }
 
 /* 3 items will fit in 12 columns. It is not useful to add text-align: center */
 .item1-goback {
 	grid-area: 1 / 1 / 2 / 2;
-	padding: 9.5px 10px;
-	align-self: center;
+	padding: 10.8px 10px;
+  color: white;
+  width: 100%;
 }
 
 .item1-goback i{
-	align-self: center;
+  text-align: center;
 	padding: 0px;
+  width: 100%;
+  margin: 0;
+  font-size: 24px;
 }
 
 .item1-goback:hover {
-  background-color: #1b61e4; /* Blue */
+  background-color: white; /* Blue */
+  color: #6495ed;
 }
 
 .item2-title {
 	grid-area: 1 / 2 / 2 / 10;
 	align-self: center;
 	padding: 8px;
+  color: white;
 }
 
 .item3-save {
-	grid-area: 1 / 10 / 2 / 13;
-	padding: 0x;
+	grid-area: 1 / 10 / 2 / 11;
+	margin: 0;
+  width: 100%;
+  background-color: #6495ed;
+  color: white;
 }
 
 .item3-save:hover {
-  background-color: #1b61e4; /* Blue */
+  background-color: white; /* Blue */
+  color: #6495ed;
 }
 
 /*------------------------------ Object definition main section --------------------*/

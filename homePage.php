@@ -174,12 +174,12 @@ This code has been moved to a linux based OS.
 		  <br>&copy; Samuel Roccoli<br>
 			<?php echo date("Y");?> -->
 					<!--This button opens a form to add a new cardboard box.-->
-			<!-- <button id=""
+			<button id=""
 				class="w3-button w3-xlarge w3-circle w3-red w3-card-4 w3-margin w3-right" 
 				onclick="location.href='recordNewCardboard.php';" >
 				+
 			</button>
-		</div> -->
+		<!-- </div> -->
 
 	</body>
 	<script src="myScript.js"></script>
