@@ -30,11 +30,11 @@ From experience, moving is often a painstaking, slow but necessary process. Fort
 - Inventory checker at the destination place
 - Weight limit and overall value dashboard  
 
-### Product update video
+### Product demo video
 
-- 2021 April product update coming soon...
+- 2021 April product demo coming soon...
 
-- [2020 April product update](https://github.com/sroccoli1/homeinventoryweb/blob/master/2020_milestones.md) 
+- [2020 April product demo](https://github.com/sroccoli1/homeinventoryweb/blob/master/2020_milestones.md) 
 
 ## homeinventoryweb features
 

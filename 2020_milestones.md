@@ -12,7 +12,7 @@ Started learning ReactJS [(following this tutorial)](https://reactjs.org/tutoria
 ### April
 - Github's Home Inventory Web repository becomes public.
 - The cardboard search bar searches throught the database. Coded my own AJAX Http request and PDO query against the MySQL JSON Database!
-- [![Product update video #1](https://media.giphy.com/media/MdegzNhqQnHdfV59vb/giphy.gif)](https://youtu.be/2eW1WiKwrd0)
+- [![Product demo video #1](https://media.giphy.com/media/MdegzNhqQnHdfV59vb/giphy.gif)](https://youtu.be/2eW1WiKwrd0)
 
 ### Sept - Dec
 - Learning Angular via [(this course)](https://www.udemy.com/course/the-complete-guide-to-angular-2/) and looking forward to using in the next developments! 
