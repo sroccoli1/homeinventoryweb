@@ -2,7 +2,7 @@
 ## Managing your cardboard boxes for your next move !
 ### Inventory your stuff, evaluate how much it weights, so contracting with a moving company becomes easier !<br>homeinventoryweb is a self-learning web development project developed by sroccoli1.<br>The digital twin of your packed stuff!<br> 
 
-[![Welcome video](https://media.giphy.com/media/BqYJQ43Aax7iyfrM6T/giphy.gif)](https://youtu.be/UWZg4aqFPVQ)
+[![Welcome video](https://media.giphy.com/media/BqYJQ43Aax7iyfrM6T/giphy.gif)](https://youtu.be/vgd25lSMKDc)
 
 #### [HomeInventoryWeb GUI concept (slideshow)](https://docs.google.com/presentation/d/1Q-WU6EXmCz8f2J5X9AstjjvyCnf4XlexK0z0Xx5O2q4/edit?usp=sharing)
 
